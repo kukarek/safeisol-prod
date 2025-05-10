@@ -1,0 +1,85 @@
+/* Стили для модального окна */
+.modal-form {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: flex-end; /* Выравнивание по правому краю */
+    align-items: center; /* Центрирование по вертикали */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Содержимое модального окна */
+.modal-form-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+/* Закрывающая кнопка */
+.close-form {
+    cursor: pointer;
+    font-size: 28px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+/* Стили для полей ввода */
+input {
+    padding: 20px;
+    width: 100%;
+    margin: 20px 0;
+    background-color: var(--light_gray);
+    border: none;
+}
+
+textarea {
+    padding: 40px 20px;
+    width: 100%;
+    margin: 20px 0;
+    background-color: var(--light_gray);
+    border: none;
+    resize: none;
+}
+
+/* Стили для кнопки отправки */
+.submit-btn {
+    padding: 10px 20px;
+    background-color: var(--orange);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    height: 60;
+    font-size: 18;
+    color: var(--light_gray);
+    border: 1px solid var(--orange);
+    margin-top: 20px;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: white;
+    color: var(--dark_gray);
+}
+
+.questionnaire {
+    margin-top: auto;
+    font-size: 14px;
+    color: var(--orange);
+    transition: opacity 0.3s ease;
+}
+
+.questionnaire:hover {
+    opacity: 0.7;
+}

@@ -1,0 +1,87 @@
+.footer {
+    text-align: center;
+    position: relative;
+    bottom: 0px;
+    background-color: var(--orange);
+    color: var(--light_gray);
+}
+
+.footer-text {
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 550;
+}
+
+
+.footer-nav {
+    width: 100%;
+}
+
+.footer-main-ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+}
+
+.footer-main-li {
+    list-style-type: none; 
+    margin: 20px 0;
+    text-align: left;
+}
+
+.footer-ul {
+    padding: 0px;
+}
+
+.footer-li {
+    list-style-type: none; 
+    margin: 20px 0;
+}
+
+.footer-a {
+    color: var(--light_gray);
+    text-decoration: none;
+    transition: opacity 0.3s ease; /* Плавный переход для изменения прозрачности */
+}
+
+.footer-a:hover {
+    opacity: 0.7; /* Устанавливаем прозрачность при наведении */
+}
+
+.footer-phone-contact {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.footer-mail-contact {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.footer-mail-logo {
+    width: 18px;
+    height: auto;
+    padding: 10px;
+    fill: var(--light_gray);
+}
+
+.footer-address {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-phone-logo {
+    width: 18px;
+    padding: 10px;
+    fill: var(--light_gray);
+}
+
+.footer-address-logo {
+    width: 18px;
+    padding: 10px;
+    fill: var(--light_gray);
+}

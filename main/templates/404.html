@@ -1,0 +1,33 @@
+{% load static %}
+{% load main_tags %}
+
+<html>
+
+    <head>
+        <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/header.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/footer.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
+        <link rel="icon" href="{% static 'main/media/logo-ico.png' %}" type="image/x-icon">
+        <title>Страница не найдена</title>
+    </head>
+
+    <body>
+
+        {% header %}
+
+        <div class="content">
+            <div class="container">
+                <div class="404_mess" style="height: 100%; margin-top: 50px; justify-content: start; align-items: start; font-size: 25px; font-weight: bold;">Страница не найдена</div>
+            </div>
+        </div>
+
+        {% footer %}
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{% static 'main/js/base.js' %}"></script>
+
+    </body>
+
+
+</html>

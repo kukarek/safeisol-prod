@@ -1,0 +1,131 @@
+
+.products {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 50px 0;
+}
+
+/* Стили для заголовка продуктов */
+.products-title {
+    font-size: 24px; /* Размер шрифта заголовка */
+    font-weight: bold; /* Жирный шрифт */
+    margin-bottom: 20px; /* Отступ снизу */
+    text-align: center; /* Центрирование текста */
+    color: #333; /* Цвет текста */
+    border-bottom: 1px dashed;
+    padding-bottom: 3px;
+}
+
+/* Стили для контейнера карточек продуктов */
+.product-cards {
+    position: relative; /* Для позиционирования стрелок */
+    overflow: hidden; /* Скрывает переполнение */
+    width: 100%;
+}
+
+.product-cards-inner {
+    display: flex; /* Использует flexbox для расположения карточек */
+    transition: transform 0.5s ease; /* Плавный переход при перемещении */
+    width: 100%; /* Занимает всю ширину родительского контейнера */
+    justify-content: flex-start; /* Выравнивание карточек по левому краю */
+}
+
+.product {
+    min-width: 20%; /* Устанавливает ширину карточки (5 карточек в ряд) */
+    max-width: 20%;
+    box-sizing: border-box; /* Учитывает отступы и границы в ширине */
+    padding: 10px; /* Отступы внутри карточки */
+    justify-content: center;
+    border: 1px solid var(--light_gray);
+    transition: border 0.4s ease;
+}
+/* Эффект наведения на карточку продукта */
+.product:hover {
+    border: 1px solid var(--orange); /* Увеличение карточки при наведении */
+}
+
+/* Стили для изображений продуктов */
+.product-img-block {
+    height: 170px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-img {
+    height: 100%; /* Ограничивает ширину изображения */
+    max-width: 100%;
+    object-fit: cover;
+}
+
+/* Стили для названия продукта */
+.product-name-block {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-name {
+    text-align: center; /* Центрирует текст */
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--dark_gray);
+}
+
+.carousel-button {
+    display: none;
+    position: absolute; /* Позиционирует стрелки */
+    top: 50%; /* Центрирует стрелки по вертикали */
+    transform: translateY(-50%); /* Центрирует стрелки по вертикали */
+    background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
+    border: none; /* Убирает рамку */
+    cursor: pointer; /* Указывает, что это кнопка */
+    padding: 10px; /* Отступы для кнопок */
+    z-index: 1; /* Устанавливает порядок отображения */
+    background-color: var(--light_gray);
+}
+
+.carousel-button.left {
+    left: 10px; /* Позиция левой стрелки */
+}
+
+.carousel-button.right {
+    right: 10px; /* Позиция правой стрелки */
+}
+
+/* Стили для заголовка */
+.about-title {
+    font-size: 24px; /* Размер шрифта заголовка */
+    border-bottom: 1px solid gray;
+    font-weight: bold; /* Жирный шрифт */
+    margin-bottom: 15px; /* Отступ снизу */
+    color: var(--dark_gray); /* Цвет текста */
+    text-align: center; /* Центрирование текста */
+}
+
+.about-block {
+    padding-top: 60px;
+    border-top: 2px solid var(--light_gray);
+    margin: 50px 0;
+}
+
+/* Стили для текста */
+.about-text {
+    text-indent: 40px;
+    font-size: 16px; /* Размер шрифта текста */
+    font-weight: 500;
+    line-height: 1.5; /* Межстрочный интервал */
+    color: var(--dark_gray); /* Цвет текста */
+    text-align: justify; /* Выравнивание текста по ширине */
+    margin: 0; /* Убираем отступы */
+}
+
+/* Перенос текста */
+.about-text {
+    word-wrap: break-word; /* Перенос длинных слов */
+    overflow-wrap: break-word; /* Поддержка для современных браузеров */
+}

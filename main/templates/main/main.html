@@ -1,0 +1,51 @@
+{% load static %}
+{% load main_tags %}
+
+
+<head>
+    <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'main/css/header.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'main/css/main.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'main/css/carousel.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
+    <link rel="icon" href="{% static 'main/media/logo-ico.png' %}" type="image/x-icon">
+    <title>ООО "Безопасная Теплоизоляция"</title>
+</head>
+
+<body>
+    
+    {% header %}
+
+    <div class="content">
+
+        <div class="main-block">
+            <div class="main-slide">
+                
+                <div class="main-text">
+                    <p class="main-title">СОГРЕЕМ ВАШИ ИНВЕСТИЦИИ</p>
+                </div>
+            </div>
+            
+        </div>
+
+        <div style="margin-top: 100px;">  <!-- див нужен только для отступа сверху -->
+            {% include 'main/carousel.html' %}
+        </div>
+        
+        <div class="about-block">
+            <div class="container">
+                <div class="about-title"><a class="blurlink" href="{% url 'about' %}">О компании</a></div>
+                <div class="about-text">Наша филосовия - помогать решать сложные проблемы! Простота и легкость в общении и обмене информацией! Мы не смотрим на конкурентов, Мы их уважаем, Мы смотрим в будущее и Мы смотрим на заказчиков, дабы удовлетворить их потребности!  Вы покупаете теплоизоляцию, а не сложные технологические комплексы, и мы это понимаем! Вы инвестируете, Мы согреем ваши инвестиции.</div>
+            </div>
+        </div>
+
+    </div>
+
+    {% footer %}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'main/js/base.js' %}"></script>
+    <script src="{% static 'main/js/header.js' %}"></script>
+    <script src="{% static 'main/js/carousel.js' %}"></script>
+</body>
+

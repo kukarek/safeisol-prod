@@ -1,0 +1,37 @@
+{% load static %}
+
+
+
+
+
+
+
+{% for category in categories %}
+    <div class="products-block">
+        <div class="container">
+            <div class="products-title">
+                <a class="blurlink" href="{{ category.get_absolute_url }}">{{ category.title }}</a>
+            </div>
+            <div class="products">
+                <div class="product-cards">
+                    <div class="product-cards-inner">
+                        {% for product in category.products.all %}
+                        <div class="product" onclick="window.location.href='{{ product.get_absolute_url }}'">
+                            <div class="product-img-block">
+                                {% for image in product.content.images %}
+                                    {% if forloop.first %}
+                                        <img class="product-img" src="{% static 'main/media/' %}{{ image.src }}">
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="product-name-block">
+                                <p class="product-name">{{ product.title }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

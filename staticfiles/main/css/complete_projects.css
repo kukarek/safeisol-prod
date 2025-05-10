@@ -1,0 +1,30 @@
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Окно фиксировано */
+    z-index: 1000; /* На переднем плане */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Включаем прокрутку, если нужно */
+    background-color: rgba(0, 0, 0, 0.8); /* Затемнение фона */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    display: flex;
+    margin: auto;
+    margin-bottom: auto;
+    object-fit: contain;
+    width: 70%; /* Максимальная ширина изображения */
+    height: 70%; /* Максимальная высота изображения */
+    justify-content: center;
+}
+
+.modal-image {
+    height: 100%;
+}

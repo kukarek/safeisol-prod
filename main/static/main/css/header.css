@@ -1,0 +1,250 @@
+
+.sscls-1 {
+    fill: var(--orange);fill-rule: evenodd;
+}
+
+#top-line {
+    display: none;
+}
+
+.mob-top {
+    display: none;
+}
+
+.mob-panel {
+    display: none;
+}
+
+#mob-search {
+    display: none;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.header-logo {
+    background-image: url(/static/main/media/header.png);
+    background-size: cover;
+    width: 100%;
+    height: 130px;
+    background-color: white;
+    z-index: 2;
+}
+
+.header-background {
+    background-image: url(/static/main/media/header-background.png);
+    position: absolute;
+    background-size: 100% 130px;
+    width: 100%;
+    height: 130px;
+}
+
+.header-ul {
+    display: grid; /* Включаем Grid Layout */
+    grid-auto-flow: column; /* Располагаем элементы в строку */
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+    margin: 0; /* Убираем внешние отступы */
+    width: 100%;
+}
+
+.navbar {
+    position: relative;
+    width: 100%;
+    background-color: var(--light_gray);
+    padding: 10px 0 0 0;
+    z-index: 1000;
+}
+
+.navbar.fixed {
+    position: fixed; /* Фиксированная позиция */
+    top: 0; /* Вверху страницы */
+    width: 100%; /* Ширина на всю страницу */
+}
+
+.header-li {
+    margin: 5px;
+    text-align: center;
+}
+
+.navbar-a {
+    text-decoration: none;
+    color: rgb(14, 14, 14);
+    overflow: hidden;
+    margin: 5px;
+    transition: color 0.5s ease;
+
+    display: inline-block; /* Позволяет использовать padding и margin */
+}
+
+.navbar-a::after {
+    content: ''; /* Создаем пустой псевдоэлемент */
+    display: block; /* Делаем псевдоэлемент блочным */
+    width: 0; /* Начальная ширина подчеркивания */
+    height: 1px; /* Толщина подчеркивания */
+    background-color: var(--orange); /* Цвет подчеркивания */
+    transition: width 0.3s ease; /* Плавный переход */
+    margin: 5px auto 0; /* Центрируем подчеркивание */
+}
+
+.navbar-a:hover::after {
+    width: 100%; /* Расширяем подчеркивание при наведении */
+}
+
+.navbar-a-selected {
+    text-decoration: none;
+    color: var(--orange);
+    overflow: hidden;
+    margin: 5px;
+    transition: color 0.5s ease;
+    pointer-events: none;
+    display: inline-block; /* Позволяет использовать padding и margin */
+}
+
+.header-info {
+    display: flex;
+}
+
+.header-search__btn {
+    margin: 55 0 45 0;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+.mail-svg-path {
+    fill: rgb(56, 56, 56);
+    transition: 0.5s ease;
+}
+
+.mail-svg {
+    width: 25px;
+    height: 25px;
+}
+
+.header-mail-link {
+    color: rgb(56, 56, 56);
+    font-family: var(--font_family);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.header-mail-contact {
+
+    align-items: end;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+    align-items: center;
+    margin: 55 auto 45 auto;
+}
+
+.header-mail-contact:hover .mail-svg-path {
+    fill: var(--orange);
+}
+
+.phone-svg-path {
+
+    fill: rgb(56, 56, 56);
+    transition: fill 0.2s ease;
+}
+
+.header-phone-contact {
+
+    align-items: end;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+    align-items: center;
+    margin: 55 0 45 480;
+}
+
+.header-phone-link {
+    
+    color: rgb(56, 56, 56);
+    font-family: var(--font_family);
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.header-phone-contact:hover .phone-svg-path {
+    color: var(--orange);
+    fill: var(--orange);
+}
+
+.search-popup {
+    min-height: 92px;
+    display: none;
+    position: fixed; /* Фиксированное позиционирование */
+    top: 0; /* Позиционируем вверху */
+    left: 0; /* Позиционируем слева */
+    right: 0; /* Позиционируем справа */
+    background: rgb(255, 255, 255);
+    z-index: 2000; /* Устанавливаем высокий z-index */
+    overflow-y: auto; /* Прокрутка, если содержимое превышает высоту */
+    padding: 20px; /* Отступы */
+    outline: none; /* Убираем стандартный контур при фокусе */
+}
+.searchinput {
+    border: none;
+    width: calc(100% - 40px); /* Поле ввода на всю ширину с учетом отступов */
+    padding: 10px; /* Отступы */
+    font-size: 16px; /* Размер шрифта */
+    margin-bottom: 20px; /* Отступ снизу */
+    border-radius: 0;
+    background: transparent;
+}
+
+.searchinput:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0; 
+}
+
+.search-popup ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.search-popup li {
+    font-size: 14px;
+    padding: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+.search-popup li:hover {
+    opacity: 0.7;
+}
+.close-popup-button {
+    position: relative; /* Абсолютное позиционирование */
+    right: 20px; /* Расстояние от правого края */
+    font-size: 24px; /* Размер шрифта */
+    color: #333; /* Цвет текста */
+    cursor: pointer; /* Указатель при наведении */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.flag { 
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.flag img {
+    width: 35px;
+    height: 35px;
+}
+
+#mobile-menu-button {
+    display: none;
+}
+
+.mobile-sidebar {
+    display: none;
+}

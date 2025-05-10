@@ -1,0 +1,61 @@
+{% load static %}
+{% load main_tags %}
+
+<html>
+
+    <head>
+        <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/service.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/breadcrumbs.css' %}" rel="stylesheet">
+        <link rel="icon" href="{% static 'main/media/logo-ico.png' %}" type="image/x-icon">
+        <link type="text/css" href="{% static 'main/css/header.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/modal_form.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
+    </head>
+
+    <body>
+
+        {% header cat_selected='services' %}
+
+        {% include 'main/breadcrumbs.html' %}
+
+        <div class="content">
+        <div class="container">
+            <p class="section-title">{{service.name}}</p>
+        </div>
+            <div class="container"> 
+                
+                <div class="service-description">
+                    {% for item in service.content %}
+                    {% if item.type == "paragraph" %}
+                    <p class="paragraph">{{ item.value }}</p>
+                    {% else %}
+                    <div class="list">
+                        <p class="paragraph">{{ item.value.title }}</p>
+                        <ul>
+                            {% for li in item.value.values %}
+                            <li>{{ li }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    <div class="form-button openModalForm"><p>Оставить заявку</p></div>
+                </div>
+
+            </div>
+        </div>   
+        
+
+        {% footer %}
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{% static 'main/js/base.js' %}"></script>
+        <script src="{% static 'main/js/modal_form.js' %}"></script>
+
+
+        {% include 'main/modal_form.html' %}
+    </body>
+
+
+</html>

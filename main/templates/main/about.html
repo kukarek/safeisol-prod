@@ -1,0 +1,86 @@
+{% load static %}
+{% load main_tags %}
+
+<html>
+    <head>
+        <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/header.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/breadcrumbs.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/about.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
+        <link rel="icon" href="{% static 'main/media/logo-ico.png' %}" type="image/x-icon">
+        <title>О компании</title>
+    </head>
+
+    {% header cat_selected='about' %}
+    {% include 'main/breadcrumbs.html' %}
+
+    <body>
+        <div class="content">
+            <div class="container">
+                <p class="section-title">{{ subtitle }}</p>
+            </div>
+            <div class="container">
+                <div class="main">
+                    <div class="about-side-bar">
+                        <div class="sidebar-item selected" data-content="about">
+                            <a href="{% url 'about' %}" onclick="return false">О компании</a>
+                            <span class="icon">></span>
+                        </div>
+                        <div class="sidebar-item" data-content="certificates">
+                            <a href="{% url 'certificates' %}">Сертификаты</a>
+                            <span class="icon">></span>
+                        </div>
+                    </div>
+
+                    <div class="about-content" id="about">
+                        <p class="subtitle" style="margin-top: 0;">ООО «Безопасная теплоизоляция» это организация основанная на принципах педантичности, бережливого производства, систем управления персоналом и МТС.</p>
+                        <p>Особенное внимание к качеству для нас это:</p>
+                        <ul>
+                            <li>Качество работающих специалистов;</li>
+                            <li>Качество межличностного общения внутри компании и с клиентами;</li>
+                            <li>Качество передачи ценной рабочей информации для грамотной проработки;</li>
+                            <li>Качественная производимая продукция.</li>
+                        </ul>
+                        <p style="text-indent: 20px;">Мы предлагаем широкий выбор термочехлов SAFEISOL (СЭЙФИЗОЛ) для решения обогрева и изоляции производственного оборудования, узлов или исполнительных механизмов а также пищевой логистики. Наши специалисты знают о термочехлах все и с удовольствием делятся своими знаниями для Вашей экономии, экономии сил, экономии времени и самое главное, экономии денежных средств! Если Вы ищите возможности экономии финансов в производстве, в коммунальном строительстве или в теплосети, то самое время начать с теплоизоляции, предлагаемую нашей компанией!</p>
+                        
+                        <div class="stats-container">
+                            <div class="stats-grid">
+                                <div class="stats-item">
+                                    <p class="stats-number">10</p>
+                                    <p class="stats-title">лет</p>
+                                    <p class="stats-subtitle">на рынке</p>
+                                </div>
+                                <div class="stats-item">
+                                    <p class="stats-number">1000</p>
+                                    <p class="stats-title">выполненных</p>
+                                    <p class="stats-subtitle">проектов</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="text-indent: 20px;">В процессе строительства и в период эксплуатации зданий мы часто задумываемся об охране труда и технике безопасности. И именно в это время Вам как никогда помогут наши огнезащитные шторы для ведения безопасных огневых работ! Защитите свое имущество, защитите своих сотрудников. Огнезащитные экраны, шторы и перегородки сделают Ваши здания безопасными для эксплуатации и надежными при возникновении возгораний! Гибкий подход, короткие сроки производства и высокое качество продукции удовлетворят потребности любого заказчика.</p>
+                        <p>Мы предлагаем:</p>
+                        <ul>
+                            <li>абсолютное понимание Вашей проблемы и запроса;</li>
+                            <li>минимального количества времени на обработку заказа и ответа;</li>
+                            <li>оперативная помощь в расчетах тепловых потерь;</li>
+                            <li>подбор оптимального теплоизоляционного слоя;</li>
+                            <li>выгодную конкурентоспособную цену;</li>
+                            <li>простоту общения и высококвалифицированную помощь в разъяснениях;</li>
+                            <li>минимальный срок производства;</li>
+                            <li>высокое качество продукции;</li>
+                            <li>монтаж и гарантию, наши специалист произведут монтаж штор, экранов, чехлов в согласованные сроки в удобное для Вас время.</li>
+                        </ul>
+                        
+                        <p style="text-indent: 20px; margin-top: 50px; font-style: italic;" >Наша философия: помогать решать сложные проблемы! Простота и легкость в общении и обмене информацией! Мы не смотрим на конкурентов, Мы их уважаем, Мы смотрим в будущее и Мы смотрим на заказчиков, дабы удовлетворить их потребности!  Вы покупаете теплоизоляцию, а не сложные технологические комплексы, и мы это понимаем! Вы инвестируете, Мы согреем ваши инвестиции.</p>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% footer %}
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{% static 'main/js/base.js' %}"></script>
+        <script src="{% static 'main/js/header.js' %}"></script>
+    </body>
+</html>
