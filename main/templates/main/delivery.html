@@ -1,0 +1,69 @@
+{% load static %}
+{% load main_tags %}
+
+<html>
+
+    <head>
+        <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/delivery.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/breadcrumbs.css' %}" rel="stylesheet">
+        <link rel="icon" href="{% static 'main/media/logo-ico.png' %}" type="image/x-icon">
+        <link type="text/css" href="{% static 'main/css/header.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
+        <title>Доставка</title>
+    </head>
+
+    <body>
+
+        {% header cat_selected='delivery' %}
+
+        {% include 'main/breadcrumbs.html' %}
+
+        <div class="content">
+            
+            
+            <div class="title">
+                <div class="container">
+                
+                    <p class="section-title">Доставка</p>
+
+                </div>
+            </div>
+
+            <div class="map">
+                <div class="container">
+                
+                    <div class="map-block">
+
+                        <div class="subtitle">По всей России</div>  
+
+                        <div class="map-image">
+
+                            <img src="{% static 'main/media/map.png' %}">
+
+                        </div>
+
+                        <div class="delivery-company-logo">
+
+                            <div class="subtitle">Транспортными компаниями</div>
+
+                            <img src="{% static 'main/media/delivery_companies.png' %}">
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        {% footer %}
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{% static 'main/js/base.js' %}"></script>
+        <script src="{% static 'main/js/header.js' %}"></script>
+    </body>
+
+
+</html>

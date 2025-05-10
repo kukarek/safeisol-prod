@@ -1,0 +1,68 @@
+{% load static %}
+{% load main_tags %}
+
+<html>
+
+    <head>
+        <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/breadcrumbs.css' %}" rel="stylesheet">
+        <link rel="icon" href="{% static 'main/media/logo-ico.png' %}" type="image/x-icon">
+        <link type="text/css" href="{% static 'main/css/header.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/services.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/modal_form.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
+        <title>Услуги</title>
+    </head>
+
+    <body>
+
+        {% header cat_selected='services' %}
+
+        {% include 'main/breadcrumbs.html' %}
+
+        <div class="content">
+            <div class="container">
+                <div class="services-block">
+                    <p class="section-title">Услуги</p>
+                    <div class="services">
+                        
+                        {% for item in services %}
+                            {% if forloop.counter == 1 %}
+                            <div class="service white" onclick="window.location.href='/services/{{item.slug}}'">
+                                <p>{{item.name}}</p>
+                            </div>
+                            {% elif forloop.counter == 2 %}
+                            <div class="service orange" onclick="window.location.href='/services/{{item.slug}}'">
+                                <p>{{item.name}}</p>
+                            </div>
+                            {% elif forloop.counter == 3 %}
+                            <div class="service gray" onclick="window.location.href='/services/{{item.slug}}'">
+                                <p>{{item.name}}</p>
+                            </div>
+                            {% else %}
+                            <div class="service gray" onclick="window.location.href='/services/{{item.slug}}'">
+                                <p>{{item.name}}</p>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+
+                </div>
+            </div>
+
+            
+        </div>
+
+        
+        {% footer %}
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{% static 'main/js/base.js' %}"></script>
+        <script src="{% static 'main/js/header.js' %}"></script>
+        
+
+    </body>
+
+
+</html>

@@ -1,0 +1,35 @@
+{% load static %}
+{% load main_tags %}
+
+
+<head>
+    <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'main/css/category.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'main/css/tile_goods.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'main/css/header.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'main/css/breadcrumbs.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
+    <link rel="icon" href="{% static 'main/media/logo-ico.png' %}" type="image/x-icon">
+    
+    <title>{{ categories.0.title }}</title>
+</head>
+
+<body>
+
+    {% header %}
+
+    {% include 'main/breadcrumbs.html' %}
+
+    <div class="content">
+        
+        {% include 'main/tile_goods.html' %}
+        
+    </div>
+        
+    {% footer %}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'main/js/base.js' %}"></script>
+    <script src="{% static 'main/js/header.js' %}"></script>
+</body>

@@ -1,0 +1,59 @@
+{% load static %}
+{% load main_tags %}
+
+<html>
+
+    <head>
+        <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/header.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/breadcrumbs.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/about.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
+        <link rel="icon" href="{% static 'main/media/logo-ico.png' %}" type="image/x-icon">
+        <title>Сертификаты</title>
+    </head>
+
+    {% header cat_selected='about' %}
+    {% include 'main/breadcrumbs.html' %}
+    <body>
+        <div class="content">
+            <div class="container">
+                <p class="section-title">{{ subtitle }}</p>
+            </div>
+            <div class="container">
+                <div class="main">
+                    <div class="about-side-bar">
+                        <div class="sidebar-item" data-content="about">
+                            <a href="{% url 'about' %}">О компании</a>
+                            <span class="icon">></span>
+                        </div>
+                        <div class="sidebar-item selected" data-content="certificates">
+                            <a href="{% url 'certificates' %}" onclick="return false">Сертификаты</a>
+                            <span class="icon">></span>
+                        </div>
+                    </div>
+
+                    <div class="about-content" id="certificates">
+                        <div class="certificates-content">
+                            {% for item in certificates %}
+                            <img src="{% static 'main/media/certificates/' %}{{item}}" onclick="openModal(this)"/>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Модальное окно -->
+        <div id="modal" class="modal" onclick="closeModal(event)">
+            <div class="modal-content" onclick="closeModal(event)">
+                <img class="modal-image zoomable" id="modalImage" />
+            </div>
+        </div>  
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{% static 'main/js/base.js' %}"></script>
+        <script src="{% static 'main/js/header.js' %}"></script>
+        <script src="{% static 'main/js/certificates.js' %}"></script>
+    </body>
+</html>
+{% footer %}

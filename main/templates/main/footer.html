@@ -1,0 +1,124 @@
+{% load static %}
+
+
+
+<link type="text/css" href="{% static 'main/css/footer.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
+
+
+
+<div class="footer">
+    <div class="container">
+
+        <nav class="footer-nav">
+            <ul class="footer-main-ul">
+                <li class="footer-main-li">
+                    <ul class="footer-ul">
+                        <li class="footer-li bold">
+                            <a class="footer-a" href="{% url 'about' %}">О компании</a>
+                        </li>
+                        <li class="footer-li">
+                            <a class="footer-a" href="{% url 'certificates' %}">Сертификаты</a>
+                        </li>
+                        <li class="footer-li">
+                            <a class="footer-a" href="{% url 'contacts' %}">Контакты</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="footer-main-li">
+                    <ul class="footer-ul">
+                        <li class="footer-li bold">
+                            <a class="footer-a" href="{% url 'catalog' %}">Каталог товаров</a>
+                        </li>
+                        <li class="footer-li">
+                            <a class="footer-a" href="{% url 'category' 'termochehly' %}">Термочехлы</a>
+                        </li>
+                        <li class="footer-li">
+                            <a class="footer-a" href="{% url 'category' 'sistemy-asu-tp' %}">Системы АСУ ТП</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="footer-main-li">
+                    <ul class="footer-ul">
+                        <li class="footer-li bold">
+                            <a class="footer-a" href="{% url 'complete_projects' %}">Выполненные проекты </a>
+                        </li>
+                        <li class="footer-li bold">
+                            <a class="footer-a" href="{% url 'delivery' %}">Доставка</a> 
+                        </li>
+                    </ul>
+                </li>
+                <li class="footer-main-li">
+                    <ul class="footer-ul">
+                        <li class="footer-li">
+                            <div class="footer-phone-contact">
+                                <div class="footer-phone-logo">
+                                    <svg class="svg_phone" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 513.64 513.64" xml:space="preserve">
+                                        <g>
+                                            <g>
+                                                <path d="M499.66,376.96l-71.68-71.68c-25.6-25.6-69.12-15.359-79.36,17.92c-7.68,23.041-33.28,35.841-56.32,30.72
+                                                        c-51.2-12.8-120.32-79.36-133.12-133.12c-7.68-23.041,7.68-48.641,30.72-56.32c33.28-10.24,43.52-53.76,17.92-79.36l-71.68-71.68
+                                                        c-20.48-17.92-51.2-17.92-69.12,0l-48.64,48.64c-48.64,51.2,5.12,186.88,125.44,307.2c120.32,120.32,256,176.641,307.2,125.44
+                                                        l48.64-48.64C517.581,425.6,517.581,394.88,499.66,376.96z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                     </svg>
+                                </div>
+                                <div class="footer-phone-number">
+                                    <a class="footer-a bold" href="tel:+7 (499) 499-21-27">+7 (499) 499-21-27</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="footer-li">
+                            <div class="footer-mail-contact">
+                                <div class="footer-mail-logo">
+                                    <svg class="svg_mail" version="1.1" id="Capa_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                        <g>
+                                            <g>
+                                                <path d="M485.743,85.333H26.257C11.815,85.333,0,97.148,0,111.589V400.41c0,14.44,11.815,26.257,26.257,26.257h459.487
+                                                        c14.44,0,26.257-11.815,26.257-26.257V111.589C512,97.148,500.185,85.333,485.743,85.333z M475.89,105.024L271.104,258.626
+                                                        c-3.682,2.802-9.334,4.555-15.105,4.529c-5.77,0.026-11.421-1.727-15.104-4.529L36.109,105.024H475.89z M366.5,268.761
+                                                        l111.59,137.847c0.112,0.138,0.249,0.243,0.368,0.368H33.542c0.118-0.131,0.256-0.23,0.368-0.368L145.5,268.761
+                                                        c3.419-4.227,2.771-10.424-1.464-13.851c-4.227-3.419-10.424-2.771-13.844,1.457l-110.5,136.501V117.332l209.394,157.046
+                                                        c7.871,5.862,17.447,8.442,26.912,8.468c9.452-0.02,19.036-2.6,26.912-8.468l209.394-157.046v275.534L381.807,256.367
+                                                        c-3.42-4.227-9.623-4.877-13.844-1.457C363.729,258.329,363.079,264.534,366.5,268.761z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="footer-mail">
+                                    <a class="footer-a bold" href="mailto:sale@safeisol.ru">sale@safeisol.ru</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="footer-li">
+                            <div class="footer-address">
+                                <div class="footer-address-logo">
+                                    <svg class="svg_loc" version="1.1" id="Capa_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                        <g><g><path d="M256,0C156.748,0,76,80.748,76,180c0,33.534,9.289,66.26,26.869,94.652l142.885,230.257
+                                        c2.737,4.411,7.559,7.091,12.745,7.091c0.04,0,0.079,0,0.119,0c5.231-0.041,10.063-2.804,12.75-7.292L410.611,272.22
+                                        C427.221,244.428,436,212.539,436,180C436,80.748,355.252,0,256,0z M384.866,256.818L258.272,468.186l-129.905-209.34
+                                        C113.734,235.214,105.8,207.95,105.8,180c0-82.71,67.49-150.2,150.2-150.2S406.1,97.29,406.1,180
+                                        C406.1,207.121,398.689,233.688,384.866,256.818z"></path></g></g><g><g>
+                                        <path d="M256,90c-49.626,0-90,40.374-90,90c0,49.309,39.717,90,90,90c50.903,0,90-41.233,90-90C346,130.374,305.626,90,256,90z
+                                        M256,240.2c-33.257,0-60.2-27.033-60.2-60.2c0-33.084,27.116-60.2,60.2-60.2s60.1,27.116,60.1,60.2
+                                        C316.1,212.683,289.784,240.2,256,240.2z"></path></g></g>
+                                       </svg>
+                                </div>
+                                <div class="footer-addres">
+                                    <a class="footer-a" style="font-weight: 700;" href="https://yandex.ru/maps/-/CHq6mYkC">г.Москва, Варшавское <br>шоссе д.125 стр. 1 </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="footer-li">
+
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <p class="footer-text">©2015-2025, ООО "Безопасная Теплоизоляция". Производство продукции SAFEISOL.</p>
+    </div>
+</div>

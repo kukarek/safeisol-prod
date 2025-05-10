@@ -1,0 +1,29 @@
+{% load static %}
+{% load main_tags %}
+
+<html>
+<html>
+    <head>
+        <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/catalog.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/carousel.css' %}" rel="stylesheet">
+    </head>
+
+    <body>
+
+        {% header %}
+
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    
+        {% footer %}
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{% static 'main/js/base.js' %}"></script>
+        <script src="{% static 'main/js/carousel.js' %}"></script>
+    </body>
+
+
+</html>
