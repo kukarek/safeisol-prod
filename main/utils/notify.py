@@ -8,15 +8,10 @@ logger = logging.getLogger(__name__)
 
 class NotifyManager:
     @staticmethod
-    def send_mail(form_data) -> None:
-
-        contact = ContactRequest.objects.create(
-            name=form_data.get('name'),
-            phone=form_data.get('phone'),
-            email=form_data.get('email'),
-            comment=form_data.get('comment', '')
-        )
+    def send_mail(contact_id) -> None:
         
+        contact = ContactRequest.objects.get(pk=contact_id)
+
         try:
             # Отправка email
             django_send_mail(
