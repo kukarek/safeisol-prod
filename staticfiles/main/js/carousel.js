@@ -5,7 +5,7 @@
 function updateButtons(carousel) {
     let itemsPerSlide = 5;
     if (window.innerWidth < 1080) {
-        itemsPerSlide = 1; // Для мобильных устройств
+        itemsPerSlide = 2; // Для мобильных устройств
     }
 
     const leftButton = carousel.querySelector('.carousel-button.left');
@@ -28,7 +28,7 @@ function moveSlide(event, direction) {
     // Динамически меняем количество карточек на слайде в зависимости от ширины экрана
     let itemsPerSlide = 5;
     if (window.innerWidth < 1080) {
-        itemsPerSlide = 1;
+        itemsPerSlide = 2;
     }
 
     // Обновляем текущий индекс

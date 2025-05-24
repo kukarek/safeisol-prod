@@ -36,8 +36,15 @@ def send_contacts(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            
-            tasks.send_notification_email.delay(form.cleaned_data)
+
+            cd = form.cleaned_data
+
+            ContactRequest.objects.create(
+                name = cd['name'],
+                phone = cd['phone'],
+                email = cd['email'],
+                comment = cd['comment']
+            )
 
             return JsonResponse({'success': True})
         else:

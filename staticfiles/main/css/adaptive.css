@@ -76,20 +76,22 @@
 	}
 
 	.product-cards-inner .product {
-		max-width: 100%;
-		min-width: 100%;
+		max-width: 50%;
+		min-width: 50%;
 		font-size: 20px;
-
+		display: flex;
+		flex-direction: column;
 	}
 
 	.product-cards-inner .product .product-name {
 		font-size: 30px;
-
+		margin-top: 30px;
 	}
 
 	.product-cards-inner .product .product-img-block {
 		height: auto;
 		width: 100%;
+		margin-bottom: 20px;
 	}
 
 	.products {
@@ -98,7 +100,7 @@
 
 	.carousel-button {
 		color: black;
-		padding: 40px;
+		padding: 30px;
 		font-size: 30px;
 	}
 
@@ -290,6 +292,9 @@
 
 	.service {
 		font-size: 25px;
+		background: white;
+		color: var(--dark_gray);
+		border: 1px solid var(--light_gray);
 	}
 
 	.container {
@@ -340,6 +345,14 @@
 
 	.close-popup-button {
 		font-size: 50px;
+	}
+
+	.product {
+		padding: 25px;
+	}
+
+	.product-img {
+		height: 90%;
 	}
 } 	
 
