@@ -20,3 +20,4 @@ logs/
 data.json
 
 #Статика в сборе
+staticfiles/
