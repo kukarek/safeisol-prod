@@ -1,8 +1,22 @@
 {% load static %}
 {% load main_tags %}
 
-
+<html lang="ru">
 <head>
+    <title>{{ categories.0.title }}</title>
+
+    <!-- SEO meta tags -->
+    <meta name="description" content="Категория товаров {{ categories.0.title }} от ООО «Безопасная теплоизоляция» — термочехлы, огнезащитные шторы, теплоизоляционные решения.">
+    <meta name="keywords" content="термочехлы, теплоизоляция, {{ categories.0.title }}, огнезащитные шторы, Safeisol, безопасная теплоизоляция">
+    <link rel="canonical" href="https://safeisol.ru{{ request.path }}">
+
+    <!-- Open Graph для соц. сетей и мессенджеров -->
+    <meta property="og:title" content="{{ categories.0.title }} — Safeisol">
+    <meta property="og:description" content="Ознакомьтесь с товарами категории {{ categories.0.title }} от компании Safeisol.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://safeisol.ru{{ request.path }}">
+    <meta property="og:image" content="https://safeisol.ru{% static 'main/media/logo-ico.png' %}">
+    
     <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
     <link type="text/css" href="{% static 'main/css/category.css' %}" rel="stylesheet">
     <link type="text/css" href="{% static 'main/css/tile_goods.css' %}" rel="stylesheet">
@@ -12,7 +26,10 @@
     <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
     <link rel="icon" href="{% static 'main/media/logo-ico.png' %}" type="image/x-icon">
     
-    <title>{{ categories.0.title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <!-- Yandex.Metrika counter -->
         <script type="text/javascript" >
             (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -49,3 +66,4 @@
     <script src="{% static 'main/js/base.js' %}"></script>
     <script src="{% static 'main/js/header.js' %}"></script>
 </body>
+</html>
