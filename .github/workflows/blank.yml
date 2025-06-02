@@ -25,24 +25,54 @@ jobs:
 
       - name: Build and restart Docker container on server
         uses: appleboy/ssh-action@v0.1.6
+        env:
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_PORT: ${{ secrets.DB_PORT }}
+          CELERY_BROKER_URL: ${{ secrets.CELERY_BROKER_URL }}
+          CELERY_RESULT_BACKEND: ${{ secrets.CELERY_RESULT_BACKEND }}
+          ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          EMAIL_HOST_USER: ${{ secrets.EMAIL_HOST_USER }}
+          EMAIL_HOST_PASSWORD: ${{ secrets.EMAIL_HOST_PASSWORD }}
+          DEFAULT_FROM_EMAIL: ${{ secrets.DEFAULT_FROM_EMAIL }}
+          SMTP: ${{ secrets.SMTP }}
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # Создаем папку проекта
+            # Экспорт переменных окружения для docker-compose
+            export DB_HOST=$DB_HOST
+            export DB_NAME=$DB_NAME
+            export DB_USER=$DB_USER
+            export DB_PASSWORD=$DB_PASSWORD
+            export DB_PORT=$DB_PORT
+            export CELERY_BROKER_URL=$CELERY_BROKER_URL
+            export CELERY_RESULT_BACKEND=$CELERY_RESULT_BACKEND
+            export ALLOWED_HOSTS=$ALLOWED_HOSTS
+            export SECRET_KEY=$SECRET_KEY
+            export EMAIL_HOST_USER=$EMAIL_HOST_USER
+            export EMAIL_HOST_PASSWORD=$EMAIL_HOST_PASSWORD
+            export DEFAULT_FROM_EMAIL=$DEFAULT_FROM_EMAIL
+            export SMTP=$SMTP
+
+            # Создаем папку проекта и переходим в неё
             mkdir -p /var/www/safeisol
             cd /var/www/safeisol
 
+            # Клонируем репозиторий или обновляем его
             if [ -d ".git" ]; then
               echo "Обновляю существующий репозиторий"
               git pull origin main
             else
               echo "Клонирую репозиторий"
-              git clone https://github.com/твой_пользователь/твой_репозиторий.git . 
+              git clone https://github.com/kukarek/safeisol-prod.git .
             fi
 
-            # Устанавливаем PostgreSQL, если его нет
+            # Устанавливаем PostgreSQL, если он не установлен
             if ! command -v psql > /dev/null; then
               echo "PostgreSQL не найден, устанавливаю..."
               sudo apt-get update
@@ -54,32 +84,16 @@ jobs:
             fi
 
             # Проверяем, создана ли база данных, если нет - создаем
-            if ! sudo -u postgres psql -lqt | cut -d \| -f 1 | grep -qw $DB_NAME; then
+            if ! sudo -u postgres psql -lqt | cut -d \| -f 1 | grep -qw "$DB_NAME"; then
               echo "Создаю базу данных $DB_NAME и пользователя $DB_USER"
-              sudo -u postgres psql -c "CREATE DATABASE $DB_NAME;"
-              sudo -u postgres psql -c "CREATE USER $DB_USER WITH PASSWORD '$DB_PASSWORD';"
-              sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE $DB_NAME TO $DB_USER;"
+              sudo -u postgres psql -c "CREATE DATABASE \"$DB_NAME\";"
+              sudo -u postgres psql -c "CREATE USER \"$DB_USER\" WITH PASSWORD '$DB_PASSWORD';"
+              sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE \"$DB_NAME\" TO \"$DB_USER\";"
             else
               echo "База данных $DB_NAME уже существует"
             fi
 
-            # Экспортируем секреты для docker-compose
-            export DB_HOST=${{ secrets.DB_HOST }}
-            export DB_NAME=${{ secrets.DB_NAME }}
-            export DB_USER=${{ secrets.DB_USER }}
-            export DB_PASSWORD=${{ secrets.DB_PASSWORD }}
-            export DB_PORT=${{ secrets.DB_PORT }}
-            export CELERY_BROKER_URL=${{ secrets.CELERY_BROKER_URL }}
-            export CELERY_RESULT_BACKEND=${{ secrets.CELERY_RESULT_BACKEND }}
-            export ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }}
-            export SECRET_KEY=${{ secrets.SECRET_KEY }}
-            export EMAIL_HOST_USER=${{ secrets.EMAIL_HOST_USER }}
-            export EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }}
-            export DEFAULT_FROM_EMAIL=${{ secrets.DEFAULT_FROM_EMAIL }}
-            export DEFAULT_FOR_EMAIL=${{ secrets.DEFAULT_FOR_EMAIL }}
-            export SMTP=${{ secrets.SMTP }}
-
-            # Обновляем образы и запускаем контейнеры
+            # Обновляем образы и запускаем контейнеры Docker
             docker-compose build
             docker-compose up -d --force-recreate
 
