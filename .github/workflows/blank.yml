@@ -30,9 +30,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /path/to/your/project
-            # Активировать виртуальное окружение, если есть
-            # source venv/bin/activate
+            cd /var/www/safeisol
             python manage.py migrate --noinput
             python manage.py loaddata data.json
             python manage.py collectstatic --noinput
@@ -44,6 +42,6 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /path/to/your/project
+            cd /var/www/safeisol
             docker-compose build
-            docker-compose up -d
+            docker-compose up -d --build --force-recreate
