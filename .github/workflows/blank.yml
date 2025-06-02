@@ -48,6 +48,7 @@ jobs:
             EMAIL_HOST_USER=${{ secrets.EMAIL_HOST_USER }}
             EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }}
             DEFAULT_FROM_EMAIL=${{ secrets.DEFAULT_FROM_EMAIL }}
+            DEFAULT_FOR_EMAIL=${{ secrets.DEFAULT_FOR_EMAIL }}
             SMTP=${{ secrets.SMTP }}
             EOF
 
