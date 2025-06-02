@@ -89,12 +89,10 @@ jobs:
             
             docker logs safeisol-web-1
 
-            cat .env
-
             # Ждем, пока контейнер web будет готов выполнять команды
             max_attempts=20
             attempt=0
-            until docker-compose exec web python manage.py check > /dev/null 2>&1 || [ $attempt -eq $max_attempts ]; do
+            until docker-compose exec safeisol-web-1 python manage.py check > /dev/null 2>&1 || [ $attempt -eq $max_attempts ]; do
               echo "Waiting for web container to be ready... ($attempt/$max_attempts)"
               attempt=$((attempt + 1))
               sleep 3
