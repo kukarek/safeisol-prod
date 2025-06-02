@@ -34,6 +34,14 @@ jobs:
             mkdir -p /var/www/safeisol
             cd /var/www/safeisol
 
+            if [ -d ".git" ]; then
+              echo "Обновляю существующий репозиторий"
+              git pull origin main
+            else
+              echo "Клонирую репозиторий"
+              git clone https://github.com/твой_пользователь/твой_репозиторий.git . 
+            fi
+
             # Устанавливаем PostgreSQL, если его нет
             if ! command -v psql > /dev/null; then
               echo "PostgreSQL не найден, устанавливаю..."
