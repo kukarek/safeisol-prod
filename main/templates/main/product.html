@@ -1,0 +1,197 @@
+{% load static %}
+{% load main_tags %}
+
+
+
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{{ product.title }} — Безопасная Теплоизоляция</title>
+        {% if product.meta_description %}
+        <meta name="description" content="{{ product.meta_description }}">
+        {% endif %}
+
+        <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/breadcrumbs.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/product.css' %}" rel="stylesheet">
+        <link rel="icon" href="{% static 'main/media/logo-ico.png' %}" type="image/x-icon">
+        <link type="text/css" href="{% static 'main/css/header.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/modal_form.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
+
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            ym(102102304, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true
+            });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/102102304" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+
+    </head>
+
+    <body>
+
+        {% header %}
+
+        {% include 'main/breadcrumbs.html' %}
+
+        <div class="content">
+            
+            
+            <div class="title">
+                <div class="container">
+                    <p class="section-title">{{ product.title }}</p>
+                </div>
+            
+            </div>
+            <div class="product">
+                <div class="container">
+                    
+                    <div class="product-block">
+                        <div class="product-img-block">
+                            <div class="mini_imgs">
+                                {% for image in product.content.images %}
+                                <div class="mini-img {% if forloop.first %}selected{% endif %}" onclick="selectImage('{{ image.src }}', this)">
+                                    <img src="{% static 'main/media/' %}{{ image.src }}" alt="Mini Image"/>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="selected_img">
+                                <img id="main-image" src="{% static 'main/media/' %}{{ product.content.images.0.src }}" alt="Selected Image" onclick="openModal()"/>
+                            </div>
+                        </div>
+                        <div class="product-desc-block">
+                            <div class="product-desc">{{ product.content.brief_desc }}</div>
+                            <div class="form-button openModalForm"><p>Оставить заявку</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-navbar">
+                    <div class="container">
+                        <div class="product-navbar-block">
+                            <ul class="product-navbar-ul">
+                                <li class="product-navbar-li" id="navbar-desc"><a class="selected" href="#">ОПИСАНИЕ</a></li>
+                                {% if 'tables' in product.content %}
+                                <li class="product-navbar-li" id="navbar-feature"><a class="navbar-link" href="#">ХАРАКТЕРИСТИКИ</a></li>
+                                {% endif %}
+                                {% if 'documents' in product.content %}
+                                <li class="product-navbar-li" id="navbar-docs"><a class="navbar-link" href="#">ДОКУМЕНТЫ</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+
+                    <div class="product-full-description" id="content-desc">
+                        {% for item in product.content.description %}
+                        {% if item.type == "paragraph" %}
+                        <p class="paragraph">{{ item.value }}</p>
+                        {% elif item.type == "list"  %}
+                        <div class="list">
+                            <p class="paragraph">{{ item.value.title }}</p>
+                            <ul>
+                                {% for li in item.value.values %}
+                                <li class="product-li">{{ li }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% else  %}
+                        <div class="product-desc-img-container">
+                            <img class="product-desc-img" src="{% static 'main/media/' %}{{ item.value }}"/>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+
+                </div>
+                <div class="container">
+
+                    <div class="feature" id="content-feature" style="display: none;">
+                        <table>
+                            <tbody>
+                                {% for table in product.content.tables %}
+                                    <tr>
+                                        <td colspan="2" style="font-weight: bold; background: white; color: var(--dark_gray);">
+                                            {{ table.header }}
+                                        </td>
+                                    </tr>
+                                    {% for row in table.rows %}
+                                        <tr>
+                                            {% for cell in row %}
+                                                <td>{{ cell }}</td>
+                                            {% endfor %}
+                                        </tr>
+                                    {% endfor %}
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="container">
+
+                   <div class="docs" id="content-docs" style="display: none;">
+                        {% for doc in product.content.documents %}
+                        <div class="document" onclick="window.location.href='{% static 'main/documents/' %}{{ doc.src }}'">
+                            
+                            <div class="doc-ico">
+                                <svg class="doc-ico"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="50"
+                                    height="60"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="gray"
+                                    stroke-width="1"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
+                                    <line x1="14" y1="2" x2="14" y2="8" />
+                                    <line x1="9" y1="12" x2="15" y2="12" />
+                                    <line x1="9" y1="16" x2="15" y2="16" />
+                                </svg>
+                            </div>
+                            
+                            <div class="doc-info">
+                                <p class="name">{{ doc.name }}</p>
+                                <p class="format">Формат: {{ doc.format }}</p>
+                                <p class="size">Размер: {{ doc.size }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        {% footer %}
+
+        <!-- Модальное окно -->
+        <div id="modal" class="modal" onclick="closeModal(event)">
+            <div class="modal-content" onclick="closeModal(event)">
+                <img class="modal-image" id="modal-image" onclick="closeModal(event)"/>
+            </div>
+        </div>
+        
+        {% include 'main/modal_form.html' %}
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{% static 'main/js/product.js' %}"></script>
+        <script src="{% static 'main/js/header.js' %}"></script>
+        <script src="{% static 'main/js/modal_form.js' %}"></script>
+        <script src="{% static 'main/js/base.js' %}"></script>
+    </body>
+
+</html>

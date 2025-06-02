@@ -1,0 +1,364 @@
+@media (max-width: 990px) {
+	.container {
+		width: 90%;
+	}	
+
+	.header-logo {
+		background-image: url(/static/main/media/mobile-header.png);
+		height: 250px;
+		border-bottom: 1px solid var(--dark_gray);
+		border-top: 1px solid var(--dark_gray);
+		background-color: var(--light_gray);
+		box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+	}
+
+	.header-phone-contact {
+		display: none;
+	}
+
+	.header-mail-contact {
+		display: none;
+	}
+
+	.flag {
+		display: none;
+	}
+
+	.header-search__btn {
+		position: relative;
+		margin-left: auto;
+		margin-right: 30px;
+		margin-top: 75px;
+		
+	}
+
+	.main-slide {
+		display: none;
+	}
+
+	.header-search__btn svg {
+		width: 70px;
+		height: 70px;
+	}
+
+	.navbar {
+		display: none;
+	}
+
+	#mobile-menu-button {
+		display:block;
+		position: relative;
+		border: 0;
+		margin-right: auto;
+		margin-top: 40px;
+		margin-left: 10px;
+		background-color: var(--light_gray);
+	}
+
+	.search-popup {
+		min-height: 200px;
+	}
+
+	.search-popup input {
+		font-size: 30px;
+	}
+
+	.search-popup a {
+		font-size: 20px;
+	}
+
+	.main-title {
+		font-size: 60px;
+	}
+
+	.products-title {
+		font-size: 50px;
+	}
+
+	.product-cards-inner .product {
+		max-width: 50%;
+		min-width: 50%;
+		font-size: 20px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.product-cards-inner .product .product-name {
+		font-size: 30px;
+		margin-top: 30px;
+	}
+
+	.product-cards-inner .product .product-img-block {
+		height: auto;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.products {
+		width: 100%;
+	}
+
+	.carousel-button {
+		color: black;
+		padding: 30px;
+		font-size: 30px;
+	}
+
+	.carousel-button.right {
+		right: -10;
+	}
+
+	.about-title {
+		font-size: 50px;
+	}
+
+	.about-text {
+		font-size: 24px;
+	}
+
+	.mobile-sidebar {
+		display: block;
+		position: fixed;
+		width: 60%;
+		height: 100vh;
+		background-color: white;
+		z-index: 2000;
+		padding-top: 75px;
+		padding-left: 30px;
+		left: -65%;
+		color: var(--orange);
+		box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+		transition: left 0.3s ease;
+	}
+
+	.mobile-sidebar.active {
+		left: 0;
+	}
+
+	.mob-panel-header {
+		font-size: 60px;
+		font-weight: bold;
+		display: flex;
+		color: var(--dark_gray);
+		width: 100%;
+		padding-bottom: 50px;
+		border-bottom: 1px solid var(--middle_gray);
+		padding-left: 20px;
+
+	}
+
+	.close-mob-sidebar {
+		position: relative;
+		margin-left: auto;
+		width: 60px;
+		margin-right: 50px;
+		font-size: 70px;
+		border: 0;
+		background-color: inherit;
+	}
+
+	.mob-panel-nav {
+		font-size: 45px;
+	}
+
+	.lnav__item {
+		padding-top: 50px;
+		padding-bottom: 50px;
+		padding-left: 20px;
+		border-bottom: 1px solid var(--middle_gray);
+	}
+
+	.mob-panel-footer {
+		margin-top: 80px;
+	}
+
+	.mob-panel__phone {
+		color: var(--dark_gray);
+		font-size: 30px;
+		font-weight: bold;
+	}
+
+	.mob-panel__number {
+		margin-top: 20px;
+		color: var(--orange);
+		font-size: 50px;
+		opacity: 1;
+	}
+	
+	.footer-a {
+		font-size: 20px;
+	}
+
+	.breadcrumbs {
+		display: none;
+	}
+
+	.products-block {
+		margin-top: 50px;
+		margin-bottom: 100px;
+	}
+
+	.product-desc-img-container {
+		margin: 5px;
+		padding: 0;
+	}
+
+	.product-desc-img-container img {
+		height: auto;
+		width: 100%;
+	}
+
+	.product-desc-block {
+		display: none;
+	}
+
+	.mini-img {
+		width: 150px;
+		height: 150px;
+	}
+
+	.product-block {
+		height: 700px;
+	}
+
+	#navbar-docs {
+		display: none;
+	}
+
+	.product-navbar-li {
+		font-size: 30px;
+	}
+
+	.section-title {
+		font-size: 40px;
+	}
+
+	.product-full-description p {
+		font-size: 28px;
+	}
+
+	.product-li {
+		font-size: 25px;
+	}
+
+	.feature table {
+		font-size: 25px;
+	}
+
+	.about-side-bar {
+		display: none;
+	}
+
+	.about-content .subtitle {
+		font-size: 30px;
+	}
+
+	.about-content p {
+		font-size: 25px;
+	}
+
+	.about-content ul li {
+		font-size: 20px;
+	}
+
+	.stats-grid {
+        grid-template-columns: 1fr; /* Одна колонка на мобиле */
+    }
+
+    .stats-item {
+        height: 400px;
+		font-size: 25px;
+    }
+
+    .stats-item .stats-number {
+        font-size: 120px; /* чуть меньше, чтобы влезало */
+    }
+
+    .stats-item .stats-title {
+		font-size: 40px;
+	}
+
+    .stats-item .stats-subtitle {
+        font-size: 30px; /* больше текст для удобства чтения */
+    }
+
+	.container.tile_goods .product{
+		width: 50%;
+	}
+
+	.container.tile_goods .product .product-img-block{
+		height: auto;
+	}
+
+	.service {
+		font-size: 25px;
+		background: white;
+		color: var(--dark_gray);
+		border: 1px solid var(--light_gray);
+	}
+
+	.container {
+		align-items: baseline;
+	}
+
+	.subtitle {
+		font-size: 30px;
+	}
+
+	.services {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.service {
+		width: 100%;
+		height: 250px;
+	}
+
+	.service-description .list ul li {
+		font-size: 28px;
+	}
+
+	.form-button {
+		display: none;
+	}
+
+	.contacts-block {
+		flex-direction: column;
+	}
+
+	.contacts-info .text {
+		font-size: 25px;
+	}
+
+	.location {
+		display: none;
+	}
+
+	.footer-nav {
+		display: none;
+	}
+
+	.footer-text {
+		font-size: 20px;
+	}
+
+	.close-popup-button {
+		font-size: 50px;
+	}
+
+	.product {
+		padding: 25px;
+	}
+
+	.product-img {
+		height: 90%;
+	}
+
+	.service-description .paragraph {
+		font-size: 28px;
+	}
+} 	
+
+
+

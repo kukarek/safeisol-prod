@@ -1,0 +1,22 @@
+{% load static %}
+
+
+
+<div id="modal-form" class="modal-form">
+    <div class="modal-form-content">
+        <h2 style="font-size: 30px;">Оставить заявку</h2>
+        <form id="contactForm">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Имя" required>
+            <input type="tel" name="phone" placeholder="Телефон" required>
+            <input type="email" name="email" placeholder="Почта" required>
+            <textarea type="comment" name="comment" placeholder="Комментарий"></textarea>
+            <button type="submit" class="submit-btn">Отправить</button>
+        </form>
+        {% for doc in product.content.documents %}
+        {% if "Опросный лист" in doc.name %}
+        <a class="questionnaire" href="{% static 'main/documents/' %}{{ doc.src }}">Скачать опросный лист .docs</a>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>

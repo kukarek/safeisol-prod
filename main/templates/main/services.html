@@ -1,0 +1,99 @@
+{% load static %}
+{% load main_tags %}
+
+<html lang="ru">
+
+    <head>
+        <title>Услуги</title>
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="Перечень профессиональных услуг по теплоизоляции от компании SAFEISOL. Качественно, надежно и с гарантией.">
+        <meta name="keywords" content="теплоизоляция, услуги теплоизоляции, SAFEISOL, изоляция труб, теплоизоляционные работы">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="Услуги по теплоизоляции | SAFEISOL">
+        <meta property="og:description" content="Ознакомьтесь с полным перечнем услуг нашей компании по теплоизоляции оборудования и труб.">
+        <meta property="og:image" content="https://safeisol.ru/static/main/media/logo-ico.png">
+        <meta property="og:url" content="https://safeisol.ru/services">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="SAFEISOL">
+
+        <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/breadcrumbs.css' %}" rel="stylesheet">
+        <link rel="icon" href="{% static 'main/media/logo-ico.png' %}" type="image/x-icon">
+        <link type="text/css" href="{% static 'main/css/header.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/services.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/modal_form.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
+
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            ym(102102304, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true
+            });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/102102304" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    </head>
+
+    <body>
+
+        {% header cat_selected='services' %}
+
+        {% include 'main/breadcrumbs.html' %}
+
+        <div class="content">
+            <div class="container">
+                <div class="services-block">
+                    <p class="section-title">Услуги</p>
+                    <div class="services">
+                        
+                        {% for item in services %}
+                            {% if forloop.counter == 1 %}
+                            <div class="service white" onclick="window.location.href='/services/{{item.slug}}'">
+                                <p>{{item.name}}</p>
+                            </div>
+                            {% elif forloop.counter == 2 %}
+                            <div class="service orange" onclick="window.location.href='/services/{{item.slug}}'">
+                                <p>{{item.name}}</p>
+                            </div>
+                            {% elif forloop.counter == 3 %}
+                            <div class="service gray" onclick="window.location.href='/services/{{item.slug}}'">
+                                <p>{{item.name}}</p>
+                            </div>
+                            {% else %}
+                            <div class="service gray" onclick="window.location.href='/services/{{item.slug}}'">
+                                <p>{{item.name}}</p>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+
+                </div>
+            </div>
+
+            
+        </div>
+
+        
+        {% footer %}
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{% static 'main/js/base.js' %}"></script>
+        <script src="{% static 'main/js/header.js' %}"></script>
+        
+
+    </body>
+
+
+</html>

@@ -1,0 +1,102 @@
+{% load static %}
+{% load main_tags %}
+
+<html lang="ru">
+
+    <head>
+        <title>Контакты — Безопасная теплоизоляция</title>
+        <meta name="description" content="Контактная информация ООО «Безопасная теплоизоляция». Адрес, телефон, email и часы работы. Свяжитесь с нами для консультаций и заказов." />
+        <meta name="keywords" content="контакты, теплоизоляция, ООО Безопасная теплоизоляция, телефон, email, адрес" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://safeisol.ru/contacts" />
+        <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/contacts.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/breadcrumbs.css' %}" rel="stylesheet">
+        <link rel="icon" href="{% static 'main/media/logo-ico.png' %}" type="image/x-icon">
+        <link type="text/css" href="{% static 'main/css/header.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            ym(102102304, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true
+            });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/102102304" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    </head>
+
+    <body>
+
+        {% header cat_selected='contacts' %}
+
+        {% include 'main/breadcrumbs.html' %}
+
+        <div class="content">
+            
+            <div class="title">
+
+                <div class="container">
+                    <div class="section-title">Контакты</div>   
+                </div>
+
+            </div>
+            
+            <div class="contacts-section">
+                
+                <div class="container">
+
+                    <div class="contacts-block">
+
+                        <div class="contacts-info">
+                            <p class="subtitle">ООО "Безопасная теплоизоляция"</p>
+                            <p class="text">Полную информацию об услугах и товарах можно получить по электронному адресу, а так же позвонив нам по телефону.</p>
+                            <p class="subtitle">Адрес</p>
+                            <p class="text">117587 г.Москва, Варшавское шоссе д.125 стр. 1 </p>
+                            <p class="subtitle">Телефон</p>
+                            <a class="text" style="color: var(--orange);" href="tel:+7 (499) 499-21-27">+7 (499) 499-21-27</a>
+                            <p class="subtitle">Электронная почта</p>
+                            <p class="text">Отдел продаж</p>
+                            <a class="text" style="color: var(--orange);" href="mailto:sale@safeisol.ru">sale@safeisol.ru</a>
+                            <p class="text">Технический отдел</p>
+                            <a class="text" style="color: var(--orange);" href="mailto:service@safeisol.ru">service@safeisol.ru</a>
+                            <p class="text">Финансовый отдел и бухгалтерия</p>
+                            <a class="text" style="color: var(--orange);" href="mailto:fin@safeisol.ru">fin@safeisol.ru</a>
+                            <p class="subtitle">Часы работы</p>
+                            <p class="text">пн-чт 9:00-18:00</p>
+                            <p class="text">пт 9:00-17:00</p>
+
+                        </div>
+
+                        <div class="location">
+                            <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a href="https://yandex.ru/maps/213/moscow/house/varshavskoye_shosse_125s1/Z04YcAVgTEQHQFtvfXpzdnplZQ==/?ll=37.622530%2C55.626567&utm_medium=mapframe&utm_source=maps&z=16.76" style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?ll=37.622530%2C55.626567&mode=whatshere&whatshere%5Bpoint%5D=37.621056%2C55.628476&whatshere%5Bzoom%5D=17&z=16.76" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        {% footer %}
+
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{% static 'main/js/base.js' %}"></script>
+        <script src="{% static 'main/js/header.js' %}"></script>
+    </body>
+
+
+</html>

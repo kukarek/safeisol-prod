@@ -1,0 +1,20 @@
+# Виртуальное окружение
+venv/
+env/
+
+# Кеши Python
+__pycache__/
+*.py[cod]
+
+# IDE
+.vscode/
+.idea/
+
+# Логи и временные файлы
+logs/
+
+# Секреты
+.env
+
+#Статика в сборе
+staticfiles/

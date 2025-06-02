@@ -1,0 +1,67 @@
+{% load static %}
+{% load main_tags %}
+
+<html lang="ru">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO мета-теги -->
+    <meta name="description" content="Каталог продукции компании Безопасная теплоизоляция: термочехлы SAFEISOL, огнезащитные шторы, изоляционные экраны и многое другое.">
+    <meta name="keywords" content="каталог, термочехлы, теплоизоляция, SAFEISOL, огнезащитные шторы, экраны, продукция, промышленная изоляция">
+    <meta name="author" content="ООО «Безопасная теплоизоляция»">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Каталог продукции — Безопасная теплоизоляция">
+    <meta property="og:description" content="Широкий выбор теплоизоляционной продукции SAFEISOL и сопутствующих решений.">
+    <meta property="og:image" content="https://safeisol.ru/static/logo.png">
+    <meta property="og:url" content="https://safeisol.ru/catalog">
+    <meta property="og:site_name" content="Безопасная теплоизоляция">
+
+    <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'main/css/catalog.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'main/css/tile_goods.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'main/css/header.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'main/css/breadcrumbs.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
+    <link rel="icon" href="{% static 'main/media/logo-ico.png' %}" type="image/x-icon">
+    <title>Каталог</title>
+
+    <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            ym(102102304, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true
+            });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/102102304" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+</head>
+<body class="body">
+
+    {% header cat_selected='catalog' %}
+
+    {% include 'main/breadcrumbs.html' %}
+
+    <div class="content">
+        
+        {% include 'main/tile_goods.html' %}
+        
+    </div>
+
+    {% footer %}
+
+    <script src="{% static 'main/js/base.js' %}"></script>
+    <script src="{% static 'main/js/header.js' %}"></script>
+</body>
+</html>

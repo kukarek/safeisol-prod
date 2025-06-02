@@ -1,0 +1,92 @@
+{% load static %}
+{% load main_tags %}
+
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Доставка — Безопасная теплоизоляция</title>
+        <meta name="description" content="Доставка продукции ООО «Безопасная теплоизоляция» по всей России транспортными компаниями." />
+        <meta name="keywords" content="доставка, транспортные компании, Россия, безопасная теплоизоляция" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://safeisol.ru/delivery" />
+        <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/delivery.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/breadcrumbs.css' %}" rel="stylesheet">
+        <link rel="icon" href="{% static 'main/media/logo-ico.png' %}" type="image/x-icon">
+        <link type="text/css" href="{% static 'main/css/header.css' %}" rel="stylesheet">
+        <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
+
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            ym(102102304, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true
+            });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/102102304" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    </head>
+
+    <body>
+
+        {% header cat_selected='delivery' %}
+
+        {% include 'main/breadcrumbs.html' %}
+
+        <div class="content">
+            
+            
+            <div class="title">
+                <div class="container">
+                
+                    <p class="section-title">Доставка</p>
+
+                </div>
+            </div>
+
+            <div class="map">
+                <div class="container">
+                
+                    <div class="map-block">
+
+                        <div class="subtitle">По всей России</div>  
+
+                        <div class="map-image">
+
+                            <img src="{% static 'main/media/map.png' %}">
+
+                        </div>
+
+                        <div class="delivery-company-logo">
+
+                            <div class="subtitle">Транспортными компаниями</div>
+
+                            <img src="{% static 'main/media/delivery_companies.png' %}">
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        {% footer %}
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{% static 'main/js/base.js' %}"></script>
+        <script src="{% static 'main/js/header.js' %}"></script>
+    </body>
+
+
+</html>
