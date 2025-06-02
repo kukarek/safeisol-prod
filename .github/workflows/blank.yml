@@ -38,6 +38,7 @@ jobs:
           EMAIL_HOST_USER: ${{ secrets.EMAIL_HOST_USER }}
           EMAIL_HOST_PASSWORD: ${{ secrets.EMAIL_HOST_PASSWORD }}
           DEFAULT_FROM_EMAIL: ${{ secrets.DEFAULT_FROM_EMAIL }}
+          DEFAULT_FOR_EMAIL: ${{ secrets.DEFAULT_FOR_EMAIL }}
           SMTP: ${{ secrets.SMTP }}
         with:
           host: ${{ secrets.SERVER_HOST }}
@@ -62,6 +63,7 @@ jobs:
             EMAIL_HOST_USER=$EMAIL_HOST_USER
             EMAIL_HOST_PASSWORD=$EMAIL_HOST_PASSWORD
             DEFAULT_FROM_EMAIL=$DEFAULT_FROM_EMAIL
+            DEFAULT_FOR_EMAIL=$DEFAULT_FOR_EMAIL
             SMTP=$SMTP
             EOF
 
@@ -100,9 +102,9 @@ jobs:
             # Обновляем образы и запускаем контейнеры Docker
             docker-compose build
             docker-compose up -d --force-recreate
-
-            docker ps --format "{{.Names}}"
             
+            docker logs safeisol-web-1
+
             # Ждем, пока контейнер web будет готов выполнять команды
             max_attempts=20
             attempt=0
