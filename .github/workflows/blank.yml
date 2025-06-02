@@ -105,7 +105,7 @@ jobs:
             
             docker logs safeisol-web-1
 
-            cat .envd
+            cat .env
 
             # Ждем, пока контейнер web будет готов выполнять команды
             max_attempts=20
