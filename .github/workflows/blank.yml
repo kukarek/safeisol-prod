@@ -44,29 +44,33 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # Экспорт переменных окружения для docker-compose
-            export DB_HOST=$DB_HOST
-            export DB_NAME=$DB_NAME
-            export DB_USER=$DB_USER
-            export DB_PASSWORD=$DB_PASSWORD
-            export DB_PORT=$DB_PORT
-            export CELERY_BROKER_URL=$CELERY_BROKER_URL
-            export CELERY_RESULT_BACKEND=$CELERY_RESULT_BACKEND
-            export ALLOWED_HOSTS=$ALLOWED_HOSTS
-            export SECRET_KEY=$SECRET_KEY
-            export EMAIL_HOST_USER=$EMAIL_HOST_USER
-            export EMAIL_HOST_PASSWORD=$EMAIL_HOST_PASSWORD
-            export DEFAULT_FROM_EMAIL=$DEFAULT_FROM_EMAIL
-            export SMTP=$SMTP
 
             # Создаем папку проекта и переходим в неё
             mkdir -p /var/www/safeisol
             cd /var/www/safeisol
+            
+            cat > .env <<EOF
+            DB_HOST=$DB_HOST
+            DB_NAME=$DB_NAME
+            DB_USER=$DB_USER
+            DB_PASSWORD=$DB_PASSWORD
+            DB_PORT=$DB_PORT
+            CELERY_BROKER_URL=$CELERY_BROKER_URL
+            CELERY_RESULT_BACKEND=$CELERY_RESULT_BACKEND
+            ALLOWED_HOSTS=$ALLOWED_HOSTS
+            SECRET_KEY=$SECRET_KEY
+            EMAIL_HOST_USER=$EMAIL_HOST_USER
+            EMAIL_HOST_PASSWORD=$EMAIL_HOST_PASSWORD
+            DEFAULT_FROM_EMAIL=$DEFAULT_FROM_EMAIL
+            SMTP=$SMTP
+            EOF
+
 
             # Клонируем репозиторий или обновляем его
             if [ -d ".git" ]; then
               echo "Обновляю существующий репозиторий"
-              git pull origin main
+              git fetch origin
+              git reset --hard origin/main
             else
               echo "Клонирую репозиторий"
               git clone https://github.com/kukarek/safeisol-prod.git .
