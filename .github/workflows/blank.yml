@@ -23,18 +23,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run migrations on server
-        uses: appleboy/ssh-action@v0.1.6
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd /var/www/safeisol
-            python manage.py migrate --noinput
-            python manage.py loaddata data.json
-            python manage.py collectstatic --noinput
-
       - name: Build and restart Docker container on server
         uses: appleboy/ssh-action@v0.1.6
         with:
@@ -43,5 +31,41 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /var/www/safeisol
+
+            # Экспортируем секреты для docker-compose
+            export DB_HOST=${{ secrets.DB_HOST }}
+            export DB_NAME=${{ secrets.DB_NAME }}
+            export DB_USER=${{ secrets.DB_USER }}
+            export DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+            export DB_PORT=${{ secrets.DB_PORT }}
+            export CELERY_BROKER_URL=${{ secrets.CELERY_BROKER_URL }}
+            export CELERY_RESULT_BACKEND=${{ secrets.CELERY_RESULT_BACKEND }}
+            export ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }}
+            export SECRET_KEY=${{ secrets.SECRET_KEY }}
+            export EMAIL_HOST_USER=${{ secrets.EMAIL_HOST_USER }}
+            export EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }}
+            export DEFAULT_FROM_EMAIL=${{ secrets.DEFAULT_FROM_EMAIL }}
+            export DEFAULT_FOR_EMAIL=${{ secrets.DEFAULT_FOR_EMAIL }}
+            export SMTP=${{ secrets.SMTP }}
+
+            # Обновляем образы и запускаем контейнеры
             docker-compose build
-            docker-compose up -d --build --force-recreate
+            docker-compose up -d --force-recreate
+
+            # Ждем, пока контейнер web будет готов выполнять команды
+            max_attempts=20
+            attempt=0
+            until docker-compose exec web python manage.py check > /dev/null 2>&1 || [ $attempt -eq $max_attempts ]; do
+              echo "Waiting for web container to be ready... ($attempt/$max_attempts)"
+              attempt=$((attempt + 1))
+              sleep 3
+            done
+
+            if [ $attempt -eq $max_attempts ]; then
+              echo "Web container failed to start in time."
+              exit 1
+            fi
+
+            # Выполняем миграции, сбор статики и загрузку данных внутри контейнера
+            docker-compose exec web python manage.py migrate --noinput
+            docker-compose exec web python manage.py loaddata data.json
