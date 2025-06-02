@@ -1,0 +1,94 @@
+name: Deploy Django to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build and restart Docker container on server
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Создаем папку проекта
+            mkdir -p /var/www/safeisol
+            cd /var/www/safeisol
+
+            # Устанавливаем PostgreSQL, если его нет
+            if ! command -v psql > /dev/null; then
+              echo "PostgreSQL не найден, устанавливаю..."
+              sudo apt-get update
+              sudo apt-get install -y postgresql postgresql-contrib
+              sudo systemctl enable postgresql
+              sudo systemctl start postgresql
+            else
+              echo "PostgreSQL уже установлен"
+            fi
+
+            # Проверяем, создана ли база данных, если нет - создаем
+            if ! sudo -u postgres psql -lqt | cut -d \| -f 1 | grep -qw $DB_NAME; then
+              echo "Создаю базу данных $DB_NAME и пользователя $DB_USER"
+              sudo -u postgres psql -c "CREATE DATABASE $DB_NAME;"
+              sudo -u postgres psql -c "CREATE USER $DB_USER WITH PASSWORD '$DB_PASSWORD';"
+              sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE $DB_NAME TO $DB_USER;"
+            else
+              echo "База данных $DB_NAME уже существует"
+            fi
+
+            # Экспортируем секреты для docker-compose
+            export DB_HOST=${{ secrets.DB_HOST }}
+            export DB_NAME=${{ secrets.DB_NAME }}
+            export DB_USER=${{ secrets.DB_USER }}
+            export DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+            export DB_PORT=${{ secrets.DB_PORT }}
+            export CELERY_BROKER_URL=${{ secrets.CELERY_BROKER_URL }}
+            export CELERY_RESULT_BACKEND=${{ secrets.CELERY_RESULT_BACKEND }}
+            export ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }}
+            export SECRET_KEY=${{ secrets.SECRET_KEY }}
+            export EMAIL_HOST_USER=${{ secrets.EMAIL_HOST_USER }}
+            export EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }}
+            export DEFAULT_FROM_EMAIL=${{ secrets.DEFAULT_FROM_EMAIL }}
+            export DEFAULT_FOR_EMAIL=${{ secrets.DEFAULT_FOR_EMAIL }}
+            export SMTP=${{ secrets.SMTP }}
+
+            # Обновляем образы и запускаем контейнеры
+            docker-compose build
+            docker-compose up -d --force-recreate
+
+            # Ждем, пока контейнер web будет готов выполнять команды
+            max_attempts=20
+            attempt=0
+            until docker-compose exec web python manage.py check > /dev/null 2>&1 || [ $attempt -eq $max_attempts ]; do
+              echo "Waiting for web container to be ready... ($attempt/$max_attempts)"
+              attempt=$((attempt + 1))
+              sleep 3
+            done
+
+            if [ $attempt -eq $max_attempts ]; then
+              echo "Web container failed to start in time."
+              exit 1
+            fi
+
+            # Выполняем миграции, сбор статики и загрузку данных внутри контейнера
+            docker-compose exec web python manage.py migrate --noinput
+            docker-compose exec web python manage.py loaddata data.json
