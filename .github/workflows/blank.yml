@@ -101,7 +101,9 @@ jobs:
             docker-compose build
             docker-compose up -d --force-recreate
 
-            docker-compose logs safeisol-prod-web-1
+            docker -compose ps
+            # Проверяем логи контейнера web
+            docker logs safeisol-prod-web-1
 
             # Выполняем миграции, сбор статики и загрузку данных внутри контейнера
             docker-compose exec web python manage.py migrate --noinput
