@@ -1,52 +1,28 @@
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+from ..models import Products
+from ..serializers import ProductSerializer, ContactRequestSerializer
 import logging
-from django.http import JsonResponse
-from main import models
-from main.forms import ContactForm
-from main.models import ContactRequest
-from main import tasks
 
-# Настройка логгера
 logger = logging.getLogger(__name__)
 
 
-# Получение списка продуктов
+@api_view(['GET'])
 def get_products(request):
     try:
-        # Оптимизация запросов, чтобы избежать множества запросов к базе данных
-        products = models.Products.objects.all().values('id', 'title', 'slug')  # Получаем только нужные поля
-        product_ids = [product['id'] for product in products]  # Собираем id продуктов
-        product_dict = {product.id: product.get_absolute_url() for product in models.Products.objects.filter(id__in=product_ids)}  # Получаем URL для всех продуктов
-
-        products_with_urls = [
-            {
-                'id': product['id'],
-                'title': product['title'],
-                'url': product_dict.get(product['id'], '')  # Извлекаем URL из словаря
-            }
-            for product in products
-        ]
-
-        return JsonResponse(products_with_urls, safe=False)
+        products = Products.objects.all()
+        serializer = ProductSerializer(products, many=True)
+        return Response(serializer.data)
     except Exception as e:
         logger.error(f"Error retrieving products: {e}")
-        return JsonResponse({'success': False, 'message': 'Произошла ошибка при получении продуктов.'})
+        return Response({'message': 'Ошибка при получении продуктов.'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-# Обработка отправки контактной формы
+
+@api_view(['POST'])
 def send_contacts(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-
-            cd = form.cleaned_data
-
-            ContactRequest.objects.create(
-                name = cd['name'],
-                phone = cd['phone'],
-                email = cd['email'],
-                comment = cd['comment']
-            )
-
-            return JsonResponse({'success': True})
-        else:
-            return JsonResponse({'success': False})
-
+    serializer = ContactRequestSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response({'success': True})
+    return Response({'success': False, 'errors': serializer.errors}, status=400)

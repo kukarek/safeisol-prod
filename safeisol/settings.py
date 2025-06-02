@@ -1,6 +1,7 @@
 import environ 
 import os
 from pathlib import Path
+import logging.config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,10 +14,9 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = env.bool('DEBUG', default=False)
 
-ALLOWED_HOSTS = ['195.133.146.56', 'localhost', '127.0.0.1']
-
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 # Application definition
 
@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main'
+    'main',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -64,11 +65,11 @@ WSGI_APPLICATION = 'safeisol.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'safeisol',
-        'USER': 'postgres',
-        'PASSWORD': '1324',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
         'OPTIONS': {
             'client_encoding': 'UTF8',  
         }
@@ -141,45 +142,22 @@ EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = 'Wallsey.Hooker@yandex.ru'
-EMAIL_HOST_PASSWORD = env("SMTP")  
-DEFAULT_FROM_EMAIL = "Wallsey.Hooker@yandex.ru"
-DEFAULT_FOR_EMAIL = "emirsaliev@list.ru"
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
+DEFAULT_FOR_EMAIL = env('DEFAULT_FOR_EMAIL')
+
+print("BROKER URL:", os.getenv('CELERY_BROKER_URL'))
+CELERY_BROKER_URL = env('CELERY_BROKER_URL')
+CELERY_RESULT_BACKEND = env('CELERY_RESULT_BACKEND')
 
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+LOGGING_CONFIG_PATH = BASE_DIR / 'logging.ini'
 
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+# Убедись, что папка logs существует
+LOGS_DIR = BASE_DIR / 'logs'
+LOGS_DIR.mkdir(exist_ok=True)
 
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False, 
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',  
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs', 'django.log'),
-            'encoding': 'utf-8',
-            'formatter': 'verbose',
-        },
-    },
-    'formatters': {
-        'verbose': {
-            'format': '{asctime} [{levelname}] {name}: {message}',
-            'style': '{',
-        },
-    },
-    'loggers': {
-        'django': {  
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-        'celery': {  
-            'handlers': ['file'],
-            'level': 'INFO',  
-            'propagate': False,
-        },
-    },
-}
+# Загрузи конфигурацию из INI-файла
+logging.config.fileConfig(LOGGING_CONFIG_PATH, disable_existing_loggers=False)

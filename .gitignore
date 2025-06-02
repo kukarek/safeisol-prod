@@ -16,8 +16,5 @@ logs/
 # Секреты
 .env
 
-#Данные для бд
-data.json
-
 #Статика в сборе
 staticfiles/
