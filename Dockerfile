@@ -13,7 +13,5 @@ COPY . .
 
 ENV DJANGO_SETTINGS_MODULE=safeisol.settings
 
-COPY entrypoint.sh /app/entrypoint.sh
-RUN chmod +x /app/entrypoint.sh
-
-CMD ["/app/entrypoint.sh"]
+# Команды запускаем через shell
+CMD sh -c "python manage.py collectstatic --noinput && exec gunicorn safeisol.wsgi:application --bind 0.0.0.0:8000"
