@@ -88,6 +88,9 @@ jobs:
             docker-compose build
             docker-compose up -d --force-recreate
 
+            #Запускаем тесты
+            docker-compose run --rm web python manage.py test
+
             # Ждем, пока контейнер web будет готов выполнять команды
             max_attempts=20
             attempt=0

@@ -55,6 +55,9 @@ class Certificates(models.Model):
 
     title = models.CharField(max_length=255, verbose_name="Название")
 
+    def __str__(self):
+        return self.title
+
 #входящие заявки от пользователей
 class ContactRequest(models.Model):
     

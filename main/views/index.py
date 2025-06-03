@@ -9,7 +9,7 @@ class Index(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        cat_termochehly = models.Categories.objects.get(id=1)
+        cat_termochehly = models.Categories.objects.get(title='Термочехлы')
         temp_category = {'title': 'Дополнительно', 'slug': 'temp-category', 'get_absolute_url': 'catalog/'}
         temp_category['products'] = models.Products.objects.exclude(category_id=1)
         context['categories'] = [cat_termochehly, temp_category]
