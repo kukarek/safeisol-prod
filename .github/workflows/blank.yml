@@ -87,8 +87,6 @@ jobs:
             # Обновляем образы и запускаем контейнеры Docker
             docker-compose build
             docker-compose up -d --force-recreate
-            
-            docker logs safeisol-web-1
 
             # Ждем, пока контейнер web будет готов выполнять команды
             max_attempts=20

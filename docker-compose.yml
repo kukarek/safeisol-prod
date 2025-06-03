@@ -3,6 +3,7 @@ services:
 
   nginx:
     image: nginx:latest
+    restart: always
     ports:
       - "80:80"
     volumes:
@@ -13,11 +14,13 @@ services:
 
   redis:
     image: redis:7
+    restart: always
     ports:
       - "6379:6379"
 
   web:
     build: .
+    restart: always
     volumes:
       - .:/app
       - static_volume:/app/staticfiles
@@ -30,6 +33,7 @@ services:
 
   celery:
     build: .
+    restart: always
     command: celery -A safeisol worker --loglevel=info
     volumes:
       - .:/app
