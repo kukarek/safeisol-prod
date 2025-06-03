@@ -26,8 +26,9 @@ services:
       - static_volume:/app/staticfiles
       - ./logs:/var/log/django
     env_file:
-
       - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       - redis
     ports:
