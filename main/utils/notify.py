@@ -4,7 +4,7 @@ from django.conf import settings
 from main.models import ContactRequest
 from main.serializers import ContactRequestSerializer
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('django')
 
 class NotifyManager:
     @staticmethod

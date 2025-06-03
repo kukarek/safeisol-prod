@@ -33,15 +33,18 @@ window.addEventListener('load', () => {
         }, 300);
     });
 
+
+
+
     document.getElementById('contactForm').addEventListener('submit', (e) => {
-        e.preventDefault();
-    
+    e.preventDefault();
+
         const form = e.target;
         const formData = new FormData(form);
-    
+
         // Логируем данные формы для проверки
         console.log('Form Data:', Array.from(formData.entries()));
-    
+
         fetch('/api/send_contacts/', {
             method: 'POST',
             headers: {
@@ -51,9 +54,13 @@ window.addEventListener('load', () => {
         })
         .then(response => {
             if (!response.ok) {
+                if (response.status === 429) {
+                    // Специальное сообщение при статусе 429
+                    throw new Error('Заявка уже отправлена.');
+                }
                 throw new Error('Ошибка при отправке. Код ответа: ' + response.status);
             }
-    
+
             return response.json().catch(error => {
                 throw new Error('Ошибка при обработке ответа от сервера: ' + error.message);
             });
@@ -72,7 +79,7 @@ window.addEventListener('load', () => {
         .catch(error => {
             alert('Ошибка: ' + error.message);
         });
-    
+
         function getCookie(name) {
             let cookieValue = null;
             if (document.cookie && document.cookie !== '') {
@@ -88,4 +95,5 @@ window.addEventListener('load', () => {
             return cookieValue;
         }
     });
+
 })

@@ -3,8 +3,20 @@ import os
 from pathlib import Path
 import logging.config
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
+LOGGING_CONFIG_PATH = BASE_DIR / 'safeisol/logging.ini'
+
+# Убедись, что папка logs существует
+LOGS_DIR = BASE_DIR / 'logs'
+LOGS_DIR.mkdir(exist_ok=True)
+
+# Загрузи конфигурацию из INI-файла
+logging.config.fileConfig(LOGGING_CONFIG_PATH, disable_existing_loggers=False)
+
+logger = logging.getLogger('django')
 
 # Инициализация environ
 env = environ.Env()
@@ -39,7 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'main.middleware.CacheControlMiddleware'
+    'main.middleware.CacheControlMiddleware',
+    'main.middleware.LogAllRequestsMiddleware',
 ]
 
 ROOT_URLCONF = 'safeisol.urls'
@@ -151,13 +164,3 @@ print("BROKER URL:", os.getenv('CELERY_BROKER_URL'))
 CELERY_BROKER_URL = env('CELERY_BROKER_URL')
 CELERY_RESULT_BACKEND = env('CELERY_RESULT_BACKEND')
 
-
-BASE_DIR = Path(__file__).resolve().parent.parent
-LOGGING_CONFIG_PATH = BASE_DIR / 'logging.ini'
-
-# Убедись, что папка logs существует
-LOGS_DIR = BASE_DIR / 'logs'
-LOGS_DIR.mkdir(exist_ok=True)
-
-# Загрузи конфигурацию из INI-файла
-logging.config.fileConfig(LOGGING_CONFIG_PATH, disable_existing_loggers=False)

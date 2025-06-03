@@ -23,5 +23,3 @@ urlpatterns = [
     path('api/send_contacts/', views.send_contacts, name="send_contacts"),
     path('api/products/', views.get_products, name='get_products'),
 ]
-
-handler404 = 'main.views.handler404'

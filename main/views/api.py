@@ -5,7 +5,7 @@ from ..models import Products
 from ..serializers import ProductSerializer, ContactRequestSerializer
 import logging
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('django')
 
 
 @api_view(['GET'])
@@ -21,8 +21,14 @@ def get_products(request):
 
 @api_view(['POST'])
 def send_contacts(request):
+    if request.session.get('contact_sent'):
+        return Response({'success': False, 'error': 'Заявка уже отправлена.'}, status=429)
+
     serializer = ContactRequestSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
+        # Помечаем сессию, что заявка отправлена
+        request.session['contact_sent'] = True
+        request.session.modified = True
         return Response({'success': True})
     return Response({'success': False, 'errors': serializer.errors}, status=400)
