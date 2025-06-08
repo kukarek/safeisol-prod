@@ -47,10 +47,10 @@
             </div>
 
             <div class="container tile_goods" style="justify-content: left; margin-bottom: 100px;">
-                {% for i in products %}
+                {% for product in products %}
                 <div class="product">
                     <div class="product-img-block">
-                        <img class="product-img" src="{% static 'main/media/complete projects/'%}{{forloop.counter}}.png" onclick="openModal(this)">
+                        <img class="product-img" src="{% static 'main/media/complete projects/'%}{{product.image_path}}" alt="{{ product.name }}" onclick="openModal(this)">
                     </div>
                 </div>
                 {% endfor %}

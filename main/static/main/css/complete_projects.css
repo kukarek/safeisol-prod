@@ -1,14 +1,14 @@
 /* Стили для модального окна */
 .modal {
-    display: none; /* Скрыто по умолчанию */
-    position: fixed; /* Окно фиксировано */
-    z-index: 1000; /* На переднем плане */
+    display: none; 
+    position: fixed;
+    z-index: 1000; 
     left: 0;
     top: 0;
-    width: 100%; /* Полная ширина */
-    height: 100%; /* Полная высота */
-    overflow: auto; /* Включаем прокрутку, если нужно */
-    background-color: rgba(0, 0, 0, 0.8); /* Затемнение фона */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); 
     justify-content: center;
     align-items: center;
     opacity: 0;
@@ -20,8 +20,8 @@
     margin: auto;
     margin-bottom: auto;
     object-fit: contain;
-    width: 70%; /* Максимальная ширина изображения */
-    height: 70%; /* Максимальная высота изображения */
+    width: 70%; 
+    height: 70%; 
     justify-content: center;
 }
 

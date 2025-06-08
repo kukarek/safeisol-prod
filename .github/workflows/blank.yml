@@ -1,110 +1,137 @@
-name: Deploy Django to Server
+- name: Build and restart Docker container on server
+  uses: appleboy/ssh-action@v0.1.6
+  with:
+    host: ${{ secrets.SERVER_HOST }}
+    username: ${{ secrets.SERVER_USER }}
+    key: ${{ secrets.SSH_PRIVATE_KEY }}
+    script: |
 
-on:
-  push:
-    branches:
-      - main
+      # Создаем папку проекта и переходим в неё
+      mkdir -p /var/www/safeisol
+      cd /var/www/safeisol
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+      # Проверяем и устанавливаем Docker, если он не установлен
+      if ! command -v docker > /dev/null; then
+        echo "Docker не найден, устанавливаю..."
+        sudo apt-get update
+        sudo apt-get install -y \
+          ca-certificates \
+          curl \
+          gnupg \
+          lsb-release
 
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+        sudo mkdir -p /etc/apt/keyrings
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
-      - name: Setup Python 3.11
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.11
+        echo \
+          "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+          $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+        sudo apt-get update
+        sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
-      - name: Build and restart Docker container on server
-        uses: appleboy/ssh-action@v0.1.6
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
+        sudo systemctl enable docker
+        sudo systemctl start docker
 
-            # Создаем папку проекта и переходим в неё
-            mkdir -p /var/www/safeisol
-            cd /var/www/safeisol
-            
-            cat > .env <<EOF
-            DB_HOST=${{ secrets.DB_HOST }}
-            DB_NAME=${{ secrets.DB_NAME }}
-            DB_USER=${{ secrets.DB_USER }}
-            DB_PASSWORD=${{ secrets.DB_PASSWORD }}
-            DB_PORT=${{ secrets.DB_PORT }}
-            CELERY_BROKER_URL=${{ secrets.CELERY_BROKER_URL }}
-            CELERY_RESULT_BACKEND=${{ secrets.CELERY_RESULT_BACKEND }}
-            ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }}
-            SECRET_KEY=${{ secrets.SECRET_KEY }}
-            EMAIL_HOST_USER=${{ secrets.EMAIL_HOST_USER }}
-            EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }}
-            DEFAULT_FROM_EMAIL=${{ secrets.DEFAULT_FROM_EMAIL }}
-            DEFAULT_FOR_EMAIL=${{ secrets.DEFAULT_FOR_EMAIL }}
-            SMTP=${{ secrets.SMTP }}
-            EOF
+        echo "Docker установлен"
+      else
+        echo "Docker уже установлен"
+      fi
 
+      # Проверяем и устанавливаем Docker Compose, если он не установлен
+      if ! command -v docker-compose > /dev/null; then
+        echo "Docker Compose не найден, устанавливаю..."
+        DOCKER_COMPOSE_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep tag_name | cut -d '"' -f 4)
+        sudo curl -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+        sudo chmod +x /usr/local/bin/docker-compose
+        echo "Docker Compose установлен"
+      else
+        echo "Docker Compose уже установлен"
+      fi
 
-            # Клонируем репозиторий или обновляем его
-            if [ -d ".git" ]; then
-              echo "Обновляю существующий репозиторий"
-              git fetch origin
-              git reset --hard origin/main
-            else
-              echo "Клонирую репозиторий"
-              git clone https://github.com/kukarek/safeisol-prod.git .
-            fi
+      # Создаем .env файл
+      cat > .env <<EOF
+      DB_HOST=${{ secrets.DB_HOST }}
+      DB_NAME=${{ secrets.DB_NAME }}
+      DB_USER=${{ secrets.DB_USER }}
+      DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+      DB_PORT=${{ secrets.DB_PORT }}
+      CELERY_BROKER_URL=${{ secrets.CELERY_BROKER_URL }}
+      CELERY_RESULT_BACKEND=${{ secrets.CELERY_RESULT_BACKEND }}
+      ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }}
+      SECRET_KEY=${{ secrets.SECRET_KEY }}
+      EMAIL_HOST_USER=${{ secrets.EMAIL_HOST_USER }}
+      EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }}
+      DEFAULT_FROM_EMAIL=${{ secrets.DEFAULT_FROM_EMAIL }}
+      DEFAULT_FOR_EMAIL=${{ secrets.DEFAULT_FOR_EMAIL }}
+      SMTP=${{ secrets.SMTP }}
+      ADMIN_PASS=${{ secrets.ADMIN_PASS }}
+      EOF
 
-            # Устанавливаем PostgreSQL, если он не установлен
-            if ! command -v psql > /dev/null; then
-              echo "PostgreSQL не найден, устанавливаю..."
-              sudo apt-get update
-              sudo apt-get install -y postgresql postgresql-contrib
-              sudo systemctl enable postgresql
-              sudo systemctl start postgresql
-            else
-              echo "PostgreSQL уже установлен"
-            fi
+      # Клонируем репозиторий или обновляем его
+      if [ -d ".git" ]; then
+        echo "Обновляю существующий репозиторий"
+        git fetch origin
+        git reset --hard origin/main
+      else
+        echo "Клонирую репозиторий"
+        git clone https://github.com/kukarek/safeisol-prod.git .
+      fi
 
-            # Проверяем, создана ли база данных, если нет - создаем
-            if ! sudo -u postgres psql -lqt | cut -d \| -f 1 | grep -qw "$DB_NAME"; then
-              echo "Создаю базу данных $DB_NAME и пользователя $DB_USER"
-              sudo -u postgres psql -c "CREATE DATABASE \"$DB_NAME\";"
-              sudo -u postgres psql -c "CREATE USER \"$DB_USER\" WITH PASSWORD '$DB_PASSWORD';"
-              sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE \"$DB_NAME\" TO \"$DB_USER\";"
-            else
-              echo "База данных $DB_NAME уже существует"
-            fi
+      # Проверяем и устанавливаем PostgreSQL, если он не установлен
+      if ! command -v psql > /dev/null; then
+        echo "PostgreSQL не найден, устанавливаю..."
+        sudo apt-get update
+        sudo apt-get install -y postgresql postgresql-contrib
+        sudo systemctl enable postgresql
+        sudo systemctl start postgresql
+      else
+        echo "PostgreSQL уже установлен"
+      fi
 
-            # Обновляем образы и запускаем контейнеры Docker
-            docker-compose build
-            docker-compose up -d --force-recreate
+      # Проверяем, создана ли база данных, если нет - создаем
+      if ! sudo -u postgres psql -lqt | cut -d \| -f 1 | grep -qw "$DB_NAME"; then
+        echo "Создаю базу данных $DB_NAME и пользователя $DB_USER"
+        sudo -u postgres psql -c "CREATE DATABASE \"$DB_NAME\";"
+        sudo -u postgres psql -c "CREATE USER \"$DB_USER\" WITH PASSWORD '$DB_PASSWORD';"
+        sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE \"$DB_NAME\" TO \"$DB_USER\";"
+      else
+        echo "База данных $DB_NAME уже существует"
+      fi
 
-            #Запускаем тесты
-            docker-compose run --rm web python manage.py test
+      # Обновляем образы и запускаем контейнеры Docker
+      docker-compose build
+      docker-compose up -d --force-recreate
 
-            # Ждем, пока контейнер web будет готов выполнять команды
-            max_attempts=20
-            attempt=0
-            until docker-compose exec web python manage.py check > /dev/null 2>&1 || [ $attempt -eq $max_attempts ]; do
-              echo "Waiting for web container to be ready... ($attempt/$max_attempts)"
-              attempt=$((attempt + 1))
-              sleep 3
-            done
+      # Запускаем тесты
+      docker-compose run --rm web python manage.py test
 
-            if [ $attempt -eq $max_attempts ]; then
-              echo "Web container failed to start in time."
-              exit 1
-            fi
+      # Ждем, пока контейнер web будет готов выполнять команды
+      max_attempts=20
+      attempt=0
+      until docker-compose exec web python manage.py check > /dev/null 2>&1 || [ $attempt -eq $max_attempts ]; do
+        echo "Waiting for web container to be ready... ($attempt/$max_attempts)"
+        attempt=$((attempt + 1))
+        sleep 3
+      done
 
-            # Выполняем миграции и загрузку данных внутри контейнера
-            docker-compose exec web python manage.py migrate --noinput
-            docker-compose exec web python manage.py loaddata data.json
+      if [ $attempt -eq $max_attempts ]; then
+        echo "Web container failed to start in time."
+        exit 1
+      fi
+
+      # Выполняем миграции и загрузку данных внутри контейнера
+      docker-compose exec web python manage.py migrate --noinput
+      docker-compose exec web python manage.py loaddata data.json
+
+      docker-compose exec web python manage.py shell -c "
+      from django.contrib.auth import get_user_model;
+      User = get_user_model();
+      username = 'admin';
+      password = '${ADMIN_PASS}';
+      if not User.objects.filter(username=username).exists():
+          User.objects.create_superuser(username=username, email='admin@example.com', password=password);
+          print('Superuser created');
+      else:
+          print('Superuser already exists');
+      "

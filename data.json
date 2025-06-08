@@ -1,1 +1,1264 @@
-[{"model": "auth.permission", "pk": 1, "fields": {"name": "Can add log entry", "content_type": 1, "codename": "add_logentry"}}, {"model": "auth.permission", "pk": 2, "fields": {"name": "Can change log entry", "content_type": 1, "codename": "change_logentry"}}, {"model": "auth.permission", "pk": 3, "fields": {"name": "Can delete log entry", "content_type": 1, "codename": "delete_logentry"}}, {"model": "auth.permission", "pk": 4, "fields": {"name": "Can view log entry", "content_type": 1, "codename": "view_logentry"}}, {"model": "auth.permission", "pk": 5, "fields": {"name": "Can add permission", "content_type": 2, "codename": "add_permission"}}, {"model": "auth.permission", "pk": 6, "fields": {"name": "Can change permission", "content_type": 2, "codename": "change_permission"}}, {"model": "auth.permission", "pk": 7, "fields": {"name": "Can delete permission", "content_type": 2, "codename": "delete_permission"}}, {"model": "auth.permission", "pk": 8, "fields": {"name": "Can view permission", "content_type": 2, "codename": "view_permission"}}, {"model": "auth.permission", "pk": 9, "fields": {"name": "Can add group", "content_type": 3, "codename": "add_group"}}, {"model": "auth.permission", "pk": 10, "fields": {"name": "Can change group", "content_type": 3, "codename": "change_group"}}, {"model": "auth.permission", "pk": 11, "fields": {"name": "Can delete group", "content_type": 3, "codename": "delete_group"}}, {"model": "auth.permission", "pk": 12, "fields": {"name": "Can view group", "content_type": 3, "codename": "view_group"}}, {"model": "auth.permission", "pk": 13, "fields": {"name": "Can add user", "content_type": 4, "codename": "add_user"}}, {"model": "auth.permission", "pk": 14, "fields": {"name": "Can change user", "content_type": 4, "codename": "change_user"}}, {"model": "auth.permission", "pk": 15, "fields": {"name": "Can delete user", "content_type": 4, "codename": "delete_user"}}, {"model": "auth.permission", "pk": 16, "fields": {"name": "Can view user", "content_type": 4, "codename": "view_user"}}, {"model": "auth.permission", "pk": 17, "fields": {"name": "Can add content type", "content_type": 5, "codename": "add_contenttype"}}, {"model": "auth.permission", "pk": 18, "fields": {"name": "Can change content type", "content_type": 5, "codename": "change_contenttype"}}, {"model": "auth.permission", "pk": 19, "fields": {"name": "Can delete content type", "content_type": 5, "codename": "delete_contenttype"}}, {"model": "auth.permission", "pk": 20, "fields": {"name": "Can view content type", "content_type": 5, "codename": "view_contenttype"}}, {"model": "auth.permission", "pk": 21, "fields": {"name": "Can add session", "content_type": 6, "codename": "add_session"}}, {"model": "auth.permission", "pk": 22, "fields": {"name": "Can change session", "content_type": 6, "codename": "change_session"}}, {"model": "auth.permission", "pk": 23, "fields": {"name": "Can delete session", "content_type": 6, "codename": "delete_session"}}, {"model": "auth.permission", "pk": 24, "fields": {"name": "Can view session", "content_type": 6, "codename": "view_session"}}, {"model": "auth.permission", "pk": 25, "fields": {"name": "Can add product", "content_type": 7, "codename": "add_product"}}, {"model": "auth.permission", "pk": 26, "fields": {"name": "Can change product", "content_type": 7, "codename": "change_product"}}, {"model": "auth.permission", "pk": 27, "fields": {"name": "Can delete product", "content_type": 7, "codename": "delete_product"}}, {"model": "auth.permission", "pk": 28, "fields": {"name": "Can view product", "content_type": 7, "codename": "view_product"}}, {"model": "auth.permission", "pk": 29, "fields": {"name": "Can add products", "content_type": 8, "codename": "add_products"}}, {"model": "auth.permission", "pk": 30, "fields": {"name": "Can change products", "content_type": 8, "codename": "change_products"}}, {"model": "auth.permission", "pk": 31, "fields": {"name": "Can delete products", "content_type": 8, "codename": "delete_products"}}, {"model": "auth.permission", "pk": 32, "fields": {"name": "Can view products", "content_type": 8, "codename": "view_products"}}, {"model": "auth.permission", "pk": 33, "fields": {"name": "Can add categories", "content_type": 9, "codename": "add_categories"}}, {"model": "auth.permission", "pk": 34, "fields": {"name": "Can change categories", "content_type": 9, "codename": "change_categories"}}, {"model": "auth.permission", "pk": 35, "fields": {"name": "Can delete categories", "content_type": 9, "codename": "delete_categories"}}, {"model": "auth.permission", "pk": 36, "fields": {"name": "Can view categories", "content_type": 9, "codename": "view_categories"}}, {"model": "auth.permission", "pk": 37, "fields": {"name": "Can add complete products", "content_type": 10, "codename": "add_completeproducts"}}, {"model": "auth.permission", "pk": 38, "fields": {"name": "Can change complete products", "content_type": 10, "codename": "change_completeproducts"}}, {"model": "auth.permission", "pk": 39, "fields": {"name": "Can delete complete products", "content_type": 10, "codename": "delete_completeproducts"}}, {"model": "auth.permission", "pk": 40, "fields": {"name": "Can view complete products", "content_type": 10, "codename": "view_completeproducts"}}, {"model": "auth.permission", "pk": 41, "fields": {"name": "Can add services", "content_type": 11, "codename": "add_services"}}, {"model": "auth.permission", "pk": 42, "fields": {"name": "Can change services", "content_type": 11, "codename": "change_services"}}, {"model": "auth.permission", "pk": 43, "fields": {"name": "Can delete services", "content_type": 11, "codename": "delete_services"}}, {"model": "auth.permission", "pk": 44, "fields": {"name": "Can view services", "content_type": 11, "codename": "view_services"}}, {"model": "auth.permission", "pk": 45, "fields": {"name": "Can add sertificates", "content_type": 12, "codename": "add_sertificates"}}, {"model": "auth.permission", "pk": 46, "fields": {"name": "Can change sertificates", "content_type": 12, "codename": "change_sertificates"}}, {"model": "auth.permission", "pk": 47, "fields": {"name": "Can delete sertificates", "content_type": 12, "codename": "delete_sertificates"}}, {"model": "auth.permission", "pk": 48, "fields": {"name": "Can view sertificates", "content_type": 12, "codename": "view_sertificates"}}, {"model": "auth.permission", "pk": 49, "fields": {"name": "Can add certificates", "content_type": 12, "codename": "add_certificates"}}, {"model": "auth.permission", "pk": 50, "fields": {"name": "Can change certificates", "content_type": 12, "codename": "change_certificates"}}, {"model": "auth.permission", "pk": 51, "fields": {"name": "Can delete certificates", "content_type": 12, "codename": "delete_certificates"}}, {"model": "auth.permission", "pk": 52, "fields": {"name": "Can view certificates", "content_type": 12, "codename": "view_certificates"}}, {"model": "auth.permission", "pk": 53, "fields": {"name": "Can add contact request", "content_type": 13, "codename": "add_contactrequest"}}, {"model": "auth.permission", "pk": 54, "fields": {"name": "Can change contact request", "content_type": 13, "codename": "change_contactrequest"}}, {"model": "auth.permission", "pk": 55, "fields": {"name": "Can delete contact request", "content_type": 13, "codename": "delete_contactrequest"}}, {"model": "auth.permission", "pk": 56, "fields": {"name": "Can view contact request", "content_type": 13, "codename": "view_contactrequest"}}, {"model": "contenttypes.contenttype", "pk": 1, "fields": {"app_label": "admin", "model": "logentry"}}, {"model": "contenttypes.contenttype", "pk": 2, "fields": {"app_label": "auth", "model": "permission"}}, {"model": "contenttypes.contenttype", "pk": 3, "fields": {"app_label": "auth", "model": "group"}}, {"model": "contenttypes.contenttype", "pk": 4, "fields": {"app_label": "auth", "model": "user"}}, {"model": "contenttypes.contenttype", "pk": 5, "fields": {"app_label": "contenttypes", "model": "contenttype"}}, {"model": "contenttypes.contenttype", "pk": 6, "fields": {"app_label": "sessions", "model": "session"}}, {"model": "contenttypes.contenttype", "pk": 7, "fields": {"app_label": "main", "model": "product"}}, {"model": "contenttypes.contenttype", "pk": 8, "fields": {"app_label": "main", "model": "products"}}, {"model": "contenttypes.contenttype", "pk": 9, "fields": {"app_label": "main", "model": "categories"}}, {"model": "contenttypes.contenttype", "pk": 10, "fields": {"app_label": "main", "model": "completeproducts"}}, {"model": "contenttypes.contenttype", "pk": 11, "fields": {"app_label": "main", "model": "services"}}, {"model": "contenttypes.contenttype", "pk": 12, "fields": {"app_label": "main", "model": "certificates"}}, {"model": "contenttypes.contenttype", "pk": 13, "fields": {"app_label": "main", "model": "contactrequest"}}, {"model": "main.products", "pk": 1, "fields": {"slug": "tiermochiekhly-vzryvozashchishchionnyie-safeisol-ex", "title": "Термочехлы взрывозащищенные SAFEISOL Ex", "content": {"images": [{"src": "explosion-proof thermal cover/1111.png", "type": "image"}, {"src": "explosion-proof thermal cover/2222.png", "type": "image"}, {"src": "explosion-proof thermal cover/3333.png", "type": "image"}, {"src": "explosion-proof thermal cover/4444.png", "type": "image"}], "tables": [{"rows": [["Маркировка взрывозащиты", "1Ex e IIC T6 Gb X / T5 / e mb IIC T6 / T5 или II Gb X (без электрооборудования)"], ["Рабочая температура окружающей среды", "–60°C ÷ +80°C"], ["Сопротивление поверхности", "не более 10⁹ Ом"], ["Напряжение питания", "≈220В; 208–227 В"], ["Максимальная мощность одного нагревателя", "от 10 до 2000 Вт (единой длиной)"], ["Степень защиты оболочки", "IP65"], ["Климатическое исполнение", "УХЛ1 согласно ГОСТ 15150-69"]], "header": "Термочехол SAFEISOL Ex", "columns": ["Параметр", "Значение"]}, {"rows": [["Маркировка", "Корпус SAFEISOL Ex: 1 Ex e II T5 Gb X"], ["Напряжение питания", "не более 440 В постоянного или переменного тока"], ["Максимальный ток", "10А (клеммы 264-120) / 23А (клеммы 862-1503/999-950)"], ["Частота напряжения", "50 Гц"], ["Температура окружающей среды", "от –60°C до +80°C"], ["Класс защиты от поражения током", "Класс I по ГОСТ 12.2.007.0-75"], ["Степень защиты оболочки", "не ниже IP66 по ГОСТ 14254-2015"]], "header": "Корпус соединительный SAFEISOL Ex", "columns": ["Параметр", "Значение"]}, {"rows": [["Маркировка взрывозащиты", "1Ex e IIC T6/T5 Gb X или 1Ex e mb IIC T6/T5 Gb X"], ["Напряжение питания", "≈220В; 208–227 В"], ["Максимальная мощность одного нагревателя", "от 10 до 2000 Вт (единой длиной)"], ["Класс защиты от поражения током", "Класс I по ГОСТ 12.2.007.0-75"], ["Температура окружающей среды", "от –60°C до +80°C"]], "header": "Нагреватель на основе греющего кабеля SAFEISOL Ex НГК-хх", "columns": ["Параметр", "Значение"]}], "documents": [{"src": "ОПРОСНЫЙ ЛИСТ ДЛЯ ТЕРМОЧЕХЛОВ ВЗРЫВОЗАЩИЩЕННЫЙ SAFEISOL Ex.docx", "name": "Опросный лист SAFEISOL Ex", "size": "297 К/б", "format": "DOCX"}], "brief_desc": "Термочехлы SAFEISOL Ex производятся согласно ТУ 5760-002-44498679-2017 000 \"Безопасная теплоизоляция\" и предназначены для эксплуатации во взрывоопасных зонах: нефтегазовой, химической и нефтехимической промышленности, горнодобывающей и горно- перерабатвающей а также других отраслях. Основная задача термочехлов оборудования, приборов, трубопроводов, различного типа технологического оборудования в том числе контрольного-измерительного, от внешних атмосферных осадков, а также обогрева и обеспечения постоянной положительной температуры для поддержания рабочих условий эксплуатации данного оборудования и приборов.", "description": [{"type": "paragraph", "value": "Термочехлы SAFEISOL Ex производятся согласно ТУ 5760-002-44498679-2017 000 \"Безопасная теплоизоляция\" и предназначены для эксплуатации во взрывоопасных зонах: нефтегазовой, химической и нефтехимической промышленности, горнодобывающей и горно- перерабатвающей а также других отраслях. Основная задача термочехлов оборудования, приборов, трубопроводов, различного типа технологического оборудования в том числе контрольного-измерительного, от внешних атмосферных осадков, а также обогрева и обеспечения постоянной положительной температуры для поддержания рабочих условий эксплуатации данного оборудования и приборов."}, {"type": "paragraph", "value": "Область применения: взрывоопасные зоны помещений и наружных установок в соответствии с указанной маркировкой, отраслевыми правилами безопасности рекомендациями изготовителя."}, {"type": "img", "value": "explosion-proof thermal cover/IMG_20240213_180403.png"}, {"type": "list", "value": {"title": "Термочехлы SAFEISOL Ex в комплекте с соединительными корпусами, кабельными вводами и нагревателями на основе грейющего кабеля относятся к электрическому оборудованию для взрывоопасных зон и соответствуют следующим условиям взрывозащиты:", "values": ["ТР ТС 012/2011 «О безопасности оборудования для работы во взрывоопасных средах»", "взрывоопасная зона класса 1 (по ГОСТ ИЕS 60079-10-1-2011)", "температурные классы T3, T4, T5, T6 (по ГОСТ ИЕS 60079-10-1-2011)", "маркировка взрывозащиты присваивается согласно ГОСТ IEC 60079-14-2011 и ГОСТ Р МЭК 60079-25-2012", "соответствует требованиям ГОСТ Р МЭК 60079-0-2011, ГОСТ ИЕS 60079-1-2011, ГОСТ Р МЭК 60079-11-2010, ГОСТ Р МЭК 60079-18-2011, ГОСТ Р МЭК 60079-7:2006 и настоящим техническим условиям."]}}]}, "category": 1}}, {"model": "main.products", "pk": 2, "fields": {"slug": "korobki-soedinitelnye-vzryvozashishennye-safeisol-ex", "title": "Коробки соединительные взрывозащищенные SAFEISOL Ex", "content": {"images": [{"src": "explosion-proof junction box/1.png", "type": "image"}, {"src": "explosion-proof junction box/2.png", "type": "image"}], "tables": [{"rows": [["Маркировка", "Корпус SAFEISOL Ex: 1 Ex e II T5 Gb X"], ["Напряжение питания", "не более 440 В постоянного или переменного тока"], ["Максимальный ток", "10А (клеммы 264-120) / 23А (клеммы 862-1503/999-950)"], ["Частота напряжения", "50 Гц"], ["Температура окружающей среды", "от –60°C до +80°C"], ["Класс защиты от поражения током", "Класс I по ГОСТ 12.2.007.0-75"], ["Степень защиты оболочки", "не ниже IP66 по ГОСТ 14254-2015"]], "header": "Корпус соединительный SAFEISOL Ex", "columns": ["Параметр", "Значение"]}], "brief_desc": "Коробка SAFEISOL Ех КСхх — это готовое решение для надежного и герметичного соединения кабелей и проводов. Она обеспечивает подачу питания к нагревательным элементам термочехла, а также позволяет организовать информационную и сигнальную коммутацию в сложных условиях эксплуатации.", "description": [{"type": "paragraph", "value": "Коробка соединительная SAFEISOL Ех КСхх в комплекте служит для осуществления герметичного соединения и коммутации проводов, кабелей для подачи электрического питания нагревательных элементов термочехла, информационных и сигнальных коммутаций."}, {"type": "paragraph", "value": "Пример: схема подключения в коробке соединительной SAFEISOL Ex с нагревателем:"}, {"type": "img", "value": "explosion-proof junction box/shema_podklyuchenie_nagrevatelya_termochehla_19_11_19_fon[1]-Photoroom.png"}]}, "category": 1}}, {"model": "main.products", "pk": 3, "fields": {"slug": "termochehly-safeisol-dlya-zaporno-reguliruyushej-armatury", "title": "Термочехлы SAFEISOL для запорно-регулирующей арматуры", "content": {"title": "Термочехлы SAFEISOL для запорно-регулирующей арматуры", "images": [{"src": "thermal covers for shut-off and control valves and general industrial equipment/1111.png", "type": "image"}, {"src": "thermal covers for shut-off and control valves and general industrial equipment/2222.png", "type": "image"}, {"src": "thermal covers for shut-off and control valves and general industrial equipment/3333.png", "type": "image"}, {"src": "thermal covers for shut-off and control valves and general industrial equipment/4444.png", "type": "image"}], "tables": [{"rows": [["Температурный диапазон", "от -60°C до +900°C (в зависимости от подтипа)"], ["Виброустойчивость", "Соответствует ГОСТ 17516.1, степень жёсткости 11"], ["Ударостойкость", "Соответствует ГОСТ 17516.1, степень жёсткости 6"]], "header": "Технические данные", "columns": ["Параметр", "Значение"]}, {"rows": [["Антистатичность", "Опционально: антистатик с клеммой заземления"], ["Слои изоляции", "1 или более, по расчёту"], ["Материалы", "Стеклоткань, кремнезём, сэндвич-утеплители"]], "header": "Дополнительные характеристики", "columns": ["Параметр", "Значение"]}], "brief_desc": "Термочехлы SAFEISOL производятся согласно ТУ 5760-001-44498679-2015 и предназначены для теплоизоляции, защиты персонала и оборудования от высоких температур в различных сферах промышленности и ЖКХ.", "description": [{"type": "paragraph", "value": "Термочехлы SAFEISOL производятся согласно ТУ 5760-001-44498679-2015, применяются в различных областях промышленности и сфере ЖКХ. Они сохраняют тепло, защищают персонал от ожогов, оборудование — от воздействия высоких температур, включая открытое пламя."}, {"type": "paragraph", "value": "Конструкция может состоять из одного или нескольких слоёв утеплителя. Расчёт изоляционных свойств производится с учётом коэффициента теплопроводности материалов, согласно СП 61.13330.2012 и регламенту ТР ТС 2011."}, {"type": "paragraph", "value": "Материалы — высокотемпературная стеклоткань или кремнезём, а также сэндвич-структура из нескольких слоёв утеплителя. Обеспечивается устойчивость к вибрациям, УФ/ИК-излучению, влаге и другим атмосферным воздействиям."}, {"type": "list", "value": {"title": "Подтипы термочехлов SAFEISOL для запорно-регулирующей арматуры:", "values": ["Температурный диапазон до 150°C", "Температурный диапазон до 250°C", "Температурный диапазон от 250°C до 570°C", "Температурный диапазон от 250°C до 900°C"]}}, {"type": "paragraph", "value": "Термочехлы соответствуют ГОСТ 17516.1 по виброустойчивости (11-я степень жёсткости) и ударостойкости (6-я степень жёсткости). Конкретные параметры согласовываются с Заказчиком."}, {"type": "paragraph", "value": "Материалы, применяемые в производстве термочехлов SAFEISOL, должны соответствовать стандартам, ТУ и контрактам, и иметь соответствующие сертификаты."}]}, "category": 1}}, {"model": "main.products", "pk": 4, "fields": {"slug": "termochehly-safeisol-fl-dlya-evropallet-i-roll-kontejnerov", "title": "Термочехлы SAFEISOL FL для европаллет и Ролл контейнеров", "content": {"title": "Термочехлы SAFEISOL FL для европаллет и Ролл контейнеров", "images": [{"src": "thermal cover for roll container/1111.png", "type": "image"}, {"src": "thermal cover for roll container/2222.png", "type": "image"}, {"src": "thermal cover for roll container/3333.png", "type": "image"}], "tables": [{"rows": [["Материал оболочки", "Полипропилен, нагрузка на разрыв от 500 Н"], ["Температурный режим", "от -50°C до +70°C"], ["Макс. изменение температуры", "0,2°C в час"], ["Теплопроводность", "0,039 Вт/(м·°С)"], ["Гарантийный срок", "12 месяцев"]], "header": "Технические характеристики", "columns": ["Параметр", "Характеристика"]}, {"rows": [["Тип застёжки", "Молния / Липучка Velcro (50-100 мм)"], ["Изоляция", "150–400 г/м² (по умолчанию 150–200 г/м²)"], ["УФ-устойчивость", "Да"], ["Карман для документов", "Да"], ["Крепления", "Ручки, ремни, липучки, пластиковая фурнитура"]], "header": "Конструктивные особенности", "columns": ["Опция", "Описание"]}, {"rows": [["1", "800×1200×1200"], ["2", "800×1200×1500"], ["3", "800×1200×1700"], ["4", "800×1200×1800"], ["5", "800×1200×2000"], ["6", "800×1200×2200"]], "header": "Типовые размеры термочехлов для паллет", "columns": ["№", "Размер (Ш×Г×В), мм"]}, {"rows": [["1", "800×600×915"], ["2", "800×715×1500"], ["3", "800×600×1700"], ["4", "800×704×1630"], ["5", "800×600×1800"], ["6", "800×1200×1700"]], "header": "Типовые размеры термочехлов для Ролл контейнеров", "columns": ["№", "Размер (Ш×Г×В), мм"]}], "brief_desc": "Высокоэффективные термочехлы SAFEISOL FL по ТУ 5760-003-44498679-2017 предназначены для поддержания температуры при транспортировке пищевых и непищевых товаров на паллетах и в ролл контейнерах.", "description": [{"type": "paragraph", "value": "Термочехлы SAFEISOL FL применяются для обеспечения необходимого температурного режима при перевозке продуктов питания, медикаментов, химических веществ, живых растений и цветов вне зависимости от внешней температуры."}, {"type": "list", "value": {"title": "Примеры транспортируемой продукции:", "values": ["Замороженное мясо и рыба", "Молочные и кисломолочные продукты", "Свежие, сухие и экзотические фрукты и овощи", "Лекарственные препараты и химические вещества", "Цветы, газонная трава, растения"]}}, {"type": "paragraph", "value": "Термочехлы SAFEISOL FL изготавливаются из прочных материалов с влагозащитой и устойчивостью к механическим и климатическим воздействиям. В конструкции предусмотрены ручки, карманы, липучки и молнии, а также различные способы крепления дна."}]}, "category": 1}}, {"model": "main.products", "pk": 5, "fields": {"slug": "termochehly-ognestojkie-safeisol", "title": "Термочехлы огнестойкие SAFEISOL", "content": {"title": "Термочехлы огнестойкие SAFEISOL (СЭЙФИЗОЛ)", "images": [{"src": "fireproof thermal cover/2222.png", "type": "image"}, {"src": "fireproof thermal cover/1111.png", "type": "image"}], "tables": [{"rows": [["Степень горения", "НГ (не горит)"], ["Температурный диапазон", "от -80°C до +900°C"], ["Защита от пыли и влаги", "IP65"], ["Токопроводящая поверхность", "Менее 10⁹ Ом/дм²"]], "header": "Основные характеристики", "columns": ["Параметр", "Характеристика"]}], "documents": [{"src": "ОПРОСНЫЙ ЛИСТ ДЛЯ ТЕРМОЧЕХЛОВ SAFEISOL ОГНЕСТОЙКИХ.docx", "name": "Опросный лист SAFEISOL", "size": "227 К/б", "format": "DOCX"}], "brief_desc": "Огнестойкие термочехлы SAFEISOL предназначены для временной защиты оборудования и устройств от воздействия открытого пламени и высоких температур.", "description": [{"type": "paragraph", "value": "Термочехлы огнестойкие SAFEISOL применяются для защиты производственного оборудования, информационных устройств и других важных компонентов от воздействия огня и экстремальных температур. Они изготавливаются из многослойных негорючих материалов и устойчивы к вибрациям, влаге, ультрафиолетовому и инфракрасному излучению."}, {"type": "list", "value": {"title": "Преимущества огнестойких термочехлов SAFEISOL:", "values": ["Многослойная конструкция с кремнеземной или стеклотканевой основой", "Высокая стойкость к пламени и температуре до +900°C", "Антистатическое исполнение с клеммой заземления", "Устойчивость к погодным воздействиям и вибрации", "Отличная шумоизоляция"]}}, {"type": "paragraph", "value": "Расчеты и подбор материалов выполняются индивидуально на основе данных заказчика, в соответствии с нормами СНиП 41-03-2003 и СП 61.13330.2012."}]}, "category": 1}}, {"model": "main.products", "pk": 6, "fields": {"slug": "termochehly-safeisol-dlya-parovyh-i-gazovyh-turbin", "title": "Термочехлы SAFEISOL для паровых и газовых турбин", "content": {"title": "Термочехлы SAFEISOL для паровых и газовых турбин", "images": [{"src": "thermal covers for steam and gas turbines/1111.png", "type": "image"}], "tables": [{"rows": [["Степень горения", "НГ (не горит)"], ["Степень защиты IP", "IP65 (для отдельных отводящих узлов)"], ["Температурный диапазон", "от -80°C до +900°C"], ["Проводимость поверхности", "менее 10⁹ Ом/дм² (опционально)"]], "header": "Основные характеристики", "columns": ["Параметр", "Характеристика"]}], "documents": [{"src": "ОПРОСНЫЙ ЛИСТ ДЛЯ ТЕРМОЧЕХЛОВ SAFEISOL ПАРОВЫХ И ГАЗОВЫХ ТУРБИН.docx", "name": "Опросный лист SAFEISOL", "size": "227 К/б", "format": "DOCX"}], "brief_desc": "Комплекс теплоизоляционных чехлов SAFEISOL для турбин обеспечивает сохранение тепла, безопасность, шумоизоляцию и устойчивость к вибрациям. Производится по стандарту ТУ 5760-001-44498679-2015.", "description": [{"type": "paragraph", "value": "Термочехлы SAFEISOL для турбин представляют собой модульную, быстроразъёмную конструкцию, разработанную по индивидуальному заказу. Основная задача — сохранение тепла, снижение потерь и защита обслуживающего персонала."}, {"type": "list", "value": {"title": "Работы, входящие в изготовление термочехлов:", "values": ["Обследование турбины и проверка документации", "Замеры всех элементов и отходящих узлов", "Расчёт площади и толщины теплоизоляции", "Разработка чертежей, спецификаций и пояснительной записки", "Производство и монтаж чехлов"]}}, {"type": "paragraph", "value": "Чехлы SAFEISOL изготавливаются из высокотемпературной ткани с базальтовым или стекловолокнистым наполнением. Все части конструкции прошиты насквозь, что повышает прочность и долговечность изделия."}, {"type": "paragraph", "value": "Изоляция производится с соблюдением СНиП 41-03-2003, СП 61.13330.2012, а также требований ТР ТС 2011. При необходимости исключения накопления статического электричества используются ткани с антистатиком и заземляющей клеммой, что актуально для энергетики и газовой промышленности."}]}, "category": 1}}, {"model": "main.products", "pk": 7, "fields": {"slug": "avtomatizirovannye-sistemy-upravleniya-tehnologicheskimi-processami-i-zashity", "title": "Системы АСУ ТП", "content": {"title": "Автоматизированные системы управления технологическими процессами и защиты", "images": [{"src": "acs/1.png", "type": "image"}, {"src": "acs/2.png", "type": "image"}, {"src": "acs/3.png", "type": "image"}], "brief_desc": "ООО «Безопасная теплоизоляция» предлагает комплексные решения по автоматизации технологических процессов, включая разработку и внедрение систем управления, с использованием оборудования мировых лидеров отрасли.", "description": [{"type": "paragraph", "value": "Компания ООО «Безопасная теплоизоляция» разрабатывает и внедряет автоматизированные системы управления технологическими процессами (АСУ ТП), используя оборудование ведущих мировых производителей. Мы работаем с технологиями для нефтехимической, газоперерабатывающей, химической и других отраслей промышленности."}, {"type": "list", "value": {"title": "Преимущества автоматизированных систем управления:", "values": ["Измерение, обработка и регистрация данных от первичных преобразователей для технологического процесса", "Дистанционное управление исполнительными механизмами и частотными преобразователями", "Экономия времени и средств на обработку данных по сырью, очистке и транспортировке", "Предотвращение аварийных ситуаций и соблюдение технологического регламента", "Контроль состояния и работы технологического оборудования", "Снижение себестоимости и потерь рабочего времени"]}}, {"type": "paragraph", "value": "Мы обеспечиваем полный цикл работ по автоматизации, включая проектирование, выбор оборудования, программирование, монтаж и пуско-наладочные работы. В процессе работы используются только современные технологии от ведущих мировых брендов."}, {"type": "paragraph", "value": "Основные этапы работы с автоматизированными системами:"}, {"type": "list", "value": {"title": "", "values": ["Создание перечня точек контроля и алгоритмов по ТЗ или технологическому регламенту", "Создание мнемосхем, схем внешних подключений, структурных схем и описаний системы", "Согласование выбора контроллеров, закупка и сборка оборудования на производственных мощностях", "Разработка программного обеспечения для контроллеров по алгоритмам", "Установка, настройка и запуск системы на предприятии заказчика"]}}, {"type": "img", "value": "acs/9.png"}]}, "category": 5}}, {"model": "main.categories", "pk": 1, "fields": {"title": "Термочехлы", "slug": "termochehly"}}, {"model": "main.categories", "pk": 5, "fields": {"title": "Системы АСУ ТП", "slug": "sistemy-asu-tp"}}, {"model": "main.services", "pk": 0, "fields": {"name": "Комплексные услуги связанные с проектированием и внедрением теплоизоляции.", "slug": "kompleksnye-uslugi-svyazannye-s-proektirovaniem-i-vnedreniem-teploizolyacii", "content": [{"type": "list", "value": {"values": ["проектные работы по расчету эффективности применения теплоизоляции производства ООО «Безопасной теплоизоляции». В данные работы входит полный расчет согласно предоставленными данными от заказчика с учетом географического расположения, температуры окружающего воздуха согласно требованиям и температуры спутника. На основе СНиП 41-03-2003 и СП 61.13330.2012  мы предоставим необходимые расчеты и сформируем данные по экономии как тепловых показателей, так и финансовых за необходимый период времени. По умолчанию берется один календарный год;", "предпроектное обследование объекта. В случае масштабных работ, мы осуществляем предпроектное обследование объекта. В данные работы включены замеры геометрических параметров и измерение температур в критических точках;"]}}]}}, {"model": "main.services", "pk": 1, "fields": {"name": "Сборка и монтаж оборудования по проекту заказчика.", "slug": "sborka-i-montazh-oborudovaniya-po-proektu-zakazchika", "content": [{"type": "paragraph", "value": "У Вас есть проект, который выполняет ваша организация и с учётом загруженности и накладок ваши специалисты не успевают произвести сборку и монтаж шкафов автоматизации."}, {"type": "list", "value": {"title": "Мы с радостью поможем и включимся в работу на любой стадии проекта. Изучив монтажные схемы мы сможем осуществить:", "values": ["закупку комплектующих или работать на давальческом сырье", "сделать монтаж и сборку оборудования согласно проекту не нарушая нормативной документации", "перенесем присланный проект в контроллеры и сможем проверить каналы на предмет правильности подключения и срабатывания алгоритмов", "при необходимости проведем FAT испытания", "упакуем и отправим по указанному адресу в надлежащем состоянии"]}}, {"type": "paragraph", "value": "Для получения консультации и проработки информации, присылайте запросы на почту: service@safeisol.ru"}]}}, {"model": "main.services", "pk": 2, "fields": {"name": "Предпроектное обследование и монтажные работы.", "slug": "predproektnoe-obsledovanie-i-montazhnye-raboty", "content": [{"type": "paragraph", "value": "Для получения полного объема изолируемого оборудования, наши специалисты выезжают на объект заказчика, проводят мероприятия замера оборудования и сбору информации о технологическом процессе учитывая температурные характеристики процесса и окружающей среды."}, {"type": "paragraph", "value": "По завершении составления конструкторской документации, ее согласования и реализации процесса производства, специалисты приезжают на монтаж изделий в соответствии с проектом."}, {"type": "paragraph", "value": "Все итерации проекта сводятся к реализации проекта «под ключ» и оптимизируют недочеты в процессе бюрократического взаимодействия и возможной передачи недостоверных данных."}]}}, {"model": "main.services", "pk": 4, "fields": {"name": "Производство термочехлов под вашим брендом.", "slug": "proizvodstvo-termochehlov-pod-vashim-brendom", "content": [{"type": "list", "value": {"title": "", "values": ["По вашим чертежам или без них (в случае отсутствия чертежей необходимо указать наименование зачехляемого оборудования и температурный режим);", "По вашим лекалам или без них (наши инженеры и закройщики сделают лекала по необходимых геометрическим размерам);", "Из давальческого сырья или своего (мы можем использовать как свои комплектующие так и переданные заказчиком в качестве давальческого);", "Согласно вашей технологии и пожеланиям (наша команда непременно учтет все особенности вашего изделия и технологические нюансы);", "Возможность поэтапного контроля (мы можем присылать фото или видео после каждой технологической операции или пригласить в наш цех контролирующего специалиста из компании заказчика);", "Возможность пошива опытного образца (в случае производственной необходимости мы готовы произвести образец для осмотра или испытаний)."]}}]}}, {"model": "main.certificates", "pk": 0, "fields": {"title": "iso_ooo_bezopasnaya_teploizolyaciya.jpg"}}, {"model": "main.certificates", "pk": 1, "fields": {"title": "iso_ooo_bezopasnaya_teploizolyaciya2.jpg"}}, {"model": "main.certificates", "pk": 2, "fields": {"title": "otkaznoye_kachestvo.jpg"}}, {"model": "main.certificates", "pk": 3, "fields": {"title": "sert_iso_audit_bt.jpg"}}, {"model": "main.certificates", "pk": 4, "fields": {"title": "sertifikat_safeisol_fl_2020.jpg"}}, {"model": "main.certificates", "pk": 5, "fields": {"title": "sertifikat_safeisol_ng.jpg"}}, {"model": "main.certificates", "pk": 6, "fields": {"title": "sertifikat_termochekhly_vzryvozashchishchennyye_safeisol_ex_bezopasnaya_teploizolyatsiya.jpg"}}, {"model": "main.certificates", "pk": 7, "fields": {"title": "sertifikat_termochekhly_vzryvozashchishchennyye_safeisol_ex_bezopasnaya_teploizolyatsiya_pril1.jpg"}}, {"model": "main.certificates", "pk": 8, "fields": {"title": "sertifikat_termochekhly_vzryvozashchishchennyye_safeisol_ex_bezopasnaya_teploizolyatsiya_pril2.jpg"}}, {"model": "main.certificates", "pk": 9, "fields": {"title": "sertifikat_termochekhly_vzryvozashchishchennyye_safeisol_ex_bezopasnaya_teploizolyatsiya_pril3.jpg"}}, {"model": "main.certificates", "pk": 10, "fields": {"title": "sertifikat_termochekhly_vzryvozashchishchennyye_safeisol_ex_bezopasnaya_teploizolyatsiya_pril4.jpg"}}]
+[
+{
+    "model": "main.product",
+    "pk": 1,
+    "fields": {
+        "slug": "tiermochiekhly-vzryvozashchishchionnyie-safeisol-ex",
+        "title": "Термочехлы взрывозащищенные SAFEISOL Ex",
+        "content": {
+            "images": [
+                {
+                    "src": "explosion-proof thermal cover/1111.png",
+                    "type": "image"
+                },
+                {
+                    "src": "explosion-proof thermal cover/2222.png",
+                    "type": "image"
+                },
+                {
+                    "src": "explosion-proof thermal cover/3333.png",
+                    "type": "image"
+                },
+                {
+                    "src": "explosion-proof thermal cover/4444.png",
+                    "type": "image"
+                }
+            ],
+            "tables": [
+                {
+                    "rows": [
+                        [
+                            "Маркировка взрывозащиты",
+                            "1Ex e IIC T6 Gb X / T5 / e mb IIC T6 / T5 или II Gb X (без электрооборудования)"
+                        ],
+                        [
+                            "Рабочая температура окружающей среды",
+                            "–60°C ÷ +80°C"
+                        ],
+                        [
+                            "Сопротивление поверхности",
+                            "не более 10⁹ Ом"
+                        ],
+                        [
+                            "Напряжение питания",
+                            "≈220В; 208–227 В"
+                        ],
+                        [
+                            "Максимальная мощность одного нагревателя",
+                            "от 10 до 2000 Вт (единой длиной)"
+                        ],
+                        [
+                            "Степень защиты оболочки",
+                            "IP65"
+                        ],
+                        [
+                            "Климатическое исполнение",
+                            "УХЛ1 согласно ГОСТ 15150-69"
+                        ]
+                    ],
+                    "header": "Термочехол SAFEISOL Ex",
+                    "columns": [
+                        "Параметр",
+                        "Значение"
+                    ]
+                },
+                {
+                    "rows": [
+                        [
+                            "Маркировка",
+                            "Корпус SAFEISOL Ex: 1 Ex e II T5 Gb X"
+                        ],
+                        [
+                            "Напряжение питания",
+                            "не более 440 В постоянного или переменного тока"
+                        ],
+                        [
+                            "Максимальный ток",
+                            "10А (клеммы 264-120) / 23А (клеммы 862-1503/999-950)"
+                        ],
+                        [
+                            "Частота напряжения",
+                            "50 Гц"
+                        ],
+                        [
+                            "Температура окружающей среды",
+                            "от –60°C до +80°C"
+                        ],
+                        [
+                            "Класс защиты от поражения током",
+                            "Класс I по ГОСТ 12.2.007.0-75"
+                        ],
+                        [
+                            "Степень защиты оболочки",
+                            "не ниже IP66 по ГОСТ 14254-2015"
+                        ]
+                    ],
+                    "header": "Корпус соединительный SAFEISOL Ex",
+                    "columns": [
+                        "Параметр",
+                        "Значение"
+                    ]
+                },
+                {
+                    "rows": [
+                        [
+                            "Маркировка взрывозащиты",
+                            "1Ex e IIC T6/T5 Gb X или 1Ex e mb IIC T6/T5 Gb X"
+                        ],
+                        [
+                            "Напряжение питания",
+                            "≈220В; 208–227 В"
+                        ],
+                        [
+                            "Максимальная мощность одного нагревателя",
+                            "от 10 до 2000 Вт (единой длиной)"
+                        ],
+                        [
+                            "Класс защиты от поражения током",
+                            "Класс I по ГОСТ 12.2.007.0-75"
+                        ],
+                        [
+                            "Температура окружающей среды",
+                            "от –60°C до +80°C"
+                        ]
+                    ],
+                    "header": "Нагреватель на основе греющего кабеля SAFEISOL Ex НГК-хх",
+                    "columns": [
+                        "Параметр",
+                        "Значение"
+                    ]
+                }
+            ],
+            "documents": [
+                {
+                    "src": "ОПРОСНЫЙ ЛИСТ ДЛЯ ТЕРМОЧЕХЛОВ ВЗРЫВОЗАЩИЩЕННЫЙ SAFEISOL Ex.docx",
+                    "name": "Опросный лист SAFEISOL Ex",
+                    "size": "297 К/б",
+                    "format": "DOCX"
+                }
+            ],
+            "brief_desc": "Термочехлы SAFEISOL Ex производятся согласно ТУ 5760-002-44498679-2017 000 \"Безопасная теплоизоляция\" и предназначены для эксплуатации во взрывоопасных зонах: нефтегазовой, химической и нефтехимической промышленности, горнодобывающей и горно- перерабатвающей а также других отраслях. Основная задача термочехлов оборудования, приборов, трубопроводов, различного типа технологического оборудования в том числе контрольного-измерительного, от внешних атмосферных осадков, а также обогрева и обеспечения постоянной положительной температуры для поддержания рабочих условий эксплуатации данного оборудования и приборов.",
+            "description": [
+                {
+                    "type": "paragraph",
+                    "value": "Термочехлы SAFEISOL Ex производятся согласно ТУ 5760-002-44498679-2017 000 \"Безопасная теплоизоляция\" и предназначены для эксплуатации во взрывоопасных зонах: нефтегазовой, химической и нефтехимической промышленности, горнодобывающей и горно- перерабатвающей а также других отраслях. Основная задача термочехлов оборудования, приборов, трубопроводов, различного типа технологического оборудования в том числе контрольного-измерительного, от внешних атмосферных осадков, а также обогрева и обеспечения постоянной положительной температуры для поддержания рабочих условий эксплуатации данного оборудования и приборов."
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Область применения: взрывоопасные зоны помещений и наружных установок в соответствии с указанной маркировкой, отраслевыми правилами безопасности рекомендациями изготовителя."
+                },
+                {
+                    "type": "img",
+                    "value": "explosion-proof thermal cover/IMG_20240213_180403.png"
+                },
+                {
+                    "type": "list",
+                    "value": {
+                        "title": "Термочехлы SAFEISOL Ex в комплекте с соединительными корпусами, кабельными вводами и нагревателями на основе грейющего кабеля относятся к электрическому оборудованию для взрывоопасных зон и соответствуют следующим условиям взрывозащиты:",
+                        "values": [
+                            "ТР ТС 012/2011 «О безопасности оборудования для работы во взрывоопасных средах»",
+                            "взрывоопасная зона класса 1 (по ГОСТ ИЕS 60079-10-1-2011)",
+                            "температурные классы T3, T4, T5, T6 (по ГОСТ ИЕS 60079-10-1-2011)",
+                            "маркировка взрывозащиты присваивается согласно ГОСТ IEC 60079-14-2011 и ГОСТ Р МЭК 60079-25-2012",
+                            "соответствует требованиям ГОСТ Р МЭК 60079-0-2011, ГОСТ ИЕS 60079-1-2011, ГОСТ Р МЭК 60079-11-2010, ГОСТ Р МЭК 60079-18-2011, ГОСТ Р МЭК 60079-7:2006 и настоящим техническим условиям."
+                        ]
+                    }
+                }
+            ]
+        },
+        "category": 1
+    }
+},
+{
+    "model": "main.product",
+    "pk": 2,
+    "fields": {
+        "slug": "korobki-soedinitelnye-vzryvozashishennye-safeisol-ex",
+        "title": "Коробки соединительные взрывозащищенные SAFEISOL Ex",
+        "content": {
+            "images": [
+                {
+                    "src": "explosion-proof junction box/1.png",
+                    "type": "image"
+                },
+                {
+                    "src": "explosion-proof junction box/2.png",
+                    "type": "image"
+                }
+            ],
+            "tables": [
+                {
+                    "rows": [
+                        [
+                            "Маркировка",
+                            "Корпус SAFEISOL Ex: 1 Ex e II T5 Gb X"
+                        ],
+                        [
+                            "Напряжение питания",
+                            "не более 440 В постоянного или переменного тока"
+                        ],
+                        [
+                            "Максимальный ток",
+                            "10А (клеммы 264-120) / 23А (клеммы 862-1503/999-950)"
+                        ],
+                        [
+                            "Частота напряжения",
+                            "50 Гц"
+                        ],
+                        [
+                            "Температура окружающей среды",
+                            "от –60°C до +80°C"
+                        ],
+                        [
+                            "Класс защиты от поражения током",
+                            "Класс I по ГОСТ 12.2.007.0-75"
+                        ],
+                        [
+                            "Степень защиты оболочки",
+                            "не ниже IP66 по ГОСТ 14254-2015"
+                        ]
+                    ],
+                    "header": "Корпус соединительный SAFEISOL Ex",
+                    "columns": [
+                        "Параметр",
+                        "Значение"
+                    ]
+                }
+            ],
+            "brief_desc": "Коробка SAFEISOL Ех КСхх — это готовое решение для надежного и герметичного соединения кабелей и проводов. Она обеспечивает подачу питания к нагревательным элементам термочехла, а также позволяет организовать информационную и сигнальную коммутацию в сложных условиях эксплуатации.",
+            "description": [
+                {
+                    "type": "paragraph",
+                    "value": "Коробка соединительная SAFEISOL Ех КСхх в комплекте служит для осуществления герметичного соединения и коммутации проводов, кабелей для подачи электрического питания нагревательных элементов термочехла, информационных и сигнальных коммутаций."
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Пример: схема подключения в коробке соединительной SAFEISOL Ex с нагревателем:"
+                },
+                {
+                    "type": "img",
+                    "value": "explosion-proof junction box/shema_podklyuchenie_nagrevatelya_termochehla_19_11_19_fon[1]-Photoroom.png"
+                }
+            ]
+        },
+        "category": 1
+    }
+},
+{
+    "model": "main.product",
+    "pk": 3,
+    "fields": {
+        "slug": "termochehly-safeisol-dlya-zaporno-reguliruyushej-armatury",
+        "title": "Термочехлы SAFEISOL для запорно-регулирующей арматуры",
+        "content": {
+            "title": "Термочехлы SAFEISOL для запорно-регулирующей арматуры",
+            "images": [
+                {
+                    "src": "thermal covers for shut-off and control valves and general industrial equipment/1111.png",
+                    "type": "image"
+                },
+                {
+                    "src": "thermal covers for shut-off and control valves and general industrial equipment/2222.png",
+                    "type": "image"
+                },
+                {
+                    "src": "thermal covers for shut-off and control valves and general industrial equipment/3333.png",
+                    "type": "image"
+                },
+                {
+                    "src": "thermal covers for shut-off and control valves and general industrial equipment/4444.png",
+                    "type": "image"
+                }
+            ],
+            "tables": [
+                {
+                    "rows": [
+                        [
+                            "Температурный диапазон",
+                            "от -60°C до +900°C (в зависимости от подтипа)"
+                        ],
+                        [
+                            "Виброустойчивость",
+                            "Соответствует ГОСТ 17516.1, степень жёсткости 11"
+                        ],
+                        [
+                            "Ударостойкость",
+                            "Соответствует ГОСТ 17516.1, степень жёсткости 6"
+                        ]
+                    ],
+                    "header": "Технические данные",
+                    "columns": [
+                        "Параметр",
+                        "Значение"
+                    ]
+                },
+                {
+                    "rows": [
+                        [
+                            "Антистатичность",
+                            "Опционально: антистатик с клеммой заземления"
+                        ],
+                        [
+                            "Слои изоляции",
+                            "1 или более, по расчёту"
+                        ],
+                        [
+                            "Материалы",
+                            "Стеклоткань, кремнезём, сэндвич-утеплители"
+                        ]
+                    ],
+                    "header": "Дополнительные характеристики",
+                    "columns": [
+                        "Параметр",
+                        "Значение"
+                    ]
+                }
+            ],
+            "brief_desc": "Термочехлы SAFEISOL производятся согласно ТУ 5760-001-44498679-2015 и предназначены для теплоизоляции, защиты персонала и оборудования от высоких температур в различных сферах промышленности и ЖКХ.",
+            "description": [
+                {
+                    "type": "paragraph",
+                    "value": "Термочехлы SAFEISOL производятся согласно ТУ 5760-001-44498679-2015, применяются в различных областях промышленности и сфере ЖКХ. Они сохраняют тепло, защищают персонал от ожогов, оборудование — от воздействия высоких температур, включая открытое пламя."
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Конструкция может состоять из одного или нескольких слоёв утеплителя. Расчёт изоляционных свойств производится с учётом коэффициента теплопроводности материалов, согласно СП 61.13330.2012 и регламенту ТР ТС 2011."
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Материалы — высокотемпературная стеклоткань или кремнезём, а также сэндвич-структура из нескольких слоёв утеплителя. Обеспечивается устойчивость к вибрациям, УФ/ИК-излучению, влаге и другим атмосферным воздействиям."
+                },
+                {
+                    "type": "list",
+                    "value": {
+                        "title": "Подтипы термочехлов SAFEISOL для запорно-регулирующей арматуры:",
+                        "values": [
+                            "Температурный диапазон до 150°C",
+                            "Температурный диапазон до 250°C",
+                            "Температурный диапазон от 250°C до 570°C",
+                            "Температурный диапазон от 250°C до 900°C"
+                        ]
+                    }
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Термочехлы соответствуют ГОСТ 17516.1 по виброустойчивости (11-я степень жёсткости) и ударостойкости (6-я степень жёсткости). Конкретные параметры согласовываются с Заказчиком."
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Материалы, применяемые в производстве термочехлов SAFEISOL, должны соответствовать стандартам, ТУ и контрактам, и иметь соответствующие сертификаты."
+                }
+            ]
+        },
+        "category": 1
+    }
+},
+{
+    "model": "main.product",
+    "pk": 4,
+    "fields": {
+        "slug": "termochehly-safeisol-fl-dlya-evropallet-i-roll-kontejnerov",
+        "title": "Термочехлы SAFEISOL FL для европаллет и Ролл контейнеров",
+        "content": {
+            "title": "Термочехлы SAFEISOL FL для европаллет и Ролл контейнеров",
+            "images": [
+                {
+                    "src": "thermal cover for roll container/1111.png",
+                    "type": "image"
+                },
+                {
+                    "src": "thermal cover for roll container/2222.png",
+                    "type": "image"
+                },
+                {
+                    "src": "thermal cover for roll container/3333.png",
+                    "type": "image"
+                }
+            ],
+            "tables": [
+                {
+                    "rows": [
+                        [
+                            "Материал оболочки",
+                            "Полипропилен, нагрузка на разрыв от 500 Н"
+                        ],
+                        [
+                            "Температурный режим",
+                            "от -50°C до +70°C"
+                        ],
+                        [
+                            "Макс. изменение температуры",
+                            "0,2°C в час"
+                        ],
+                        [
+                            "Теплопроводность",
+                            "0,039 Вт/(м·°С)"
+                        ],
+                        [
+                            "Гарантийный срок",
+                            "12 месяцев"
+                        ]
+                    ],
+                    "header": "Технические характеристики",
+                    "columns": [
+                        "Параметр",
+                        "Характеристика"
+                    ]
+                },
+                {
+                    "rows": [
+                        [
+                            "Тип застёжки",
+                            "Молния / Липучка Velcro (50-100 мм)"
+                        ],
+                        [
+                            "Изоляция",
+                            "150–400 г/м² (по умолчанию 150–200 г/м²)"
+                        ],
+                        [
+                            "УФ-устойчивость",
+                            "Да"
+                        ],
+                        [
+                            "Карман для документов",
+                            "Да"
+                        ],
+                        [
+                            "Крепления",
+                            "Ручки, ремни, липучки, пластиковая фурнитура"
+                        ]
+                    ],
+                    "header": "Конструктивные особенности",
+                    "columns": [
+                        "Опция",
+                        "Описание"
+                    ]
+                },
+                {
+                    "rows": [
+                        [
+                            "1",
+                            "800×1200×1200"
+                        ],
+                        [
+                            "2",
+                            "800×1200×1500"
+                        ],
+                        [
+                            "3",
+                            "800×1200×1700"
+                        ],
+                        [
+                            "4",
+                            "800×1200×1800"
+                        ],
+                        [
+                            "5",
+                            "800×1200×2000"
+                        ],
+                        [
+                            "6",
+                            "800×1200×2200"
+                        ]
+                    ],
+                    "header": "Типовые размеры термочехлов для паллет",
+                    "columns": [
+                        "№",
+                        "Размер (Ш×Г×В), мм"
+                    ]
+                },
+                {
+                    "rows": [
+                        [
+                            "1",
+                            "800×600×915"
+                        ],
+                        [
+                            "2",
+                            "800×715×1500"
+                        ],
+                        [
+                            "3",
+                            "800×600×1700"
+                        ],
+                        [
+                            "4",
+                            "800×704×1630"
+                        ],
+                        [
+                            "5",
+                            "800×600×1800"
+                        ],
+                        [
+                            "6",
+                            "800×1200×1700"
+                        ]
+                    ],
+                    "header": "Типовые размеры термочехлов для Ролл контейнеров",
+                    "columns": [
+                        "№",
+                        "Размер (Ш×Г×В), мм"
+                    ]
+                }
+            ],
+            "brief_desc": "Высокоэффективные термочехлы SAFEISOL FL по ТУ 5760-003-44498679-2017 предназначены для поддержания температуры при транспортировке пищевых и непищевых товаров на паллетах и в ролл контейнерах.",
+            "description": [
+                {
+                    "type": "paragraph",
+                    "value": "Термочехлы SAFEISOL FL применяются для обеспечения необходимого температурного режима при перевозке продуктов питания, медикаментов, химических веществ, живых растений и цветов вне зависимости от внешней температуры."
+                },
+                {
+                    "type": "list",
+                    "value": {
+                        "title": "Примеры транспортируемой продукции:",
+                        "values": [
+                            "Замороженное мясо и рыба",
+                            "Молочные и кисломолочные продукты",
+                            "Свежие, сухие и экзотические фрукты и овощи",
+                            "Лекарственные препараты и химические вещества",
+                            "Цветы, газонная трава, растения"
+                        ]
+                    }
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Термочехлы SAFEISOL FL изготавливаются из прочных материалов с влагозащитой и устойчивостью к механическим и климатическим воздействиям. В конструкции предусмотрены ручки, карманы, липучки и молнии, а также различные способы крепления дна."
+                }
+            ]
+        },
+        "category": 1
+    }
+},
+{
+    "model": "main.product",
+    "pk": 5,
+    "fields": {
+        "slug": "termochehly-ognestojkie-safeisol",
+        "title": "Термочехлы огнестойкие SAFEISOL",
+        "content": {
+            "title": "Термочехлы огнестойкие SAFEISOL (СЭЙФИЗОЛ)",
+            "images": [
+                {
+                    "src": "fireproof thermal cover/2222.png",
+                    "type": "image"
+                },
+                {
+                    "src": "fireproof thermal cover/1111.png",
+                    "type": "image"
+                }
+            ],
+            "tables": [
+                {
+                    "rows": [
+                        [
+                            "Степень горения",
+                            "НГ (не горит)"
+                        ],
+                        [
+                            "Температурный диапазон",
+                            "от -80°C до +900°C"
+                        ],
+                        [
+                            "Защита от пыли и влаги",
+                            "IP65"
+                        ],
+                        [
+                            "Токопроводящая поверхность",
+                            "Менее 10⁹ Ом/дм²"
+                        ]
+                    ],
+                    "header": "Основные характеристики",
+                    "columns": [
+                        "Параметр",
+                        "Характеристика"
+                    ]
+                }
+            ],
+            "documents": [
+                {
+                    "src": "ОПРОСНЫЙ ЛИСТ ДЛЯ ТЕРМОЧЕХЛОВ SAFEISOL ОГНЕСТОЙКИХ.docx",
+                    "name": "Опросный лист SAFEISOL",
+                    "size": "227 К/б",
+                    "format": "DOCX"
+                }
+            ],
+            "brief_desc": "Огнестойкие термочехлы SAFEISOL предназначены для временной защиты оборудования и устройств от воздействия открытого пламени и высоких температур.",
+            "description": [
+                {
+                    "type": "paragraph",
+                    "value": "Термочехлы огнестойкие SAFEISOL применяются для защиты производственного оборудования, информационных устройств и других важных компонентов от воздействия огня и экстремальных температур. Они изготавливаются из многослойных негорючих материалов и устойчивы к вибрациям, влаге, ультрафиолетовому и инфракрасному излучению."
+                },
+                {
+                    "type": "list",
+                    "value": {
+                        "title": "Преимущества огнестойких термочехлов SAFEISOL:",
+                        "values": [
+                            "Многослойная конструкция с кремнеземной или стеклотканевой основой",
+                            "Высокая стойкость к пламени и температуре до +900°C",
+                            "Антистатическое исполнение с клеммой заземления",
+                            "Устойчивость к погодным воздействиям и вибрации",
+                            "Отличная шумоизоляция"
+                        ]
+                    }
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Расчеты и подбор материалов выполняются индивидуально на основе данных заказчика, в соответствии с нормами СНиП 41-03-2003 и СП 61.13330.2012."
+                }
+            ]
+        },
+        "category": 1
+    }
+},
+{
+    "model": "main.product",
+    "pk": 6,
+    "fields": {
+        "slug": "termochehly-safeisol-dlya-parovyh-i-gazovyh-turbin",
+        "title": "Термочехлы SAFEISOL для паровых и газовых турбин",
+        "content": {
+            "title": "Термочехлы SAFEISOL для паровых и газовых турбин",
+            "images": [
+                {
+                    "src": "thermal covers for steam and gas turbines/1111.png",
+                    "type": "image"
+                }
+            ],
+            "tables": [
+                {
+                    "rows": [
+                        [
+                            "Степень горения",
+                            "НГ (не горит)"
+                        ],
+                        [
+                            "Степень защиты IP",
+                            "IP65 (для отдельных отводящих узлов)"
+                        ],
+                        [
+                            "Температурный диапазон",
+                            "от -80°C до +900°C"
+                        ],
+                        [
+                            "Проводимость поверхности",
+                            "менее 10⁹ Ом/дм² (опционально)"
+                        ]
+                    ],
+                    "header": "Основные характеристики",
+                    "columns": [
+                        "Параметр",
+                        "Характеристика"
+                    ]
+                }
+            ],
+            "documents": [
+                {
+                    "src": "ОПРОСНЫЙ ЛИСТ ДЛЯ ТЕРМОЧЕХЛОВ SAFEISOL ПАРОВЫХ И ГАЗОВЫХ ТУРБИН.docx",
+                    "name": "Опросный лист SAFEISOL",
+                    "size": "227 К/б",
+                    "format": "DOCX"
+                }
+            ],
+            "brief_desc": "Комплекс теплоизоляционных чехлов SAFEISOL для турбин обеспечивает сохранение тепла, безопасность, шумоизоляцию и устойчивость к вибрациям. Производится по стандарту ТУ 5760-001-44498679-2015.",
+            "description": [
+                {
+                    "type": "paragraph",
+                    "value": "Термочехлы SAFEISOL для турбин представляют собой модульную, быстроразъёмную конструкцию, разработанную по индивидуальному заказу. Основная задача — сохранение тепла, снижение потерь и защита обслуживающего персонала."
+                },
+                {
+                    "type": "list",
+                    "value": {
+                        "title": "Работы, входящие в изготовление термочехлов:",
+                        "values": [
+                            "Обследование турбины и проверка документации",
+                            "Замеры всех элементов и отходящих узлов",
+                            "Расчёт площади и толщины теплоизоляции",
+                            "Разработка чертежей, спецификаций и пояснительной записки",
+                            "Производство и монтаж чехлов"
+                        ]
+                    }
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Чехлы SAFEISOL изготавливаются из высокотемпературной ткани с базальтовым или стекловолокнистым наполнением. Все части конструкции прошиты насквозь, что повышает прочность и долговечность изделия."
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Изоляция производится с соблюдением СНиП 41-03-2003, СП 61.13330.2012, а также требований ТР ТС 2011. При необходимости исключения накопления статического электричества используются ткани с антистатиком и заземляющей клеммой, что актуально для энергетики и газовой промышленности."
+                }
+            ]
+        },
+        "category": 1
+    }
+},
+{
+    "model": "main.product",
+    "pk": 7,
+    "fields": {
+        "slug": "avtomatizirovannye-sistemy-upravleniya-tehnologicheskimi-processami-i-zashity",
+        "title": "Системы АСУ ТП",
+        "content": {
+            "title": "Автоматизированные системы управления технологическими процессами и защиты",
+            "images": [
+                {
+                    "src": "acs/1.png",
+                    "type": "image"
+                },
+                {
+                    "src": "acs/2.png",
+                    "type": "image"
+                },
+                {
+                    "src": "acs/3.png",
+                    "type": "image"
+                }
+            ],
+            "brief_desc": "ООО «Безопасная теплоизоляция» предлагает комплексные решения по автоматизации технологических процессов, включая разработку и внедрение систем управления, с использованием оборудования мировых лидеров отрасли.",
+            "description": [
+                {
+                    "type": "paragraph",
+                    "value": "Компания ООО «Безопасная теплоизоляция» разрабатывает и внедряет автоматизированные системы управления технологическими процессами (АСУ ТП), используя оборудование ведущих мировых производителей. Мы работаем с технологиями для нефтехимической, газоперерабатывающей, химической и других отраслей промышленности."
+                },
+                {
+                    "type": "list",
+                    "value": {
+                        "title": "Преимущества автоматизированных систем управления:",
+                        "values": [
+                            "Измерение, обработка и регистрация данных от первичных преобразователей для технологического процесса",
+                            "Дистанционное управление исполнительными механизмами и частотными преобразователями",
+                            "Экономия времени и средств на обработку данных по сырью, очистке и транспортировке",
+                            "Предотвращение аварийных ситуаций и соблюдение технологического регламента",
+                            "Контроль состояния и работы технологического оборудования",
+                            "Снижение себестоимости и потерь рабочего времени"
+                        ]
+                    }
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Мы обеспечиваем полный цикл работ по автоматизации, включая проектирование, выбор оборудования, программирование, монтаж и пуско-наладочные работы. В процессе работы используются только современные технологии от ведущих мировых брендов."
+                },
+                {
+                    "type": "paragraph",
+                    "value": "Основные этапы работы с автоматизированными системами:"
+                },
+                {
+                    "type": "list",
+                    "value": {
+                        "title": "",
+                        "values": [
+                            "Создание перечня точек контроля и алгоритмов по ТЗ или технологическому регламенту",
+                            "Создание мнемосхем, схем внешних подключений, структурных схем и описаний системы",
+                            "Согласование выбора контроллеров, закупка и сборка оборудования на производственных мощностях",
+                            "Разработка программного обеспечения для контроллеров по алгоритмам",
+                            "Установка, настройка и запуск системы на предприятии заказчика"
+                        ]
+                    }
+                },
+                {
+                    "type": "img",
+                    "value": "acs/9.png"
+                }
+            ]
+        },
+        "category": 5
+    }
+},
+{
+    "model": "main.category",
+    "pk": 1,
+    "fields": {
+        "title": "Термочехлы",
+        "slug": "termochehly"
+    }
+},
+{
+    "model": "main.category",
+    "pk": 5,
+    "fields": {
+        "title": "Системы АСУ ТП",
+        "slug": "sistemy-asu-tp"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 1,
+    "fields": {
+        "name": "Проект 1",
+        "image_path": "1.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 2,
+    "fields": {
+        "name": "Проект 2",
+        "image_path": "2.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 3,
+    "fields": {
+        "name": "Проект 3",
+        "image_path": "3.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 4,
+    "fields": {
+        "name": "Проект 4",
+        "image_path": "4.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 5,
+    "fields": {
+        "name": "Проект 5",
+        "image_path": "5.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 6,
+    "fields": {
+        "name": "Проект 6",
+        "image_path": "6.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 7,
+    "fields": {
+        "name": "Проект 7",
+        "image_path": "7.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 8,
+    "fields": {
+        "name": "Проект 8",
+        "image_path": "8.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 9,
+    "fields": {
+        "name": "Проект 9",
+        "image_path": "9.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 10,
+    "fields": {
+        "name": "Проект 10",
+        "image_path": "10.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 11,
+    "fields": {
+        "name": "Проект 11",
+        "image_path": "11.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 12,
+    "fields": {
+        "name": "Проект 12",
+        "image_path": "12.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 13,
+    "fields": {
+        "name": "Проект 13",
+        "image_path": "13.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 14,
+    "fields": {
+        "name": "Проект 14",
+        "image_path": "14.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 15,
+    "fields": {
+        "name": "Проект 15",
+        "image_path": "15.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 16,
+    "fields": {
+        "name": "Проект 16",
+        "image_path": "16.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 17,
+    "fields": {
+        "name": "Проект 17",
+        "image_path": "17.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 18,
+    "fields": {
+        "name": "Проект 18",
+        "image_path": "18.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 19,
+    "fields": {
+        "name": "Проект 19",
+        "image_path": "19.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 20,
+    "fields": {
+        "name": "Проект 20",
+        "image_path": "20.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 21,
+    "fields": {
+        "name": "Проект 21",
+        "image_path": "21.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 22,
+    "fields": {
+        "name": "Проект 22",
+        "image_path": "22.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 23,
+    "fields": {
+        "name": "Проект 23",
+        "image_path": "23.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 24,
+    "fields": {
+        "name": "Проект 24",
+        "image_path": "24.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 25,
+    "fields": {
+        "name": "Проект 25",
+        "image_path": "25.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 26,
+    "fields": {
+        "name": "Проект 26",
+        "image_path": "26.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 27,
+    "fields": {
+        "name": "Проект 27",
+        "image_path": "27.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 28,
+    "fields": {
+        "name": "Проект 28",
+        "image_path": "28.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 29,
+    "fields": {
+        "name": "Проект 29",
+        "image_path": "29.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 30,
+    "fields": {
+        "name": "Проект 30",
+        "image_path": "30.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 31,
+    "fields": {
+        "name": "Проект 31",
+        "image_path": "31.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 32,
+    "fields": {
+        "name": "Проект 32",
+        "image_path": "32.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 33,
+    "fields": {
+        "name": "Проект 33",
+        "image_path": "33.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 34,
+    "fields": {
+        "name": "Проект 34",
+        "image_path": "34.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 35,
+    "fields": {
+        "name": "Проект 35",
+        "image_path": "35.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 36,
+    "fields": {
+        "name": "Проект 36",
+        "image_path": "36.png"
+    }
+},
+{
+    "model": "main.completeproject",
+    "pk": 37,
+    "fields": {
+        "name": "Проект 37",
+        "image_path": "37.png"
+    }
+},
+{
+    "model": "main.service",
+    "pk": 1,
+    "fields": {
+        "name": "Сборка и монтаж оборудования по проекту заказчика.",
+        "slug": "sborka-i-montazh-oborudovaniya-po-proektu-zakazchika",
+        "content": [
+            {
+                "type": "paragraph",
+                "value": "У Вас есть проект, который выполняет ваша организация и с учётом загруженности и накладок ваши специалисты не успевают произвести сборку и монтаж шкафов автоматизации."
+            },
+            {
+                "type": "list",
+                "value": {
+                    "title": "Мы с радостью поможем и включимся в работу на любой стадии проекта. Изучив монтажные схемы мы сможем осуществить:",
+                    "values": [
+                        "закупку комплектующих или работать на давальческом сырье",
+                        "сделать монтаж и сборку оборудования согласно проекту не нарушая нормативной документации",
+                        "перенесем присланный проект в контроллеры и сможем проверить каналы на предмет правильности подключения и срабатывания алгоритмов",
+                        "при необходимости проведем FAT испытания",
+                        "упакуем и отправим по указанному адресу в надлежащем состоянии"
+                    ]
+                }
+            },
+            {
+                "type": "paragraph",
+                "value": "Для получения консультации и проработки информации, присылайте запросы на почту: service@safeisol.ru"
+            }
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "pk": 2,
+    "fields": {
+        "name": "Предпроектное обследование и монтажные работы.",
+        "slug": "predproektnoe-obsledovanie-i-montazhnye-raboty",
+        "content": [
+            {
+                "type": "paragraph",
+                "value": "Для получения полного объема изолируемого оборудования, наши специалисты выезжают на объект заказчика, проводят мероприятия замера оборудования и сбору информации о технологическом процессе учитывая температурные характеристики процесса и окружающей среды."
+            },
+            {
+                "type": "paragraph",
+                "value": "По завершении составления конструкторской документации, ее согласования и реализации процесса производства, специалисты приезжают на монтаж изделий в соответствии с проектом."
+            },
+            {
+                "type": "paragraph",
+                "value": "Все итерации проекта сводятся к реализации проекта «под ключ» и оптимизируют недочеты в процессе бюрократического взаимодействия и возможной передачи недостоверных данных."
+            }
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "pk": 4,
+    "fields": {
+        "name": "Производство термочехлов под вашим брендом.",
+        "slug": "proizvodstvo-termochehlov-pod-vashim-brendom",
+        "content": [
+            {
+                "type": "list",
+                "value": {
+                    "title": "",
+                    "values": [
+                        "По вашим чертежам или без них (в случае отсутствия чертежей необходимо указать наименование зачехляемого оборудования и температурный режим);",
+                        "По вашим лекалам или без них (наши инженеры и закройщики сделают лекала по необходимых геометрическим размерам);",
+                        "Из давальческого сырья или своего (мы можем использовать как свои комплектующие так и переданные заказчиком в качестве давальческого);",
+                        "Согласно вашей технологии и пожеланиям (наша команда непременно учтет все особенности вашего изделия и технологические нюансы);",
+                        "Возможность поэтапного контроля (мы можем присылать фото или видео после каждой технологической операции или пригласить в наш цех контролирующего специалиста из компании заказчика);",
+                        "Возможность пошива опытного образца (в случае производственной необходимости мы готовы произвести образец для осмотра или испытаний)."
+                    ]
+                }
+            }
+        ]
+    }
+},
+{
+    "model": "main.service",
+    "pk": 0,
+    "fields": {
+        "name": "Комплексные услуги связанные с проектированием и внедрением теплоизоляции.",
+        "slug": "kompleksnye-uslugi-svyazannye-s-proektirovaniem-i-vnedreniem-teploizolyacii",
+        "content": [
+            {
+                "type": "list",
+                "value": {
+                    "values": [
+                        "проектные работы по расчету эффективности применения теплоизоляции производства ООО «Безопасной теплоизоляции». В данные работы входит полный расчет согласно предоставленными данными от заказчика с учетом географического расположения, температуры окружающего воздуха согласно требованиям и температуры спутника. На основе СНиП 41-03-2003 и СП 61.13330.2012  мы предоставим необходимые расчеты и сформируем данные по экономии как тепловых показателей, так и финансовых за необходимый период времени. По умолчанию берется один календарный год;",
+                        "предпроектное обследование объекта. В случае масштабных работ, мы осуществляем предпроектное обследование объекта. В данные работы включены замеры геометрических параметров и измерение температур в критических точках;"
+                    ]
+                }
+            }
+        ]
+    }
+},
+{
+    "model": "main.certificate",
+    "pk": 0,
+    "fields": {
+        "title": "iso_ooo_bezopasnaya_teploizolyaciya.jpg"
+    }
+},
+{
+    "model": "main.certificate",
+    "pk": 1,
+    "fields": {
+        "title": "iso_ooo_bezopasnaya_teploizolyaciya2.jpg"
+    }
+},
+{
+    "model": "main.certificate",
+    "pk": 2,
+    "fields": {
+        "title": "otkaznoye_kachestvo.jpg"
+    }
+},
+{
+    "model": "main.certificate",
+    "pk": 3,
+    "fields": {
+        "title": "sert_iso_audit_bt.jpg"
+    }
+},
+{
+    "model": "main.certificate",
+    "pk": 4,
+    "fields": {
+        "title": "sertifikat_safeisol_fl_2020.jpg"
+    }
+},
+{
+    "model": "main.certificate",
+    "pk": 5,
+    "fields": {
+        "title": "sertifikat_safeisol_ng.jpg"
+    }
+},
+{
+    "model": "main.certificate",
+    "pk": 6,
+    "fields": {
+        "title": "sertifikat_termochekhly_vzryvozashchishchennyye_safeisol_ex_bezopasnaya_teploizolyatsiya.jpg"
+    }
+},
+{
+    "model": "main.certificate",
+    "pk": 7,
+    "fields": {
+        "title": "sertifikat_termochekhly_vzryvozashchishchennyye_safeisol_ex_bezopasnaya_teploizolyatsiya_pril1.jpg"
+    }
+},
+{
+    "model": "main.certificate",
+    "pk": 8,
+    "fields": {
+        "title": "sertifikat_termochekhly_vzryvozashchishchennyye_safeisol_ex_bezopasnaya_teploizolyatsiya_pril2.jpg"
+    }
+},
+{
+    "model": "main.certificate",
+    "pk": 9,
+    "fields": {
+        "title": "sertifikat_termochekhly_vzryvozashchishchennyye_safeisol_ex_bezopasnaya_teploizolyatsiya_pril3.jpg"
+    }
+},
+{
+    "model": "main.certificate",
+    "pk": 10,
+    "fields": {
+        "title": "sertifikat_termochekhly_vzryvozashchishchennyye_safeisol_ex_bezopasnaya_teploizolyatsiya_pril4.jpg"
+    }
+},
+{
+    "model": "main.contactrequest",
+    "pk": 1,
+    "fields": {
+        "name": "Дмитрий",
+        "phone": "+7 (986) 913-68-24",
+        "email": "mik16gt@gmail.com",
+        "comment": "тест докер",
+        "created_at": "2025-06-02T17:01:48.324Z",
+        "status": "pending",
+        "error_message": ""
+    }
+}
+]

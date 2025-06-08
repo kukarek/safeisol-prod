@@ -1,12 +1,7 @@
-
-
-from . import views
 from django.urls import path
-
-
+from . import views
 
 urlpatterns = [
-
     path('', views.Index.as_view(), name='home'),
     path('form/', views.send_contacts, name='send_contacts'),
     path('catalog/', views.Catalog.as_view(), name='catalog'),
@@ -19,7 +14,11 @@ urlpatterns = [
     path('services/<slug:service_slug>', views.Service.as_view(), name='service'),
     path('category/<slug:category_slug>', views.Category.as_view(), name='category'),
     path('product/<slug:product_slug>', views.Product.as_view(), name='product'),
+]
 
-    path('api/send_contacts/', views.send_contacts, name="send_contacts"),
+api_urlpatterns = [
+    path('api/send_contacts/', views.send_contacts, name='send_contacts'),
     path('api/products/', views.get_products, name='get_products'),
 ]
+
+urlpatterns += api_urlpatterns

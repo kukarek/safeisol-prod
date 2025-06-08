@@ -86,6 +86,7 @@
 	.product-cards-inner .product .product-name {
 		font-size: 30px;
 		margin-top: 30px;
+		padding-bottom: 20px;
 	}
 
 	.product-cards-inner .product .product-img-block {
@@ -358,7 +359,25 @@
 	.service-description .paragraph {
 		font-size: 28px;
 	}
+
+	html {
+		min-width: 900px;
+	}
+
+	.map-block {
+		width: 90%;
+	}
+
+	.map-block img {
+		max-width: 100%;
+	}
 } 	
+
+@media (max-width: 1300px) {
+	.main-title {
+		font-size: 58px !important;
+	}
+}
 
 
 

@@ -1,12 +1,13 @@
 # main/serializers.py
 from rest_framework import serializers
-from .models import Products, ContactRequest
+from .models import Product, ContactRequest
 
 class ProductSerializer(serializers.ModelSerializer):
+    """Serializer for Products model."""
     url = serializers.SerializerMethodField()
 
     class Meta:
-        model = Products
+        model = Product
         fields = ['id', 'title', 'url']
 
     def get_url(self, obj):
@@ -14,6 +15,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
 
 class ContactRequestSerializer(serializers.ModelSerializer):
+    """Serializer for ContactRequest model."""
     class Meta:
         model = ContactRequest
         fields = ['name', 'phone', 'email', 'comment']

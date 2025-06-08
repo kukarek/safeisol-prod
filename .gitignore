@@ -12,6 +12,7 @@ venv/
 
 #Кэши python
 __pycache__/
+*.pyc
 
 #Статика в сборе
 staticfiles/

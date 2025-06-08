@@ -46,11 +46,11 @@
 }
 
 .header-ul {
-    display: grid; /* Включаем Grid Layout */
-    grid-auto-flow: column; /* Располагаем элементы в строку */
-    list-style-type: none; /* Убираем маркеры списка */
-    padding: 0; /* Убираем отступы */
-    margin: 0; /* Убираем внешние отступы */
+    display: grid;
+    grid-auto-flow: column; 
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
     width: 100%;
 }
 
@@ -63,9 +63,9 @@
 }
 
 .navbar.fixed {
-    position: fixed; /* Фиксированная позиция */
-    top: 0; /* Вверху страницы */
-    width: 100%; /* Ширина на всю страницу */
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
 }
 
 .header-li {
@@ -80,21 +80,21 @@
     margin: 5px;
     transition: color 0.5s ease;
 
-    display: inline-block; /* Позволяет использовать padding и margin */
+    display: inline-block; 
 }
 
 .navbar-a::after {
-    content: ''; /* Создаем пустой псевдоэлемент */
-    display: block; /* Делаем псевдоэлемент блочным */
-    width: 0; /* Начальная ширина подчеркивания */
-    height: 1px; /* Толщина подчеркивания */
-    background-color: var(--orange); /* Цвет подчеркивания */
-    transition: width 0.3s ease; /* Плавный переход */
-    margin: 5px auto 0; /* Центрируем подчеркивание */
+    content: ''; 
+    display: block; 
+    width: 0; 
+    height: 1px; 
+    background-color: var(--orange); 
+    transition: width 0.3s ease; 
+    margin: 5px auto 0; 
 }
 
 .navbar-a:hover::after {
-    width: 100%; /* Расширяем подчеркивание при наведении */
+    width: 100%; 
 }
 
 .navbar-a-selected {
@@ -104,7 +104,7 @@
     margin: 5px;
     transition: color 0.5s ease;
     pointer-events: none;
-    display: inline-block; /* Позволяет использовать padding и margin */
+    display: inline-block;
 }
 
 .header-info {
@@ -181,22 +181,22 @@
 .search-popup {
     min-height: 92px;
     display: none;
-    position: fixed; /* Фиксированное позиционирование */
-    top: 0; /* Позиционируем вверху */
-    left: 0; /* Позиционируем слева */
-    right: 0; /* Позиционируем справа */
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0;
     background: rgb(255, 255, 255);
-    z-index: 2000; /* Устанавливаем высокий z-index */
-    overflow-y: auto; /* Прокрутка, если содержимое превышает высоту */
-    padding: 20px; /* Отступы */
-    outline: none; /* Убираем стандартный контур при фокусе */
+    z-index: 2000;
+    overflow-y: auto; 
+    padding: 20px; 
+    outline: none;
 }
 .searchinput {
     border: none;
-    width: calc(100% - 40px); /* Поле ввода на всю ширину с учетом отступов */
-    padding: 10px; /* Отступы */
-    font-size: 16px; /* Размер шрифта */
-    margin-bottom: 20px; /* Отступ снизу */
+    width: calc(100% - 40px); 
+    padding: 10px; 
+    font-size: 16px;
+    margin-bottom: 20px;
     border-radius: 0;
     background: transparent;
 }
@@ -221,12 +221,12 @@
     opacity: 0.7;
 }
 .close-popup-button {
-    position: relative; /* Абсолютное позиционирование */
-    right: 20px; /* Расстояние от правого края */
-    font-size: 24px; /* Размер шрифта */
-    color: #333; /* Цвет текста */
-    cursor: pointer; /* Указатель при наведении */
-    margin-bottom: 20px; /* Отступ снизу */
+    position: relative; 
+    right: 20px; 
+    font-size: 24px; 
+    color: #333;
+    cursor: pointer; 
+    margin-bottom: 20px; 
 }
 
 .flag { 

@@ -2,36 +2,31 @@ import environ
 import os
 from pathlib import Path
 import logging.config
-
-
-
+from django.contrib.messages import constants as messages
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-LOGGING_CONFIG_PATH = BASE_DIR / 'safeisol/logging.ini'
 
-# Убедись, что папка logs существует
+# Configure logging
+LOGGING_CONFIG_PATH = BASE_DIR / 'safeisol/logging.ini'
 LOGS_DIR = BASE_DIR / 'logs'
 LOGS_DIR.mkdir(exist_ok=True)
-
-# Загрузи конфигурацию из INI-файла
 logging.config.fileConfig(LOGGING_CONFIG_PATH, disable_existing_loggers=False)
-
 logger = logging.getLogger('django')
 
-# Инициализация environ
+# Load environment variables
 env = environ.Env()
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-# Получение SECRET_KEY из переменной окружения
+# Security settings
 SECRET_KEY = env('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# Debug mode
 DEBUG = env.bool('DEBUG', default=False)
 
+# Allowed hosts
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,9 +35,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    'rest_framework'
+    'rest_framework',
+    'django_json_widget'
 ]
 
+# Middleware configuration
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -55,8 +52,10 @@ MIDDLEWARE = [
     'main.middleware.LogAllRequestsMiddleware',
 ]
 
+# URL configuration
 ROOT_URLCONF = 'safeisol.urls'
 
+# Template configuration
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -73,8 +72,11 @@ TEMPLATES = [
     },
 ]
 
+# WSGI application
 WSGI_APPLICATION = 'safeisol.wsgi.application'
 
+
+# Database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -91,8 +93,6 @@ DATABASES = {
 
 
 # Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -110,37 +110,34 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
 
+# Static files (CSS, JavaScript, Images)
 if DEBUG:
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static'),
     ]
 else:
-    STATICFILES_DIRS = []  # Убираем или оставляем пустым для продакшн
+    STATICFILES_DIRS = []  
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Default primary key field type
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-from django.contrib.messages import constants as messages
-
+# Set the css classes for messages
 MESSAGE_TAGS = {
     messages.DEBUG: "alert-secondary",
     messages.INFO: "alert-info",
@@ -149,7 +146,8 @@ MESSAGE_TAGS = {
     messages.ERROR: "alert-danger",
 }
 
-
+# Mail configuration
+# Using yandex SMTP server
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 587
@@ -160,7 +158,7 @@ EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 DEFAULT_FOR_EMAIL = env('DEFAULT_FOR_EMAIL')
 
-print("BROKER URL:", os.getenv('CELERY_BROKER_URL'))
+# Celery configuration
 CELERY_BROKER_URL = env('CELERY_BROKER_URL')
 CELERY_RESULT_BACKEND = env('CELERY_RESULT_BACKEND')
 

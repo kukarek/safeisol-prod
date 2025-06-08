@@ -1,17 +1,21 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from ..models import Products
+from ..models import Product
 from ..serializers import ProductSerializer, ContactRequestSerializer
 import logging
 
 logger = logging.getLogger('django')
 
-
 @api_view(['GET'])
 def get_products(request):
+    """ 
+    Endpoint to retrieve all products.
+    Returns a list of products serialized in JSON format.
+    If an error occurs during retrieval, it logs the error and returns a 500 status code.
+    """
     try:
-        products = Products.objects.all()
+        products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
     except Exception as e:
@@ -21,6 +25,11 @@ def get_products(request):
 
 @api_view(['POST'])
 def send_contacts(request):
+    """
+    Endpoint to send a contact request.
+    Validates the request data and saves it if valid.
+    If the request has already been sent in the current session, it returns a 429 status code.
+    """
     if request.session.get('contact_sent'):
         return Response({'success': False, 'error': 'Заявка уже отправлена.'}, status=429)
 

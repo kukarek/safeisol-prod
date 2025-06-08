@@ -6,6 +6,8 @@ from .tasks import send_notification_email
 
 @receiver(post_save, sender=ContactRequest)
 def send_email(sender, instance, created, **kwargs):
-   
+    """
+    Signal to send an email notification when a ContactRequest is created.
+    """
     if created:
         send_notification_email.delay(instance.pk)

@@ -7,8 +7,8 @@
     height: 40px;
     width: 270px;
     display: flex;
-    justify-content: space-between; /* Разделяет кнопку и элемент справа */
-    align-items: center; /* Выравнивание по центру */
+    justify-content: space-between; 
+    align-items: center; 
     color: var(--dark_grey);
     transition: color 0.3s ease;
 }
@@ -18,7 +18,7 @@
 }
 
 .icon {
-    margin-right: 10px; /* Отступ между кнопкой и элементом справа */
+    margin-right: 10px; 
     font-weight: bold;
     font-size: 14px;
 }
@@ -49,13 +49,13 @@
 .certificates-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px; /* расстояние между изображениями */
+    gap: 20px; 
   }
 
   .certificates-content img {
     width: 100%;
     height: auto;
-    border-radius: 8px; /* необязательно — для красоты */
+    border-radius: 8px;
     object-fit: cover;
   }
 
@@ -103,7 +103,7 @@
     max-height: none;
     position: absolute;
     user-select: none;
-    pointer-events: auto; /* Делаем изображение кликабельным */
+    pointer-events: auto; 
     -webkit-user-drag: none; /* Для Safari */
   }
 

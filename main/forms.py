@@ -3,8 +3,20 @@ from django.forms import TextInput, Textarea
 
 
 class ContactForm(forms.Form):
+
+    """
+    Форма для отправки контактной информации на почту.
     
-    use_required_attribute = False  # Отключаем обязательность атрибутов на уровне HTML
+    Fields:
+    - name: Имя или название организации (обязательное)
+    - phone: Телефон (обязательное)
+    - email: Email (обязательное, с проверкой на корректность)
+    - comment: Комментарий (необязательное)
+
+    """
+
+    # Отключаем обязательность атрибутов на уровне HTML
+    use_required_attribute = False  
 
     # Поле для имени
     name = forms.CharField(

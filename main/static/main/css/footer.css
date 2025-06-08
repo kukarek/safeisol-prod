@@ -42,11 +42,11 @@
 .footer-a {
     color: var(--light_gray);
     text-decoration: none;
-    transition: opacity 0.3s ease; /* Плавный переход для изменения прозрачности */
+    transition: opacity 0.3s ease; 
 }
 
 .footer-a:hover {
-    opacity: 0.7; /* Устанавливаем прозрачность при наведении */
+    opacity: 0.7; 
 }
 
 .footer-phone-contact {

@@ -1,13 +1,16 @@
 from django.test import TestCase
 from django.urls import reverse
-from ..models import Services, Categories, Products
+from ..models import Service, Category, Product
 
 class StaticPagesTests(TestCase):
-
+    """Tests for static pages in the application."""
     def setUp(self):
-        # Создаем необходимые объекты для тестов, категорию создаем с тайтлом Термочехлы, потому-что она загружается на главной странице
-        self.category = Categories.objects.create(id=1, title="Термочехлы", slug="test-category")
-        self.product = Products.objects.create(
+        """
+        Set up test data for static pages.
+        We create the necessary objects for tests, we create a category with the title "Термочехлы", because it is loaded on the main page
+        """
+        self.category = Category.objects.create(id=1, title="Термочехлы", slug="test-category")
+        self.product = Product.objects.create(
             title="Тестовый продукт",
             slug="test-product",
             category=self.category,
@@ -20,55 +23,63 @@ class StaticPagesTests(TestCase):
                 "documents": []
             }
         )
-        self.service = Services.objects.create(
+        self.service = Service.objects.create(
             name="Тестовая услуга",
             slug="test-service",
             content=[{"type": "paragraph", "value": "Описание услуги"}]
         )
 
     def test_home_page(self):
+        """Test the home page loads successfully."""
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
 
     def test_catalog_page(self):
+        """Test the catalog page loads successfully."""
         response = self.client.get(reverse('catalog'))
         self.assertEqual(response.status_code, 200)
 
     def test_about_page(self):
+        """Test the about page loads successfully."""
         response = self.client.get(reverse('about'))
         self.assertEqual(response.status_code, 200)
 
     def test_certificates_page(self):
+        """Test the certificates page loads successfully."""
         response = self.client.get(reverse('certificates'))
         self.assertEqual(response.status_code, 200)
 
     def test_contacts_page(self):
+        """Test the contacts page loads successfully."""
         response = self.client.get(reverse('contacts'))
         self.assertEqual(response.status_code, 200)
 
     def test_delivery_page(self):
+        """Test the delivery page loads successfully."""
         response = self.client.get(reverse('delivery'))
         self.assertEqual(response.status_code, 200)
 
     def test_complete_projects_page(self):
+        """Test the complete projects page loads successfully."""
         response = self.client.get(reverse('complete_projects'))
         self.assertEqual(response.status_code, 200)
 
 class DynamicSlugTests(TestCase):
-    
+    """Tests for dynamic slugs in the application."""
     def setUp(self):
-        self.service = Services.objects.create(
+        """Set up test data for dynamic slug tests"""
+        self.service = Service.objects.create(
             name="Монтаж",
             slug="montazh",
             content=[{"type": "paragraph", "value": "Описание услуги"}]
         )
 
-        self.category = Categories.objects.create(
+        self.category = Category.objects.create(
             title="Чехлы",
             slug="chehly"
         )
 
-        self.product = Products.objects.create(
+        self.product = Product.objects.create(
             title="Чехол X",
             slug="chehol-x",
             category=self.category,
@@ -83,19 +94,18 @@ class DynamicSlugTests(TestCase):
         )
 
     def test_service_detail_page(self):
+        """Test the service detail page loads successfully."""
         response = self.client.get(reverse('service', kwargs={'service_slug': self.service.slug}))
         self.assertEqual(response.status_code, 200)
 
     def test_category_redirect(self):
-
-        #Если в категории только один товар, то редирект на страницу товара
+        """Test redirect from category page to product page if only one product exists."""
         response = self.client.get(reverse('category', kwargs={'category_slug': self.category.slug}))
         self.assertEqual(response.status_code, 302)
 
     def test_category_detail_page(self):
-        
-        #Страница категории показываеться только если в ней больше одного товара иначе редирект на страницу товара
-        self.product2 = Products.objects.create(
+        """Test the category detail page loads successfully when it has more than one product."""
+        self.product2 = Product.objects.create(
             title="Чехол XX",
             slug="chehol-xx",
             category=self.category,
@@ -113,10 +123,12 @@ class DynamicSlugTests(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_product_detail_page(self):
+        """Test the product detail page loads successfully."""
         response = self.client.get(reverse('product', kwargs={'product_slug': self.product.slug}))
         self.assertEqual(response.status_code, 200)
 
 class PageNotFoundTest(TestCase):
+    """Tests for handling 404 page not found errors."""
     def test_404_page(self):
         response = self.client.get('/non-existent-url/')
         self.assertEqual(response.status_code, 404)
