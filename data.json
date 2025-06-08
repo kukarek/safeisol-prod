@@ -1,4 +1,21 @@
-[
+[{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$iHSLjtkgym7uj37QExViQx$DRwXWxm2i+Pm2/k28kw6+mOMSKnm4KL7joodhjkjTOs=",
+    "last_login": "2025-06-08T12:46:54.047Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "mik16gt@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-06-08T12:21:19.836Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
 {
     "model": "main.product",
     "pk": 1,
