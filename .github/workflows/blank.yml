@@ -1,4 +1,4 @@
-- name: Build and restart Docker container on server
+- name: Deploy Django to Server
   uses: appleboy/ssh-action@v0.1.6
   with:
     host: ${{ secrets.SERVER_HOST }}
