@@ -10,7 +10,7 @@ function openModal(imgElement) {
     setTimeout(() => {
         modal.style.opacity = 1; // Добавляем класс show для плавного появления
     }, 1); // Небольшая задержка для применения стилей
-    modalImage.src = imgElement.src; // Устанавливаем изображение в модальном окне
+    modalImage.src = imgElement.dataset.file;; // Устанавливаем изображение в модальном окне
 
     // Отключаем прокрутку
     document.body.classList.add('no-scroll');

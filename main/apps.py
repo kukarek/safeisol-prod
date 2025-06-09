@@ -8,10 +8,11 @@ class MainConfig(AppConfig):
     It also imports the signals module to ensure that signal handlers are registered
     when the app is ready.
     """
+
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'main'
 
-    def ready(self):
+    def ready(self) -> None:
         """
         Method called when the app is ready.
         It imports the signals module to ensure that signal handlers are registered.

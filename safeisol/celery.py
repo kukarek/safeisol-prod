@@ -16,7 +16,6 @@ Usage:
 """
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'safeisol.settings')
-
 app = Celery('safeisol')
 app.config_from_object('django.conf:settings', namespace='CELERY')
 app.autodiscover_tasks()

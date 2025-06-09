@@ -1,6 +1,6 @@
 from django.urls import reverse
 from rest_framework.test import APITestCase
-from main.models import Product, Category, ContactRequest
+from main.models import Product, Category
 from unittest.mock import patch
 
 class ProductAPITest(APITestCase):

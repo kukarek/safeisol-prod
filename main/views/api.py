@@ -8,7 +8,7 @@ import logging
 logger = logging.getLogger('django')
 
 @api_view(['GET'])
-def get_products(request):
+def get_products(request) -> Response:
     """ 
     Endpoint to retrieve all products.
     Returns a list of products serialized in JSON format.
@@ -24,7 +24,7 @@ def get_products(request):
 
 
 @api_view(['POST'])
-def send_contacts(request):
+def send_contacts(request) -> Response:
     """
     Endpoint to send a contact request.
     Validates the request data and saves it if valid.

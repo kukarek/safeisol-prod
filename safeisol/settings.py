@@ -1,4 +1,4 @@
-import environ 
+import environ
 import os
 from pathlib import Path
 import logging.config
@@ -7,10 +7,12 @@ from django.contrib.messages import constants as messages
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Configure logging
-LOGGING_CONFIG_PATH = BASE_DIR / 'safeisol/logging.ini'
+LOGGING_CONFIG_PATH = BASE_DIR / 'safeisol' / 'logging.ini'
 LOGS_DIR = BASE_DIR / 'logs'
 LOGS_DIR.mkdir(exist_ok=True)
-logging.config.fileConfig(LOGGING_CONFIG_PATH, disable_existing_loggers=False)
+logging.config.fileConfig(
+    LOGGING_CONFIG_PATH, disable_existing_loggers=False
+)
 logger = logging.getLogger('django')
 
 # Load environment variables
@@ -36,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'rest_framework',
-    'django_json_widget'
+    'django_json_widget',
 ]
 
 # Middleware configuration
@@ -75,7 +77,6 @@ TEMPLATES = [
 # WSGI application
 WSGI_APPLICATION = 'safeisol.wsgi.application'
 
-
 # Database
 DATABASES = {
     'default': {
@@ -86,28 +87,38 @@ DATABASES = {
         'HOST': 'host.docker.internal',
         'PORT': env('DB_PORT'),
         'OPTIONS': {
-            'client_encoding': 'UTF8',  
-        }
+            'client_encoding': 'UTF8',
+        },
     }
 }
-
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'UserAttributeSimilarityValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'MinimumLengthValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'CommonPasswordValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'NumericPasswordValidator'
+        ),
     },
 ]
-
 
 # Internationalization
 LANGUAGE_CODE = 'ru'
@@ -120,34 +131,28 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-
 # Static files (CSS, JavaScript, Images)
 if DEBUG:
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'static'),
-    ]
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 else:
-    STATICFILES_DIRS = []  
+    STATICFILES_DIRS = []
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Set the css classes for messages
+# Message tags mapping to Bootstrap classes
 MESSAGE_TAGS = {
-    messages.DEBUG: "alert-secondary",
-    messages.INFO: "alert-info",
-    messages.SUCCESS: "alert-success",
-    messages.WARNING: "alert-warning",
-    messages.ERROR: "alert-danger",
+    messages.DEBUG: 'alert-secondary',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
 }
 
-# Mail configuration
-# Using yandex SMTP server
+# Mail configuration (Yandex SMTP)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 587
@@ -161,4 +166,3 @@ DEFAULT_FOR_EMAIL = env('DEFAULT_FOR_EMAIL')
 # Celery configuration
 CELERY_BROKER_URL = env('CELERY_BROKER_URL')
 CELERY_RESULT_BACKEND = env('CELERY_RESULT_BACKEND')
-

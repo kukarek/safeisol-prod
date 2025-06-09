@@ -79,8 +79,8 @@ jobs:
             docker-compose build
             docker-compose up -d --force-recreate
 
-            #Запускаем тесты
-            docker-compose run --rm web python manage.py test
+            # Запускаем тесты и смотрим покрытие
+            docker-compose run --rm web coverage run --source='.' manage.py test && docker-compose run --rm web coverage report -m
 
             # Ждем, пока контейнер web будет готов выполнять команды
             max_attempts=20
