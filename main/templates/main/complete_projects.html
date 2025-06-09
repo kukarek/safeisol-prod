@@ -12,7 +12,6 @@
         <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
         <link type="text/css" href="{% static 'main/css/breadcrumbs.css' %}" rel="stylesheet">
         <link type="text/css" href="{% static 'main/css/header.css' %}" rel="stylesheet">
-        <link type="text/css" href="{% static 'main/css/tile_goods.css' %}" rel="stylesheet">
         <link type="text/css" href="{% static 'main/css/complete_projects.css' %}" rel="stylesheet">
         <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
         <link rel="icon" href="{% static 'main/media/logo-ico.png' %}" type="image/x-icon">
@@ -51,6 +50,9 @@
                 <div class="product">
                     <div class="product-img-block">
                         <img class="product-img" src="{% static 'main/media/complete projects/'%}{{product.image_path}}" alt="{{ product.name }}" onclick="openModal(this)">
+                    </div>
+                    <div class="product-name-block">
+                        <p class="product-name">{{ product.name }}</p>
                     </div>
                 </div>
                 {% endfor %}

@@ -39,7 +39,7 @@ class Product(models.Model):
         "brief_desc": "",
         "description": [
             {"type": "paragraph", "value": ""},
-            {"type": "img", "value": ""},
+            {"type": "img", "value": "", "alt": ""},
             {"type": "list", "value": {
                 "title": "",
                 "values": ["", "", ""]
@@ -66,9 +66,9 @@ class Product(models.Model):
         ]
     }],
         "images": [
-            {"type": "image", "src": ""},
-            {"type": "image", "src": ""},
-            {"type": "image", "src": ""}
+            {"type": "image", "src": "", "alt": ""},
+            {"type": "image", "src": "", "alt": ""},
+            {"type": "image", "src": "", "alt": ""}
         ],
 
         "documents": [

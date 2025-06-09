@@ -63,12 +63,12 @@
                             <div class="mini_imgs">
                                 {% for image in product.content.images %}
                                 <div class="mini-img {% if forloop.first %}selected{% endif %}" onclick="selectImage('{{ image.src }}', this)">
-                                    <img src="{% static 'main/media/' %}{{ image.src }}" alt="Mini Image"/>
+                                    <img src="{% static 'main/media/' %}{{ image.src }}" alt="{{ image.alt }}"/>
                                 </div>
                                 {% endfor %}
                             </div>
                             <div class="selected_img">
-                                <img id="main-image" src="{% static 'main/media/' %}{{ product.content.images.0.src }}" alt="Selected Image" onclick="openModal()"/>
+                                <img id="main-image" src="{% static 'main/media/' %}{{ product.content.images.0.src }}" alt="{{ product.content.images.0.alt }}" title="{{ product.content.images.0.alt }}" onclick="openModal()"/>
                             </div>
                         </div>
                         <div class="product-desc-block">
@@ -110,7 +110,7 @@
                         </div>
                         {% else  %}
                         <div class="product-desc-img-container">
-                            <img class="product-desc-img" src="{% static 'main/media/' %}{{ item.value }}"/>
+                            <img class="product-desc-img" src="{% static 'main/media/' %}{{ item.value }}" alt="{{ item.alt }}" title="{{ item.alt }}"/>
                         </div>
                         {% endif %}
                         {% endfor %}

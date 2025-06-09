@@ -1,14 +1,16 @@
 
 
 function selectImage(src, element) {
-    // Обновляем src главного изображения
-    document.getElementById('main-image').src = "/static/main/media/" + src;
+    const mainImage = document.getElementById('main-image');
+    const img = element.querySelector('img'); // находим вложенный <img>
 
-    // Удаляем класс 'selected' у всех миниатюр
+    mainImage.src = "/static/main/media/" + src;
+    mainImage.alt = img.alt || '';
+    mainImage.title = img.alt || '';
+
     const miniImages = document.querySelectorAll('.mini-img');
-    miniImages.forEach(img => img.classList.remove('selected'));
+    miniImages.forEach(imgDiv => imgDiv.classList.remove('selected'));
 
-    // Добавляем класс 'selected' к текущей миниатюре
     element.classList.add('selected');
 }
 
@@ -24,6 +26,8 @@ function openModal() {
         modal.style.opacity = 1; // Добавляем класс show для плавного появления
     }, 1); // Небольшая задержка для применения стилей
     modalImage.src = document.getElementById('main-image').src; // Устанавливаем изображение в модальном окне
+    modalImage.alt = document.getElementById('main-image').alt;
+    modalImage.title = document.getElementById('main-image').alt; 
 
     // Отключаем прокрутку
     document.body.classList.add('no-scroll');
