@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': env('DB_NAME'),
         'USER': env('DB_USER'),
         'PASSWORD': env('DB_PASSWORD'),
-        'HOST': 'host.docker.internal',
+        'HOST': env('DB_HOST'),
         'PORT': env('DB_PORT'),
         'OPTIONS': {
             'client_encoding': 'UTF8',
