@@ -121,7 +121,7 @@
 		display: block;
 		position: fixed;
 		width: 60%;
-		height: 100vh;
+		height: 100%;
 		background-color: white;
 		z-index: 2000;
 		padding-top: 75px;
