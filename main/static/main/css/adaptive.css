@@ -126,7 +126,7 @@
 		z-index: 2000;
 		padding-top: 75px;
 		padding-left: 30px;
-		left: -65%;
+		left: -100%;
 		color: var(--orange);
 		box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 		transition: left 0.3s ease;
