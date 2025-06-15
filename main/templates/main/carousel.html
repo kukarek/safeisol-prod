@@ -18,7 +18,7 @@
                             <div class="product-img-block">
                                 {% for image in product.content.images %}
                                     {% if forloop.first %}
-                                        <img class="product-img" src="{% static 'main/media/' %}{{ image.src }}" alt="{{ image.alt }}"/>
+                                        <img class="product-img" src="{% static 'main/media/' %}{{ image.thumbnail }}" alt="{{ image.alt }}"/>
                                     {% endif %}
                                 {% endfor %}
                             </div>

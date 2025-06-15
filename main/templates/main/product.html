@@ -63,7 +63,7 @@
                             <div class="mini_imgs">
                                 {% for image in product.content.images %}
                                 <div class="mini-img {% if forloop.first %}selected{% endif %}" onclick="selectImage('{{ image.src }}', this)">
-                                    <img src="{% static 'main/media/' %}{{ image.src }}" alt="{{ image.alt }}"/>
+                                    <img src="{% static 'main/media/' %}{{ image.thumbnail }}" alt="{{ image.alt }}"/>
                                 </div>
                                 {% endfor %}
                             </div>
