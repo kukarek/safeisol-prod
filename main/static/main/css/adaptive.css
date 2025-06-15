@@ -71,6 +71,7 @@
 
 	.search-popup input {
 		font-size: 4vw;
+		width: 90%;
 	}
 
 	.search-popup a {
@@ -390,13 +391,9 @@
 		font-size: 4vw;
 	}
 
-	.services-block {
-		posi
-	}
-
 	.service-description {
 		height: 100%;
-		position: relative	;
+		position: relative;
 	}
 
 	.map-block {
