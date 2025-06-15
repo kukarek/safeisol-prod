@@ -122,3 +122,22 @@
     white-space: pre-line;
     word-wrap: break-word;
 }
+
+.pagination {
+    margin: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: var(--orange);
+    transition: color 0.3s ease, color 0.3s ease;
+    margin: 0 20px;
+}
+
+.pagination a:hover {
+    color: var(--middle_gray);
+}
+

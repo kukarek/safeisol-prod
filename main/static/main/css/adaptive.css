@@ -30,9 +30,9 @@
 		position: absolute;
         right: 3%;
         margin: 0;
-        width: 14%;
+        width: 10%;
         height: 100%;
-		
+		padding: 0px;
 	}
 
 	.main-slide {
@@ -63,10 +63,6 @@
 	.close-mob-sidebar svg {
 		height: 100%;
 		width: 100%;
-	}
-
-	.search-popup {
-		min-height: 200px;
 	}
 
 	.search-popup input {
@@ -124,6 +120,7 @@
 
 	.about-title {
 		font-size: 7vw;
+		padding: 0;
 	}
 
 	.about-block {
@@ -138,6 +135,7 @@
 
 	.about-text {
 		font-size: 3vw;
+		padding: 0;
 	}
 
 	.mobile-sidebar {
@@ -385,6 +383,7 @@
 
 	.product-img {
 		height: 90%;
+		aspect-ratio: 1/1;
 	}
 
 	.service-description .paragraph {
@@ -402,6 +401,15 @@
 
 	.map-block img {
 		max-width: 100%;
+	}
+
+	.pagination {
+		margin: 5% 0;
+	}
+
+	.pagination a {
+		font-size: 4vw;
+		padding: 2%;
 	}
 } 	
 

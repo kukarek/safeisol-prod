@@ -5,6 +5,7 @@
 
     <head>
         <title>Выполненные проекты</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="description" content="Просмотрите выполненные проекты компании Безопасная теплоизоляция — качество и надежность в каждой работе.">
         <meta name="keywords" content="теплоизоляция, выполненные проекты, теплоизоляционные работы, SAFEISOL">
         <meta name="robots" content="index, follow">
@@ -45,7 +46,7 @@
                 <div class="section-title">Выполненные проекты</div>
             </div>
 
-            <div class="container tile_goods" style="justify-content: left; margin-bottom: 100px;">
+            <div class="container tile_goods" style="justify-content: left;">
                 {% for product in products %}
                 <div class="product">
                     <div class="product-img-block">
@@ -55,9 +56,18 @@
                         <p class="product-name">{{ product.name }}</p>
                     </div>
                 </div>
-                {% endfor %}
-            </div>                
-
+                {% endfor %}          
+            </div>  
+            <div class="container">
+                <div class="pagination">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}" class="previous">‹ Предыдущая</a>
+                {% endif %}
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="next">Следующая ›</a>
+                {% endif %}
+                </div>  
+            </div>
         </div>
 
         <!-- Модальное окно -->

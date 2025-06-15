@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView
 from main import models, mixins
+from django.core.paginator import Paginator
 
 class About(mixins.BreadcrumbsMixin, mixins.SectionMixin, TemplateView):
     """
@@ -48,15 +49,20 @@ class Delivery(mixins.BreadcrumbsMixin, mixins.SectionMixin, TemplateView):
 
 
 class CompleteProjects(mixins.BreadcrumbsMixin, mixins.SectionMixin, TemplateView):
-    """
-    View for the "Complete Projects" page.
-    Inherits from BreadcrumbsMixin to provide breadcrumb navigation and SectionMixin for section handling.
-    """
     template_name = 'main/complete_projects.html'
     section = 'complete_projects'
     subtitle = 'Выполненные проекты'
+    paginate_by = 8
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['products'] = models.CompleteProject.objects.all()
+        
+        all_projects = models.CompleteProject.objects.all()
+        paginator = Paginator(all_projects, self.paginate_by)
+
+        page_number = self.request.GET.get("page")
+        page_obj = paginator.get_page(page_number)
+
+        context['page_obj'] = page_obj
+        context['products'] = page_obj.object_list
         return context

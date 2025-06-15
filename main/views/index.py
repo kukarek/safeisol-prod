@@ -26,7 +26,7 @@ class Index(TemplateView):
 
         # Виртуальная категория с остальными продуктами
         temp_category = {
-            'title': 'Дополнительно',
+            'title': 'Системы АСУ ТП',
             'slug': 'temp-category',
             'get_absolute_url': reverse('catalog'),
             'products': models.Product.objects.exclude(category_id=cat_termochehly.id)
