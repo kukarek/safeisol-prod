@@ -5,7 +5,9 @@
 
 	.header-logo {
 		background-image: url(/static/main/media/mobile-header.png);
-		height: 250px;
+		height: inherit;
+		width: 100%;
+		aspect-ratio: 33/9;
 		border-bottom: 1px solid var(--dark_gray);
 		border-top: 1px solid var(--dark_gray);
 		background-color: var(--light_gray);
@@ -25,10 +27,11 @@
 	}
 
 	.header-search__btn {
-		position: relative;
-		margin-left: auto;
-		margin-right: 30px;
-		margin-top: 75px;
+		position: absolute;
+        right: 3%;
+        margin: 0;
+        width: 14%;
+        height: 100%;
 		
 	}
 
@@ -37,8 +40,8 @@
 	}
 
 	.header-search__btn svg {
-		width: 70px;
-		height: 70px;
+		width: 100%;
+		height: 100%;
 	}
 
 	.navbar {
@@ -46,13 +49,20 @@
 	}
 
 	#mobile-menu-button {
-		display:block;
-		position: relative;
-		border: 0;
-		margin-right: auto;
-		margin-top: 40px;
-		margin-left: 10px;
-		background-color: var(--light_gray);
+		display: block;
+        position: absolute;
+        border: 0;
+        background-color: var(--light_gray);
+        height: 95%;
+        width: 10%;
+        padding: 0;
+        margin: 0;
+        margin-left: 2%;
+	}
+
+	.close-mob-sidebar svg {
+		height: 100%;
+		width: 100%;
 	}
 
 	.search-popup {
@@ -60,72 +70,82 @@
 	}
 
 	.search-popup input {
-		font-size: 30px;
+		font-size: 4vw;
 	}
 
 	.search-popup a {
-		font-size: 20px;
-	}
-
-	.main-title {
-		font-size: 60px;
+		font-size: 3vw;
 	}
 
 	.products-title {
-		font-size: 50px;
+		font-size: 7vw;
 	}
 
 	.product-cards-inner .product {
 		max-width: 50%;
 		min-width: 50%;
-		font-size: 20px;
 		display: flex;
 		flex-direction: column;
 	}
 
+	.div-for-indent {
+		margin: 0;
+	}
+
 	.product-cards-inner .product .product-name {
-		font-size: 30px;
-		margin-top: 30px;
-		padding-bottom: 20px;
+		font-size: 3vw;
+		margin-top: 3%;
+		padding-bottom: 3%;
+	}
+	
+	.product-name-block .product-name {
+		font-size: 3vw;
+		margin-top: 1%;
 	}
 
 	.product-cards-inner .product .product-img-block {
 		height: auto;
 		width: 100%;
-		margin-bottom: 20px;
+		margin-bottom: 3%;
 	}
 
 	.products {
 		width: 100%;
+		margin: 5% 0;
 	}
 
 	.carousel-button {
 		color: black;
-		padding: 30px;
-		font-size: 30px;
+		padding: 4%;
+		font-size: 4vw;
 	}
 
-	.carousel-button.right {
-		right: -10;
+
+	.about-title {
+		font-size: 7vw;
+	}
+
+	.about-block {
+		padding: 0;
+		margin-bottom: 5%;
 	}
 
 	.about-title {
-		font-size: 50px;
+		border: 0;
+		margin: 3% 0;
 	}
 
 	.about-text {
-		font-size: 24px;
+		font-size: 3vw;
 	}
 
 	.mobile-sidebar {
 		display: block;
 		position: fixed;
-		width: 60%;
+		width: 70%;
 		height: 100%;
 		background-color: white;
 		z-index: 2000;
-		padding-top: 75px;
-		padding-left: 30px;
 		left: -100%;
 		color: var(--orange);
 		box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
@@ -137,52 +157,50 @@
 	}
 
 	.mob-panel-header {
-		font-size: 60px;
+		font-size: 8vw;
 		font-weight: bold;
 		display: flex;
 		color: var(--dark_gray);
 		width: 100%;
-		padding-bottom: 50px;
-		border-bottom: 1px solid var(--middle_gray);
-		padding-left: 20px;
+		margin-left: 5%;
 
 	}
 
 	.close-mob-sidebar {
 		position: relative;
 		margin-left: auto;
-		width: 60px;
-		margin-right: 50px;
-		font-size: 70px;
+		margin-right: 8%;
 		border: 0;
 		background-color: inherit;
+		width: 16%;
 	}
 
 	.mob-panel-nav {
-		font-size: 45px;
+		font-size: 5vw;
 	}
 
 	.lnav__item {
-		padding-top: 50px;
-		padding-bottom: 50px;
-		padding-left: 20px;
+		padding-top: 6%;
+		padding-bottom: 6%;
+		padding-left: 6%;
 		border-bottom: 1px solid var(--middle_gray);
 	}
 
 	.mob-panel-footer {
-		margin-top: 80px;
+		margin-top: 10%;
 	}
 
 	.mob-panel__phone {
 		color: var(--dark_gray);
-		font-size: 30px;
+		font-size: 6vw;
 		font-weight: bold;
+		margin-left: 5%;
 	}
 
 	.mob-panel__number {
-		margin-top: 20px;
+		margin-top: 3%;
 		color: var(--orange);
-		font-size: 50px;
+		font-size: 6vw;
 		opacity: 1;
 	}
 	
@@ -214,12 +232,7 @@
 	}
 
 	.mini-img {
-		width: 150px;
-		height: 150px;
-	}
-
-	.product-block {
-		height: 700px;
+		width: 100%;
 	}
 
 	#navbar-docs {
@@ -227,23 +240,29 @@
 	}
 
 	.product-navbar-li {
-		font-size: 30px;
+		font-size: 5vw;
 	}
 
+	.product-navbar {
+	    width: 100%;
+        height: inherit;
+        padding: 2% 0;
+    }
+
 	.section-title {
-		font-size: 40px;
+		font-size: 6vw;
 	}
 
 	.product-full-description p {
-		font-size: 28px;
+		font-size: 4vw;
 	}
 
 	.product-li {
-		font-size: 25px;
+		font-size: 3vw;
 	}
 
 	.feature table {
-		font-size: 25px;
+		font-size: 3vw;
 	}
 
 	.about-side-bar {
@@ -251,15 +270,16 @@
 	}
 
 	.about-content .subtitle {
-		font-size: 30px;
+		font-size: 4vw;
+		padding-top: 5%;
 	}
 
 	.about-content p {
-		font-size: 25px;
+		font-size: 4vw;
 	}
 
 	.about-content ul li {
-		font-size: 20px;
+		font-size: 2vw;
 	}
 
 	.stats-grid {
@@ -276,7 +296,7 @@
     }
 
     .stats-item .stats-title {
-		font-size: 40px;
+		font-size: 6vw;
 	}
 
     .stats-item .stats-subtitle {
@@ -284,15 +304,24 @@
     }
 
 	.container.tile_goods .product{
-		width: 50%;
+		width: 100%;
+		height: 100%;
 	}
 
 	.container.tile_goods .product .product-img-block{
 		height: auto;
 	}
 
+	.product-img-block {
+		padding: 2%;
+	}
+
+	.product-block {
+		height: auto;
+	}
+
 	.service {
-		font-size: 25px;
+		font-size: 4vw;
 		background: white;
 		color: var(--dark_gray);
 		border: 1px solid var(--light_gray);
@@ -302,22 +331,27 @@
 		align-items: baseline;
 	}
 
+	.container.tile_goods {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
 	.subtitle {
-		font-size: 30px;
+		font-size: 4vw;
 	}
 
 	.services {
 		display: grid;
 		grid-template-columns: repeat(1, 1fr);
+		position: relative;
 	}
 
 	.service {
 		width: 100%;
-		height: 250px;
 	}
 
 	.service-description .list ul li {
-		font-size: 28px;
+		font-size: 4vw;
 	}
 
 	.form-button {
@@ -329,7 +363,7 @@
 	}
 
 	.contacts-info .text {
-		font-size: 25px;
+		font-size: 3.5vw;
 	}
 
 	.location {
@@ -341,15 +375,11 @@
 	}
 
 	.footer-text {
-		font-size: 20px;
+		font-size: 2.5vw;
 	}
 
 	.close-popup-button {
-		font-size: 50px;
-	}
-
-	.product {
-		padding: 25px;
+		font-size: 10vw;
 	}
 
 	.product-img {
@@ -357,11 +387,16 @@
 	}
 
 	.service-description .paragraph {
-		font-size: 28px;
+		font-size: 4vw;
 	}
 
-	html {
-		min-width: 900px;
+	.services-block {
+		posi
+	}
+
+	.service-description {
+		height: 100%;
+		position: relative	;
 	}
 
 	.map-block {

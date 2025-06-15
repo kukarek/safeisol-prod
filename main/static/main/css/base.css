@@ -8,6 +8,10 @@
     --middle_gray: rgb(151, 151, 151);
 }
 
+html, body {
+  width: 100%;
+  min-width: 100%;
+}
 
 body {
     font-family: Arial, Arial, sans-serif;
