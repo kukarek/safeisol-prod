@@ -50,7 +50,7 @@
                 {% for product in products %}
                 <div class="product">
                     <div class="product-img-block">
-                        <img class="product-img" src="{% static 'main/media/complete projects thumbnails/'%}{{product.image_path}}" data-file="{% static 'main/media/complete projects/'%}{{product.image_path}}" alt="{{ product.name }}" onclick="openModal(this)">
+                        <img class="product-img" src="{% static 'main/media/thumbnails/complete projects/'%}{{product.image_path}}" data-file="{% static 'main/media/complete projects/'%}{{product.image_path}}" alt="{{ product.name }}" onclick="openModal(this)">
                     </div>
                     <div class="product-name-block">
                         <p class="product-name">{{ product.name }}</p>
