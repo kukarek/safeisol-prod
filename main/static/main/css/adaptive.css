@@ -278,7 +278,7 @@
 	}
 
 	.about-content ul li {
-		font-size: 2vw;
+		font-size: 4vw;
 	}
 
 	.stats-grid {
@@ -286,12 +286,11 @@
     }
 
     .stats-item {
-        height: 400px;
 		font-size: 25px;
     }
 
     .stats-item .stats-number {
-        font-size: 120px; /* чуть меньше, чтобы влезало */
+        font-size: 22vw; /* чуть меньше, чтобы влезало */
     }
 
     .stats-item .stats-title {
@@ -299,7 +298,7 @@
 	}
 
     .stats-item .stats-subtitle {
-        font-size: 30px; /* больше текст для удобства чтения */
+        font-size: 4vw; /* больше текст для удобства чтения */
     }
 
 	.container.tile_goods .product{
@@ -347,6 +346,7 @@
 
 	.service {
 		width: 100%;
+		height: auto;
 	}
 
 	.service-description .list ul li {
@@ -392,6 +392,7 @@
 
 	.service-description {
 		height: 100%;
+		margin-bottom: 5%;
 		position: relative;
 	}
 
@@ -411,6 +412,19 @@
 		font-size: 4vw;
 		padding: 2%;
 	}
+
+	.about-content {
+		padding: 0;
+		margin-left: 0;
+		margin-bottom: 3%;
+	}
+
+	.main {
+		padding: 0;
+		width: 100%;
+		margin: 0;;
+	}
+
 } 	
 
 @media (max-width: 1300px) {

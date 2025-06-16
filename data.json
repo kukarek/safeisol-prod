@@ -43,18 +43,22 @@
       "images": [
         {
           "src": "explosion-proof thermal cover/1111.png",
+          "thumbnail": "thumbnails/explosion-proof thermal cover/1111.png",
           "type": "image"
         },
         {
           "src": "explosion-proof thermal cover/2222.png",
+          "thumbnail": "thumbnails/explosion-proof thermal cover/2222.png",
           "type": "image"
         },
         {
           "src": "explosion-proof thermal cover/3333.png",
+          "thumbnail": "thumbnails/explosion-proof thermal cover/3333.png",
           "type": "image"
         },
         {
           "src": "explosion-proof thermal cover/4444.png",
+          "thumbnail": "thumbnails/explosion-proof thermal cover/4444.png",
           "type": "image"
         }
       ],
@@ -214,11 +218,13 @@
         {
           "alt": "Корпус соединительный Safeisol КС-155",
           "src": "explosion-proof junction box/1.png",
+          "thumbnail": "thumbnails/explosion-proof junction box/1.png",
           "type": "image"
         },
         {
           "alt": "Корпус соединительный Safeisol КС-110",
           "src": "explosion-proof junction box/2.png",
+          "thumbnail": "thumbnails/explosion-proof junction box/2.png",
           "type": "image"
         }
       ],
@@ -293,21 +299,25 @@
         {
           "alt": "Термочехол Safeisol для фильтра фланцевого",
           "src": "thermal covers for shut-off and control valves and general industrial equipment/1111.png",
+          "thumbnail": "thumbnails/thermal covers for shut-off and control valves and general industrial equipment/1111.png",
           "type": "image"
         },
         {
           "alt": "Термочехол Safeisol для крана шарового в системе сжижения газа",
           "src": "thermal covers for shut-off and control valves and general industrial equipment/2222.png",
+          "thumbnail": "thumbnails/thermal covers for shut-off and control valves and general industrial equipment/2222.png",
           "type": "image"
         },
         {
           "alt": "Термочехол Safeisol для крана шарового в системе сжижения газа",
           "src": "thermal covers for shut-off and control valves and general industrial equipment/3333.png",
+          "thumbnail": "thumbnails/thermal covers for shut-off and control valves and general industrial equipment/3333.png",
           "type": "image"
         },
         {
           "alt": "Термочехол Safeisol для крана шарового",
           "src": "thermal covers for shut-off and control valves and general industrial equipment/4444.png",
+          "thumbnail": "thumbnails/thermal covers for shut-off and control valves and general industrial equipment/4444.png",
           "type": "image"
         }
       ],
@@ -406,16 +416,19 @@
         {
           "alt": "Термочехлы Safeisol для ролл-контейнеров",
           "src": "thermal cover for roll container/1111.png",
+          "thumbnail": "thumbnails/thermal cover for roll container/1111.png",
           "type": "image"
         },
         {
           "alt": "Термочехлы Safeisol для ролл-контейнеров",
           "src": "thermal cover for roll container/2222.png",
+          "thumbnail": "thumbnails/thermal cover for roll container/2222.png",
           "type": "image"
         },
         {
           "alt": "Термочехлы Safeisol для паллет",
           "src": "thermal cover for roll container/3333.png",
+          "thumbnail": "thumbnails/thermal cover for roll container/3333.png",
           "type": "image"
         }
       ],
@@ -585,11 +598,13 @@
         {
           "alt": "Термочехлы Safeisol НГ для задвижек клиновых. Коэффициент 'КМ0'",
           "src": "fireproof thermal cover/2222.png",
+          "thumbnail": "thumbnails/fireproof thermal cover/2222.png",
           "type": "image"
         },
         {
           "alt": "Термочехлы Safeisol НГ для задвижек клиновых. Коэффициент 'КМ0'",
           "src": "fireproof thermal cover/1111.png",
+          "thumbnail": "thumbnails/fireproof thermal cover/1111.png",
           "type": "image"
         }
       ],
@@ -668,6 +683,7 @@
         {
           "alt": "Участок выхлопной системы двигателя корабля с термочехлами Safeisol",
           "src": "thermal covers for steam and gas turbines/1111.png",
+          "thumbnail": "thumbnails/thermal covers for steam and gas turbines/1111.png",
           "type": "image"
         }
       ],
@@ -750,16 +766,19 @@
         {
           "alt": "Шкаф управления установкой учета нефти",
           "src": "acs/1.png",
+          "thumbnail": "thumbnails/acs/1.png",
           "type": "image"
         },
         {
           "alt": "Шкаф управления блока сепаратора участка НПЗ",
           "src": "acs/2.png",
+          "thumbnail": "thumbnails/acs/2.png",
           "type": "image"
         },
         {
           "alt": "Шкаф управления блоком учета нефти в корпусе Еxd",
           "src": "acs/3.png",
+          "thumbnail": "thumbnails/acs/3.png",
           "type": "image"
         }
       ],

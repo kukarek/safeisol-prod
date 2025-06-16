@@ -23,10 +23,14 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('SECRET_KEY')
 
 # Debug mode
-DEBUG = env.bool('DEBUG', default=False)
+DEBUG =  env.bool('DEBUG', default=False)
 
 # Allowed hosts
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+
+# Security settings
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+CSRF_TRUSTED_ORIGINS = ['https://safeisol.ru']
 
 # Application definition
 INSTALLED_APPS = [
@@ -39,6 +43,7 @@ INSTALLED_APPS = [
     'main',
     'rest_framework',
     'django_json_widget',
+    'django.contrib.sitemaps',
 ]
 
 # Middleware configuration

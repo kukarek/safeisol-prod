@@ -12,6 +12,13 @@ class About(mixins.BreadcrumbsMixin, mixins.SectionMixin, TemplateView):
     subtitle = 'О компании'
 
 
+    def get_breadcrumbs(self):
+        return [
+            {"title": "Главная", "url": "/"},
+            {"title": self.subtitle, "url": ""},
+        ]
+
+
 class Certificates(mixins.BreadcrumbsMixin, mixins.SectionMixin, TemplateView):
     """
     View for the "Certificates" page.
@@ -20,6 +27,14 @@ class Certificates(mixins.BreadcrumbsMixin, mixins.SectionMixin, TemplateView):
     template_name = 'main/certificates.html'
     section = 'certificates'
     subtitle = 'Сертификаты'
+
+    def get_breadcrumbs(self):
+        return [
+            {"title": "Главная", "url": "/"},
+            {"title": "О компании", "url": "/about/"},
+            {"title": self.subtitle, "url": ""},
+        ]
+    
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -38,6 +53,13 @@ class Contacts(mixins.BreadcrumbsMixin, mixins.SectionMixin, TemplateView):
     subtitle = 'Контакты'
 
 
+    def get_breadcrumbs(self):
+        return [
+            {"title": "Главная", "url": "/"},
+            {"title": self.subtitle, "url": ""},
+        ]
+
+
 class Delivery(mixins.BreadcrumbsMixin, mixins.SectionMixin, TemplateView):
     """
     View for the "Delivery" page.
@@ -48,11 +70,26 @@ class Delivery(mixins.BreadcrumbsMixin, mixins.SectionMixin, TemplateView):
     subtitle = 'Доставка'
 
 
+    def get_breadcrumbs(self):
+        return [
+            {"title": "Главная", "url": "/"},
+            {"title": self.subtitle, "url": ""},
+        ]
+
+
 class CompleteProjects(mixins.BreadcrumbsMixin, mixins.SectionMixin, TemplateView):
     template_name = 'main/complete_projects.html'
     section = 'complete_projects'
     subtitle = 'Выполненные проекты'
     paginate_by = 8
+
+
+    def get_breadcrumbs(self):
+        return [
+            {"title": "Главная", "url": "/"},
+            {"title": self.subtitle, "url": ""},
+        ]
+    
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
