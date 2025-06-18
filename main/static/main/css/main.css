@@ -1,13 +1,13 @@
 .main-title {
     color: var(--light_gray);
-    font-size: 80px;
-    margin: 20px;
-    font-weight: bold;
+    font-size: 50px;
+    margin: 10px;
+    font-family: Mistral;
     text-align: center;
 }
 
 .main-slide {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-image: url('/static/main/media/zavod.png');
     background-size: cover;
@@ -16,11 +16,15 @@
     display: flex;
     text-align: center;
     background-color: #494949;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: left;
     margin-bottom: 50px;
     overflow: hidden;
     max-height: 150px;
+}
+
+.main-text {
+    margin-left: 15%;
 }
 
 .about-title {

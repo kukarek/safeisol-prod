@@ -100,3 +100,17 @@ jobs:
             docker-compose exec web python manage.py migrate --noinput
             docker-compose exec web python manage.py loaddata data.json
 
+            # Чистим старые образы Docker
+            docker image prune -af
+      
+      # Проверяем, достаточно ли свободного места на диске
+      - name: Check disk space
+        run: |
+          MIN_FREE_GB=1
+          FREE_GB=$(df --output=avail -BG / | tail -1 | tr -dc '0-9')
+          if [ "$FREE_GB" -lt "$MIN_FREE_GB" ]; then
+            echo "❌ Недостаточно места: ${FREE_GB}G"
+            exit 1
+          fi
+          echo "✅ Свободного места достаточно: ${FREE_GB}G"
+
