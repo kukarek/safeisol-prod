@@ -42,6 +42,11 @@ class Product(models.Model):
         verbose_name="Категория",
     )
 
+    class Meta:
+        verbose_name = "Продукт"
+        verbose_name_plural = "Продукты"
+        ordering = ["id"]
+
     def get_absolute_url(self) -> str:
         """
         Returns the URL for the product detail page.

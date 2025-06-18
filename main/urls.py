@@ -3,6 +3,7 @@ from django.contrib.sitemaps.views import sitemap
 from . import views
 from .sitemaps import SitemapRegistry
 
+
 urlpatterns = [
     path('', views.Index.as_view(), name='home'),
     path('form/', views.send_contacts, name='send_contacts'),

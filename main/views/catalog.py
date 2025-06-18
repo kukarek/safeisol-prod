@@ -85,8 +85,10 @@ class Product(mixins.BreadcrumbsMixin, DetailView):
         Uses get_object_or_404 to return a 404 error if the product does not exist.
         Prefetches related category to optimize database queries.
         """
-        return get_object_or_404(models.Product.objects.prefetch_related('category'), slug=self.kwargs['product_slug'])
-
+        if not hasattr(self, '_object'):
+            self._object = get_object_or_404(models.Product.objects.prefetch_related('category'), slug=self.kwargs['product_slug'])
+        return self._object
+    
     def get_breadcrumbs(self) -> list[dict[str, str]]:
         """
         Returns a list of breadcrumbs for the product page.

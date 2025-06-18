@@ -16,3 +16,6 @@ __pycache__/
 
 #Статика в сборе
 staticfiles/
+
+# Выгрузка данных
+export_data.py

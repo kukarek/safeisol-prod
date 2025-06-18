@@ -26,7 +26,9 @@ class Service(mixins.BreadcrumbsMixin, DetailView):
     allow_empty = False
 
     def get_object(self):
-        return get_object_or_404(models.Service.objects.all(), slug=self.kwargs['service_slug'])
+        if not hasattr(self, '_object'):
+            self._object = get_object_or_404(models.Service.objects.all(), slug=self.kwargs['service_slug'])
+        return self._object
 
     def get_breadcrumbs(self, service=None):
         if service is None:
