@@ -57,7 +57,7 @@
 
 .gray:hover {
     background-color: white;
-    color: var(--dark_gray);
+    color: var(--orange);
 }
 
 .dark {

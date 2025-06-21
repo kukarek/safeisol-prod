@@ -59,19 +59,19 @@
                         
                         {% for item in services %}
                             {% if forloop.counter == 1 %}
-                            <div class="service white" onclick="window.location.href='/services/{{item.slug}}'">
+                            <div class="service gray" onclick="window.location.href='/services/{{item.slug}}'">
                                 <p>{{item.name}}</p>
                             </div>
                             {% elif forloop.counter == 2 %}
-                            <div class="service white" onclick="window.location.href='/services/{{item.slug}}'">
+                            <div class="service gray" onclick="window.location.href='/services/{{item.slug}}'">
                                 <p>{{item.name}}</p>
                             </div>
                             {% elif forloop.counter == 3 %}
-                            <div class="service white" onclick="window.location.href='/services/{{item.slug}}'">
+                            <div class="service gray" onclick="window.location.href='/services/{{item.slug}}'">
                                 <p>{{item.name}}</p>
                             </div>
                             {% else %}
-                            <div class="service white" onclick="window.location.href='/services/{{item.slug}}'">
+                            <div class="service gray" onclick="window.location.href='/services/{{item.slug}}'">
                                 <p>{{item.name}}</p>
                             </div>
                             {% endif %}
