@@ -1,6 +1,565 @@
 [
     {
         "model": "admin.logentry",
+        "pk": 45,
+        "fields": {
+            "action_time": "2025-06-22T20:54:24.005Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "37",
+            "object_repr": "Проект 39",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 44,
+        "fields": {
+            "action_time": "2025-06-20T20:46:27.097Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "26",
+            "object_repr": "Система АСУ ТП сепараторами для нефтегазового сектора",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 43,
+        "fields": {
+            "action_time": "2025-06-20T20:43:58.313Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "30",
+            "object_repr": "Проект 30",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 42,
+        "fields": {
+            "action_time": "2025-06-20T20:40:40.025Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "24",
+            "object_repr": "Система АСУ ТП для управления узлом учета нефти с функцией управления через панель оператора",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 41,
+        "fields": {
+            "action_time": "2025-06-20T20:39:43.378Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "8",
+            "object_repr": "Термочехол SAFEISOL для фильтра фланцевого",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 40,
+        "fields": {
+            "action_time": "2025-06-20T20:39:26.747Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "Термочехол SAFEISOL для грязевика фланцевого",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 39,
+        "fields": {
+            "action_time": "2025-06-20T20:39:05.694Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "10",
+            "object_repr": "Термочехлы SAFEISOL для грязевика фланцевого",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 38,
+        "fields": {
+            "action_time": "2025-06-20T20:38:20.660Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "29",
+            "object_repr": "Распределительный щит электропитания АСУ ТП",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 37,
+        "fields": {
+            "action_time": "2025-06-20T20:37:47.454Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "9",
+            "object_repr": "Термочехлы SAFEISOL для датчиков измерения избыточного давления",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 36,
+        "fields": {
+            "action_time": "2025-06-20T20:23:41.397Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "34",
+            "object_repr": "Промежуточный контроль монтажа системы АСУ ТП для узла учета нефти",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 35,
+        "fields": {
+            "action_time": "2025-06-20T20:22:38.144Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "35",
+            "object_repr": "Система АСУ мониторинга и сигнализации для паровых турбин и котлов",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 34,
+        "fields": {
+            "action_time": "2025-06-20T20:19:21.595Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "31",
+            "object_repr": "FAT испытания системы АСУ ТП для управления узлом учета нефти в Exd оболочке с панелью управления",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 33,
+        "fields": {
+            "action_time": "2025-06-20T20:16:58.702Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "25",
+            "object_repr": "Система АСУ ТП для управления узлом учета нефти",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 32,
+        "fields": {
+            "action_time": "2025-06-20T20:16:24.457Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "31",
+            "object_repr": "Система АСУ ТП для управления узлом учета нефти в Exd оболочке с панелью управления",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 31,
+        "fields": {
+            "action_time": "2025-06-20T20:16:08.055Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "32",
+            "object_repr": "Система АСУ ТП для управления узлом учета нефти в Exd оболочке",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 30,
+        "fields": {
+            "action_time": "2025-06-20T20:16:01.859Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "33",
+            "object_repr": "Система АСУ ТП для управления узлом учета нефти в Exd оболочке",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 29,
+        "fields": {
+            "action_time": "2025-06-20T20:15:55.836Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "27",
+            "object_repr": "Система АСУ ТП для управления узлом учета нефти в Exd оболочке",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 28,
+        "fields": {
+            "action_time": "2025-06-20T20:15:35.463Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "28",
+            "object_repr": "Система АСУ ТП для управления узлом учета нефти в Exd оболочке",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 27,
+        "fields": {
+            "action_time": "2025-06-20T20:14:39.918Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "6",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL Ex с электрообогревом и смотровым окном для КИП",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 26,
+        "fields": {
+            "action_time": "2025-06-20T20:13:50.609Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "11",
+            "object_repr": "Термочехлы SAFEISOL для шарового крана",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 25,
+        "fields": {
+            "action_time": "2025-06-20T20:13:21.921Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "12",
+            "object_repr": "Термочехлы SAFEISOL для датчиков измерения избыточного давления МЕТРАН",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 24,
+        "fields": {
+            "action_time": "2025-06-20T20:12:42.918Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "13",
+            "object_repr": "Термочехлы SAFEISOL для датчиков измерения избыточного давления МЕТРАН",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 23,
+        "fields": {
+            "action_time": "2025-06-20T20:12:05.966Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "17",
+            "object_repr": "Термочехлы SAFEISOL для датчиков измерения избыточного давления ЭМИС",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 22,
+        "fields": {
+            "action_time": "2025-06-20T20:10:29.260Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "18",
+            "object_repr": "Термочехлы SAFEISOL для теплового пункта",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 21,
+        "fields": {
+            "action_time": "2025-06-20T20:10:19.741Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "36",
+            "object_repr": "Термочехлы SAFEISOL для теплового пункта",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 20,
+        "fields": {
+            "action_time": "2025-06-20T20:10:10.457Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "37",
+            "object_repr": "Термочехлы SAFEISOL для теплового пункта",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 19,
+        "fields": {
+            "action_time": "2025-06-20T20:09:44.842Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "15",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL Ex c электрообогревом для приборов КИП",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 18,
+        "fields": {
+            "action_time": "2025-06-20T20:07:14.373Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "16",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL Ex c электрообогревом для приборов КИП",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 17,
+        "fields": {
+            "action_time": "2025-06-20T20:06:31.330Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "4",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL Ex  с электрообогревом для сигнализаторов уровня",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 16,
+        "fields": {
+            "action_time": "2025-06-20T20:05:44.172Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL Ex для датчика измерения расхода",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 15,
+        "fields": {
+            "action_time": "2025-06-20T20:05:06.688Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL Ex с электрообогревом для датчика измерения температуры ТСП",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 14,
+        "fields": {
+            "action_time": "2025-06-20T20:04:13.812Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "14",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL Ex для датчика измерения давления ЭМИС-БАР",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 13,
+        "fields": {
+            "action_time": "2025-06-20T20:03:16.259Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL Ex для датчика измерения расхода Ирвис",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 12,
+        "fields": {
+            "action_time": "2025-06-20T20:02:44.278Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL Ex для датчиков измерения температуры",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 11,
+        "fields": {
+            "action_time": "2025-06-20T20:01:53.064Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "7",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL Ex для импульсных трубок с электрообогревом",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2025-06-20T20:01:15.217Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "20",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL Ex для датчика измерения давления Метран-150",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2025-06-20T20:00:28.769Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "19",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL Ex для датчика измерения расхода",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2025-06-20T19:59:51.333Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "23",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL Ex для импульсной трубки",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2025-06-20T19:59:39.696Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "22",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL Ex для импульсной линии",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2025-06-20T19:59:28.799Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "21",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL Ex с электрообогревом для задвижки клиновой",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2025-06-20T19:59:14.762Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "23",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL для импульсной трубки",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2025-06-20T19:58:54.725Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "22",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL для импульсной линии",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2025-06-20T19:58:33.118Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "21",
+            "object_repr": "Термочехол взрывозащищенный SAFEISOL с электрообогревом для задвижки клиновой",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
         "pk": 2,
         "fields": {
             "action_time": "2025-06-18T10:38:18.957Z",
@@ -1431,7 +1990,7 @@
         "model": "main.completeproject",
         "pk": 1,
         "fields": {
-            "name": "Проект 1",
+            "name": "Термочехол взрывозащищенный SAFEISOL Ex для датчика измерения расхода Ирвис",
             "image_path": "1.png"
         }
     },
@@ -1439,7 +1998,7 @@
         "model": "main.completeproject",
         "pk": 2,
         "fields": {
-            "name": "Проект 2",
+            "name": "Термочехол взрывозащищенный SAFEISOL Ex для датчика измерения расхода",
             "image_path": "2.png"
         }
     },
@@ -1447,7 +2006,7 @@
         "model": "main.completeproject",
         "pk": 3,
         "fields": {
-            "name": "Проект 3",
+            "name": "Термочехол взрывозащищенный SAFEISOL Ex с электрообогревом для датчика измерения температуры ТСП",
             "image_path": "3.png"
         }
     },
@@ -1455,7 +2014,7 @@
         "model": "main.completeproject",
         "pk": 4,
         "fields": {
-            "name": "Проект 4",
+            "name": "Термочехол взрывозащищенный SAFEISOL Ex  с электрообогревом для сигнализаторов уровня",
             "image_path": "4.png"
         }
     },
@@ -1463,7 +2022,7 @@
         "model": "main.completeproject",
         "pk": 5,
         "fields": {
-            "name": "Проект 5",
+            "name": "Термочехол взрывозащищенный SAFEISOL Ex для датчиков измерения температуры",
             "image_path": "5.png"
         }
     },
@@ -1471,7 +2030,7 @@
         "model": "main.completeproject",
         "pk": 6,
         "fields": {
-            "name": "Проект 6",
+            "name": "Термочехол взрывозащищенный SAFEISOL Ex с электрообогревом и смотровым окном для КИП",
             "image_path": "6.png"
         }
     },
@@ -1479,7 +2038,7 @@
         "model": "main.completeproject",
         "pk": 7,
         "fields": {
-            "name": "Проект 7",
+            "name": "Термочехол взрывозащищенный SAFEISOL Ex для импульсных трубок с электрообогревом",
             "image_path": "7.png"
         }
     },
@@ -1487,7 +2046,7 @@
         "model": "main.completeproject",
         "pk": 8,
         "fields": {
-            "name": "Проект 8",
+            "name": "Термочехол SAFEISOL для фильтра фланцевого",
             "image_path": "8.png"
         }
     },
@@ -1495,7 +2054,7 @@
         "model": "main.completeproject",
         "pk": 9,
         "fields": {
-            "name": "Проект 9",
+            "name": "Термочехлы SAFEISOL для датчиков измерения избыточного давления",
             "image_path": "9.png"
         }
     },
@@ -1503,7 +2062,7 @@
         "model": "main.completeproject",
         "pk": 10,
         "fields": {
-            "name": "Проект 10",
+            "name": "Термочехол SAFEISOL для грязевика фланцевого",
             "image_path": "10.png"
         }
     },
@@ -1511,7 +2070,7 @@
         "model": "main.completeproject",
         "pk": 11,
         "fields": {
-            "name": "Проект 11",
+            "name": "Термочехлы SAFEISOL для шарового крана",
             "image_path": "11.png"
         }
     },
@@ -1519,7 +2078,7 @@
         "model": "main.completeproject",
         "pk": 12,
         "fields": {
-            "name": "Проект 12",
+            "name": "Термочехлы SAFEISOL для датчиков измерения избыточного давления МЕТРАН",
             "image_path": "12.png"
         }
     },
@@ -1527,7 +2086,7 @@
         "model": "main.completeproject",
         "pk": 13,
         "fields": {
-            "name": "Проект 13",
+            "name": "Термочехлы SAFEISOL для датчиков измерения избыточного давления МЕТРАН",
             "image_path": "13.png"
         }
     },
@@ -1535,7 +2094,7 @@
         "model": "main.completeproject",
         "pk": 14,
         "fields": {
-            "name": "Проект 14",
+            "name": "Термочехол взрывозащищенный SAFEISOL Ex для датчика измерения давления ЭМИС-БАР",
             "image_path": "14.png"
         }
     },
@@ -1543,7 +2102,7 @@
         "model": "main.completeproject",
         "pk": 15,
         "fields": {
-            "name": "Проект 15",
+            "name": "Термочехол взрывозащищенный SAFEISOL Ex c электрообогревом для приборов КИП",
             "image_path": "15.png"
         }
     },
@@ -1551,7 +2110,7 @@
         "model": "main.completeproject",
         "pk": 16,
         "fields": {
-            "name": "Проект 16",
+            "name": "Термочехол взрывозащищенный SAFEISOL Ex c электрообогревом для приборов КИП",
             "image_path": "16.png"
         }
     },
@@ -1559,7 +2118,7 @@
         "model": "main.completeproject",
         "pk": 17,
         "fields": {
-            "name": "Проект 17",
+            "name": "Термочехлы SAFEISOL для датчиков измерения избыточного давления ЭМИС",
             "image_path": "17.png"
         }
     },
@@ -1567,7 +2126,7 @@
         "model": "main.completeproject",
         "pk": 18,
         "fields": {
-            "name": "Проект 18",
+            "name": "Термочехлы SAFEISOL для теплового пункта",
             "image_path": "18.png"
         }
     },
@@ -1575,7 +2134,7 @@
         "model": "main.completeproject",
         "pk": 19,
         "fields": {
-            "name": "Проект 19",
+            "name": "Термочехол взрывозащищенный SAFEISOL Ex для датчика измерения расхода",
             "image_path": "19.png"
         }
     },
@@ -1583,7 +2142,7 @@
         "model": "main.completeproject",
         "pk": 20,
         "fields": {
-            "name": "Проект 20",
+            "name": "Термочехол взрывозащищенный SAFEISOL Ex для датчика измерения давления Метран-150",
             "image_path": "20.png"
         }
     },
@@ -1591,7 +2150,7 @@
         "model": "main.completeproject",
         "pk": 21,
         "fields": {
-            "name": "Проект 21",
+            "name": "Термочехол взрывозащищенный SAFEISOL Ex с электрообогревом для задвижки клиновой",
             "image_path": "21.png"
         }
     },
@@ -1599,7 +2158,7 @@
         "model": "main.completeproject",
         "pk": 22,
         "fields": {
-            "name": "Проект 22",
+            "name": "Термочехол взрывозащищенный SAFEISOL Ex для импульсной линии",
             "image_path": "22.png"
         }
     },
@@ -1607,7 +2166,7 @@
         "model": "main.completeproject",
         "pk": 23,
         "fields": {
-            "name": "Проект 23",
+            "name": "Термочехол взрывозащищенный SAFEISOL Ex для импульсной трубки",
             "image_path": "23.png"
         }
     },
@@ -1615,7 +2174,7 @@
         "model": "main.completeproject",
         "pk": 24,
         "fields": {
-            "name": "Проект 24",
+            "name": "Система АСУ ТП для управления узлом учета нефти с функцией управления через панель оператора",
             "image_path": "24.png"
         }
     },
@@ -1623,7 +2182,7 @@
         "model": "main.completeproject",
         "pk": 25,
         "fields": {
-            "name": "Проект 25",
+            "name": "Система АСУ ТП для управления узлом учета нефти",
             "image_path": "25.png"
         }
     },
@@ -1631,7 +2190,7 @@
         "model": "main.completeproject",
         "pk": 26,
         "fields": {
-            "name": "Проект 26",
+            "name": "Система АСУ ТП сепараторами для нефтегазового сектора",
             "image_path": "26.png"
         }
     },
@@ -1639,7 +2198,7 @@
         "model": "main.completeproject",
         "pk": 27,
         "fields": {
-            "name": "Проект 27",
+            "name": "Система АСУ ТП для управления узлом учета нефти в Exd оболочке",
             "image_path": "27.png"
         }
     },
@@ -1647,7 +2206,7 @@
         "model": "main.completeproject",
         "pk": 28,
         "fields": {
-            "name": "Проект 28",
+            "name": "Система АСУ ТП для управления узлом учета нефти в Exd оболочке",
             "image_path": "28.png"
         }
     },
@@ -1655,7 +2214,7 @@
         "model": "main.completeproject",
         "pk": 29,
         "fields": {
-            "name": "Проект 29",
+            "name": "Распределительный щит электропитания АСУ ТП",
             "image_path": "29.png"
         }
     },
@@ -1671,7 +2230,7 @@
         "model": "main.completeproject",
         "pk": 31,
         "fields": {
-            "name": "Проект 31",
+            "name": "FAT испытания системы АСУ ТП для управления узлом учета нефти в Exd оболочке с панелью управления",
             "image_path": "31.png"
         }
     },
@@ -1679,7 +2238,7 @@
         "model": "main.completeproject",
         "pk": 32,
         "fields": {
-            "name": "Проект 32",
+            "name": "Система АСУ ТП для управления узлом учета нефти в Exd оболочке",
             "image_path": "32.png"
         }
     },
@@ -1687,7 +2246,7 @@
         "model": "main.completeproject",
         "pk": 33,
         "fields": {
-            "name": "Проект 33",
+            "name": "Система АСУ ТП для управления узлом учета нефти в Exd оболочке",
             "image_path": "33.png"
         }
     },
@@ -1695,7 +2254,7 @@
         "model": "main.completeproject",
         "pk": 34,
         "fields": {
-            "name": "Проект 34",
+            "name": "Промежуточный контроль монтажа системы АСУ ТП для узла учета нефти",
             "image_path": "34.png"
         }
     },
@@ -1703,7 +2262,7 @@
         "model": "main.completeproject",
         "pk": 35,
         "fields": {
-            "name": "Проект 35",
+            "name": "Система АСУ мониторинга и сигнализации для паровых турбин и котлов",
             "image_path": "35.png"
         }
     },
@@ -1711,7 +2270,7 @@
         "model": "main.completeproject",
         "pk": 36,
         "fields": {
-            "name": "Проект 36",
+            "name": "Термочехлы SAFEISOL для теплового пункта",
             "image_path": "36.png"
         }
     },
@@ -1719,27 +2278,8 @@
         "model": "main.completeproject",
         "pk": 37,
         "fields": {
-            "name": "Проект 37",
+            "name": "Термочехлы SAFEISOL для теплового пункта",
             "image_path": "37.png"
-        }
-    },
-    {
-        "model": "main.service",
-        "pk": 0,
-        "fields": {
-            "name": "Комплексные услуги связанные с проектированием и внедрением теплоизоляции.",
-            "slug": "kompleksnye-uslugi-svyazannye-s-proektirovaniem-i-vnedreniem-teploizolyacii",
-            "content": [
-                {
-                    "type": "list",
-                    "value": {
-                        "values": [
-                            "проектные работы по расчету эффективности применения теплоизоляции производства ООО «Безопасной теплоизоляции». В данные работы входит полный расчет согласно предоставленными данными от заказчика с учетом географического расположения, температуры окружающего воздуха согласно требованиям и температуры спутника. На основе СНиП 41-03-2003 и СП 61.13330.2012  мы предоставим необходимые расчеты и сформируем данные по экономии как тепловых показателей, так и финансовых за необходимый период времени. По умолчанию берется один календарный год;",
-                            "предпроектное обследование объекта. В случае масштабных работ, мы осуществляем предпроектное обследование объекта. В данные работы включены замеры геометрических параметров и измерение температур в критических точках;"
-                        ]
-                    }
-                }
-            ]
         }
     },
     {
@@ -1760,6 +2300,25 @@
                 {
                     "type": "paragraph",
                     "value": "Все итерации проекта сводятся к реализации проекта «под ключ» и оптимизируют недочеты в процессе бюрократического взаимодействия и возможной передачи недостоверных данных."
+                }
+            ]
+        }
+    },
+    {
+        "model": "main.service",
+        "pk": 0,
+        "fields": {
+            "name": "Комплексные услуги связанные с проектированием и внедрением теплоизоляции.",
+            "slug": "kompleksnye-uslugi-svyazannye-s-proektirovaniem-i-vnedreniem-teploizolyacii",
+            "content": [
+                {
+                    "type": "list",
+                    "value": {
+                        "values": [
+                            "проектные работы по расчету эффективности применения теплоизоляции производства ООО «Безопасной теплоизоляции». В данные работы входит полный расчет согласно предоставленными данными от заказчика с учетом географического расположения, температуры окружающего воздуха согласно требованиям и температуры спутника. На основе СНиП 41-03-2003 и СП 61.13330.2012  мы предоставим необходимые расчеты и сформируем данные по экономии как тепловых показателей, так и финансовых за необходимый период времени. По умолчанию берется один календарный год;",
+                            "предпроектное обследование объекта. В случае масштабных работ, мы осуществляем предпроектное обследование объекта. В данные работы включены замеры геометрических параметров и измерение температур в критических точках;"
+                        ]
+                    }
                 }
             ]
         }

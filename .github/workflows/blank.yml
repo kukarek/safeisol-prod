@@ -98,7 +98,7 @@ jobs:
 
             # Выполняем миграции и загрузку данных внутри контейнера
             docker-compose exec web python manage.py migrate --noinput
-            docker-compose exec web python manage.py loaddata data.json
+            # docker-compose exec web python manage.py loaddata data.json
 
             # Чистим старые образы Docker
             docker image prune -af
