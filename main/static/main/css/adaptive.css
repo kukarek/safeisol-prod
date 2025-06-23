@@ -234,12 +234,13 @@
 		width: 100%;
 	}
 
-	#navbar-docs {
+	/* #navbar-docs {
 		display: none;
-	}
+	} */
 
 	.product-navbar-li {
-		font-size: 5vw;
+		font-size: 3.5vw;
+		margin: 0 10px;
 	}
 
 	.product-navbar {
