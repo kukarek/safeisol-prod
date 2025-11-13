@@ -41,6 +41,8 @@ class Product(models.Model):
         null=True,
         verbose_name="Категория",
     )
+    keywords = models.CharField(max_length=255, verbose_name="Ключевые слова", null=True)
+    description = models.CharField(verbose_name="Описание", null=True)
 
     class Meta:
         verbose_name = "Продукт"

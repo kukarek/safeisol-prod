@@ -1,6 +1,4 @@
 from django.views.generic import TemplateView
-from django.shortcuts import get_object_or_404
-from django.urls import reverse
 from main import models
 
 
@@ -21,18 +19,9 @@ class Index(TemplateView):
         """
         context = super().get_context_data(**kwargs)
 
-        # Получаем категорию "Термочехлы"
-        cat_termochehly = get_object_or_404(models.Category, title='Термочехлы')
+        cats = models.Category.objects.prefetch_related("products")
+        
 
-        # Виртуальная категория с остальными продуктами
-        temp_category = {
-            'title': 'Системы АСУ ТП',
-            'slug': 'temp-category',
-            'get_absolute_url': reverse('catalog'),
-            'products': models.Product.objects.exclude(category_id=cat_termochehly.id)
-        }
-
-        context['categories'] = [cat_termochehly, temp_category]
-        context['additional_category'] = temp_category
+        context['categories'] = cats
 
         return context
