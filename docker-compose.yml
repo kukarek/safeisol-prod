@@ -1,8 +1,9 @@
+version: "3.9"
 
 services:
 
   nginx:
-    image: nginx:latest
+    image: nginx:1.26
     restart: always
     ports:
       - "80:80"
@@ -14,41 +15,32 @@ services:
     depends_on:
       - web
 
-  redis:
-    image: redis:7
-    restart: always
-    ports:
-      - "6379:6379"
-
   web:
     build: .
     restart: always
-    volumes:
-      - .:/app
-      - static_volume:/app/staticfiles
-      - ./logs:/var/log/django
     env_file:
       - .env
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+    volumes:
+      - static_volume:/app/staticfiles
+      - ./logs:/var/log/django
+    command: gunicorn safeisol.wsgi:application --bind 0.0.0.0:8000
     depends_on:
       - redis
-    ports:
-      - "8000:8000"
 
   celery:
     build: .
     restart: always
-    command: celery -A safeisol worker --loglevel=info
-    volumes:
-      - .:/app
-      - ./logs:/app/logs
-    environment:
-      - CELERY_BROKER_URL=${CELERY_BROKER_URL}
-      - CELERY_RESULT_BACKEND=${CELERY_RESULT_BACKEND}
+    env_file:
+      - .env
+    command: celery -A safeisol worker -l info
     depends_on:
       - redis
 
+  redis:
+    image: redis:7
+    restart: always
+    expose:
+      - "6379"
+
 volumes:
-  postgres_data:
   static_volume:
