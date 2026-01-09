@@ -23,18 +23,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Build and restart Docker container on server
+      - name: Deploy to server
         uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            set -e  # Выход при любой ошибке
 
-            # Создаем папку проекта и переходим в неё
-            mkdir -p /var/www/safeisol
-            cd /var/www/safeisol
-            
+            # Папка проекта
+            PROJECT_DIR=/var/www/safeisol
+            mkdir -p $PROJECT_DIR
+            cd $PROJECT_DIR
+
+            # Создаем или обновляем .env
             cat > .env <<EOF
             DB_HOST=${{ secrets.DB_HOST }}
             DB_NAME=${{ secrets.DB_NAME }}
@@ -48,62 +51,43 @@ jobs:
             EMAIL_HOST_USER=${{ secrets.EMAIL_HOST_USER }}
             EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }}
             DEFAULT_FROM_EMAIL=${{ secrets.DEFAULT_FROM_EMAIL }}
-            DEFAULT_FOR_EMAIL=${{ secrets.DEFAULT_FOR_EMAIL }}
             SMTP=${{ secrets.SMTP }}
             ADMIN_PASS=${{ secrets.ADMIN_PASS }}
             EOF
 
-
-            # Клонируем репозиторий или обновляем его
+            # Клонируем или обновляем репозиторий
             if [ -d ".git" ]; then
-              echo "Обновляю существующий репозиторий"
               git fetch origin
               git reset --hard origin/main
             else
-              echo "Клонирую репозиторий"
               git clone https://github.com/kukarek/safeisol-prod.git .
             fi
 
-            # Устанавливаем PostgreSQL, если он не установлен
-            if ! command -v psql > /dev/null; then
-              echo "PostgreSQL не найден, устанавливаю..."
-              sudo apt-get update
-              sudo apt-get install -y postgresql postgresql-contrib
-              sudo systemctl enable postgresql
-              sudo systemctl start postgresql
-            else
-              echo "PostgreSQL уже установлен"
-            fi
-
-            # Обновляем образы и запускаем контейнеры Docker
-            docker-compose build
+            # Docker: сборка и запуск
+            docker-compose pull
+            docker-compose build --pull
             docker-compose up -d --force-recreate
 
-            # Запускаем тесты и смотрим покрытие
-            docker-compose run --rm web coverage run --source='.' manage.py test && docker-compose run --rm web coverage report -m
-
-            # Ждем, пока контейнер web будет готов выполнять команды
+            # Ждем, пока контейнер web будет готов
             max_attempts=20
             attempt=0
             until docker-compose exec web python manage.py check > /dev/null 2>&1 || [ $attempt -eq $max_attempts ]; do
-              echo "Waiting for web container to be ready... ($attempt/$max_attempts)"
+              echo "Waiting for web container... ($attempt/$max_attempts)"
               attempt=$((attempt + 1))
               sleep 3
             done
+            [ $attempt -eq $max_attempts ] && { echo "Web container failed to start"; exit 1; }
 
-            if [ $attempt -eq $max_attempts ]; then
-              echo "Web container failed to start in time."
-              exit 1
-            fi
-
-            # Выполняем миграции и загрузку данных внутри контейнера
+            # Миграции
             docker-compose exec web python manage.py migrate --noinput
-            # docker-compose exec web python manage.py loaddata data.json
 
-            # Чистим старые образы Docker
+            # Тесты с покрытием
+            docker-compose exec web coverage run --source='.' manage.py test
+            docker-compose exec web coverage report -m
+
+            # Чистка старых образов Docker
             docker image prune -af
-      
-      # Проверяем, достаточно ли свободного места на диске
+
       - name: Check disk space
         run: |
           MIN_FREE_GB=1
@@ -113,4 +97,3 @@ jobs:
             exit 1
           fi
           echo "✅ Свободного места достаточно: ${FREE_GB}G"
-
