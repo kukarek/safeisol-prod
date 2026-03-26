@@ -49,11 +49,26 @@ jobs:
             printf "ADMIN_PASS=%s\n" "${{ secrets.ADMIN_PASS }}" >> .env
 
             # 2. Очистка порта 80 и старых контейнеров
-            echo "Остановка системного Nginx (если есть)..."
+            echo "--- Жёсткая очистка порта 80 ---"
+            
+            # Останавливаем системный nginx
             sudo systemctl stop nginx || true
+            
+            # Убиваем любой процесс, который слушает порт 80 (force kill)
+            sudo fuser -k 80/tcp || true
+            sudo fuser -k 443/tcp || true
+            
+            # Даем системе секунду освободить сокет
+            sleep 2
             
             echo "Остановка старых контейнеров проекта..."
             docker-compose down --remove-orphans || true
+            
+            # На всякий случай проверяем, не остался ли кто-то
+            if sudo lsof -i :80; then
+              echo "❌ Порт 80 все еще занят! Пытаемся убить процесс вручную..."
+              sudo lsof -t -i:80 | xargs sudo kill -9 || true
+            fi
 
             # 3. Сборка и запуск
             docker-compose up -d --build --force-recreate
