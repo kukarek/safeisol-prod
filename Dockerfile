@@ -31,6 +31,9 @@ RUN touch .env && \
     EMAIL_HOST_USER=temp \
     EMAIL_HOST_PASSWORD=temp \
     DEFAULT_FROM_EMAIL=temp \
+    DEFAULT_FOR_EMAIL=temp \
+    SMTP=temp \
+    ADMIN_PASS=temp \
     CELERY_BROKER_URL=redis://localhost:6379 \
     CELERY_RESULT_BACKEND=redis://localhost:6379 \
     python manage.py collectstatic --noinput && \
