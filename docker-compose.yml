@@ -1,7 +1,6 @@
 version: "3.9"
 
 services:
-
   nginx:
     image: nginx:1.26
     restart: always
@@ -16,19 +15,14 @@ services:
       - web
 
   web:
+    build: .
     image: safeisol-app
-    build:
-      context: .
-      args:
-        - SECRET_KEY=${SECRET_KEY}
-        - ALLOWED_HOSTS=${ALLOWED_HOSTS}
     restart: always
     env_file:
       - .env
     volumes:
       - static_volume:/app/staticfiles
       - ./logs:/var/log/django
-    # Убираем дубликат collectstatic из command, gunicorn теперь запустится быстрее
     command: gunicorn safeisol.wsgi:application --bind 0.0.0.0:8000
     depends_on:
       - redis
