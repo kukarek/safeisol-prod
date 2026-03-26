@@ -19,6 +19,15 @@ ENV DJANGO_SETTINGS_MODULE=safeisol.settings \
     PYTHONUNBUFFERED=1
 
 # Сборка статики с фейковыми переменными
-RUN SECRET_KEY=build-time-ignore ALLOWED_HOSTS=* python manage.py collectstatic --noinput
+RUN DB_NAME=temp \
+    DB_USER=temp \
+    DB_PASSWORD=temp \
+    DB_HOST=temp \
+    DB_PORT=5432 \
+    CELERY_BROKER_URL=redis://temp \
+    CELERY_RESULT_BACKEND=redis://temp \
+    SECRET_KEY=build-placeholder \
+    ALLOWED_HOSTS=* \
+    python manage.py collectstatic --noinput
 
 CMD ["gunicorn", "safeisol.wsgi:application", "--bind", "0.0.0.0:8000"]
