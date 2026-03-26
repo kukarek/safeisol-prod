@@ -35,8 +35,16 @@ jobs:
             mkdir -p $PROJECT_DIR
             cd $PROJECT_DIR
 
-            # 1. Генерируем .env (как и раньше)
-            cat > .env <<EOF
+            # 1. Обновляем код
+            if [ -d ".git" ]; then
+              git fetch origin
+              git reset --hard origin/main
+            else
+              git clone https://github.com/kukarek/safeisol-prod.git .
+            fi
+
+            # 2. Генерируем .env (после pull, чтобы не перезатереть)
+            cat > .env <<'ENVEOF'
             DB_HOST=${{ secrets.DB_HOST }}
             DB_NAME=${{ secrets.DB_NAME }}
             DB_USER=${{ secrets.DB_USER }}
@@ -51,20 +59,14 @@ jobs:
             DEFAULT_FROM_EMAIL=${{ secrets.DEFAULT_FROM_EMAIL }}
             SMTP=${{ secrets.SMTP }}
             ADMIN_PASS=${{ secrets.ADMIN_PASS }}
-            EOF
-
-            # 2. Обновляем код
-            if [ -d ".git" ]; then
-              git fetch origin
-              git reset --hard origin/main
-            else
-              git clone https://github.com/kukarek/safeisol-prod.git .
-            fi
+            ENVEOF
 
             # 3. Загружаем переменные для подстановки в docker-compose
-            export $(grep -v '^#' .env | xargs)
+            set -a
+            . ./.env
+            set +a
 
-            # 4. Сборка (БЕЗ pull) с передачей аргументов
+            # 4. Сборка с передачей аргументов
             docker-compose build \
               --build-arg SECRET_KEY="$SECRET_KEY" \
               --build-arg ALLOWED_HOSTS="$ALLOWED_HOSTS" \
@@ -73,7 +75,7 @@ jobs:
             # 5. Запуск
             docker-compose up -d --force-recreate
 
-            # 6. Проверка готовности (оставляем вашу логику)
+            # 6. Проверка готовности
             max_attempts=20
             attempt=0
             until docker-compose exec -T web python manage.py check > /dev/null 2>&1 || [ $attempt -eq $max_attempts ]; do
