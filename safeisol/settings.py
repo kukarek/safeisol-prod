@@ -20,7 +20,7 @@ env = environ.Env()
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Security settings
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY', default='placeholder-for-build-purposes')
 
 # Debug mode
 DEBUG =  env.bool('DEBUG', default=False)
