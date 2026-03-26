@@ -30,14 +30,12 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            set -e  # Выход при любой ошибке
-
-            # Папка проекта
+            set -e
             PROJECT_DIR=/var/www/safeisol
             mkdir -p $PROJECT_DIR
             cd $PROJECT_DIR
 
-            # Создаем или обновляем .env
+            # 1. Генерируем .env (как и раньше)
             cat > .env <<EOF
             DB_HOST=${{ secrets.DB_HOST }}
             DB_NAME=${{ secrets.DB_NAME }}
@@ -55,7 +53,7 @@ jobs:
             ADMIN_PASS=${{ secrets.ADMIN_PASS }}
             EOF
 
-            # Клонируем или обновляем репозиторий
+            # 2. Обновляем код
             if [ -d ".git" ]; then
               git fetch origin
               git reset --hard origin/main
@@ -63,29 +61,33 @@ jobs:
               git clone https://github.com/kukarek/safeisol-prod.git .
             fi
 
-            # Docker: сборка и запуск
-            docker-compose pull
-            docker-compose build --pull
+            # 3. Загружаем переменные для подстановки в docker-compose
+            export $(grep -v '^#' .env | xargs)
+
+            # 4. Сборка (БЕЗ pull) с передачей аргументов
+            docker-compose build \
+              --build-arg SECRET_KEY="$SECRET_KEY" \
+              --build-arg ALLOWED_HOSTS="$ALLOWED_HOSTS" \
+              web
+
+            # 5. Запуск
             docker-compose up -d --force-recreate
 
-            # Ждем, пока контейнер web будет готов
+            # 6. Проверка готовности (оставляем вашу логику)
             max_attempts=20
             attempt=0
-            until docker-compose exec web python manage.py check > /dev/null 2>&1 || [ $attempt -eq $max_attempts ]; do
+            until docker-compose exec -T web python manage.py check > /dev/null 2>&1 || [ $attempt -eq $max_attempts ]; do
               echo "Waiting for web container... ($attempt/$max_attempts)"
               attempt=$((attempt + 1))
               sleep 3
             done
-            [ $attempt -eq $max_attempts ] && { echo "Web container failed to start"; exit 1; }
 
-            # Миграции
-            docker-compose exec web python manage.py migrate --noinput
-
-            # Тесты с покрытием
-            docker-compose exec web coverage run --source='.' manage.py test
-            docker-compose exec web coverage report -m
-
-            # Чистка старых образов Docker
+            # 7. Миграции и тесты
+            docker-compose exec -T web python manage.py migrate --noinput
+            docker-compose exec -T web coverage run --source='.' manage.py test
+            docker-compose exec -T web coverage report -m
+            
+            # Чистка
             docker image prune -af
 
       - name: Check disk space
