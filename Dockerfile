@@ -1,8 +1,6 @@
 FROM python:3.11-slim
-
 WORKDIR /app
 
-# Только runtime-зависимости
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
        netcat-openbsd \
@@ -18,7 +16,13 @@ ENV DJANGO_SETTINGS_MODULE=safeisol.settings
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# collectstatic — ОДИН РАЗ при сборке
+# --- ДОБАВЛЯЕМ ЭТИ СТРОКИ ДЛЯ СБОРКИ ---
+ARG SECRET_KEY
+ARG ALLOWED_HOSTS
+ENV SECRET_KEY=$SECRET_KEY
+ENV ALLOWED_HOSTS=$ALLOWED_HOSTS
+# ---------------------------------------
+
 RUN python manage.py collectstatic --noinput
 
 CMD ["gunicorn", "safeisol.wsgi:application", "--bind", "0.0.0.0:8000"]

@@ -17,18 +17,19 @@ services:
 
   web:
     image: safeisol-app
-    build: .
+    build:
+      context: .
+      args:
+        - SECRET_KEY=${SECRET_KEY}
+        - ALLOWED_HOSTS=${ALLOWED_HOSTS}
     restart: always
     env_file:
       - .env
     volumes:
       - static_volume:/app/staticfiles
       - ./logs:/var/log/django
-    command: >
-      sh -c "
-      python manage.py collectstatic --noinput &&
-      exec gunicorn safeisol.wsgi:application --bind 0.0.0.0:8000
-      "
+    # Убираем дубликат collectstatic из command, gunicorn теперь запустится быстрее
+    command: gunicorn safeisol.wsgi:application --bind 0.0.0.0:8000
     depends_on:
       - redis
 
