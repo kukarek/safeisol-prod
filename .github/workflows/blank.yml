@@ -60,22 +60,16 @@ jobs:
             SMTP=${{ secrets.SMTP }}
             ADMIN_PASS=${{ secrets.ADMIN_PASS }}
             ENVEOF
+            # Убираем ведущие пробелы из .env (появляются из-за YAML-отступа)
+            sed -i 's/^[[:space:]]*//' .env
 
-            # 3. Загружаем переменные для подстановки в docker-compose
-            set -a
-            . ./.env
-            set +a
+            # 3. Сборка (docker compose читает .env автоматически)
+            docker-compose build web
 
-            # 4. Сборка с передачей аргументов
-            docker-compose build \
-              --build-arg SECRET_KEY="$SECRET_KEY" \
-              --build-arg ALLOWED_HOSTS="$ALLOWED_HOSTS" \
-              web
-
-            # 5. Запуск
+            # 4. Запуск
             docker-compose up -d --force-recreate
 
-            # 6. Проверка готовности
+            # 5. Проверка готовности
             max_attempts=20
             attempt=0
             until docker-compose exec -T web python manage.py check > /dev/null 2>&1 || [ $attempt -eq $max_attempts ]; do
@@ -84,7 +78,7 @@ jobs:
               sleep 3
             done
 
-            # 7. Миграции и тесты
+            # 6. Миграции и тесты
             docker-compose exec -T web python manage.py migrate --noinput
             docker-compose exec -T web coverage run --source='.' manage.py test
             docker-compose exec -T web coverage report -m
