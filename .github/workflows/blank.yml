@@ -32,7 +32,7 @@ jobs:
               git clone https://github.com/kukarek/safeisol-prod.git .
             fi
 
-            # Генерация .env без проблем с табуляцией
+            # 1. Генерируем .env
             printf "DB_HOST=%s\n" "${{ secrets.DB_HOST }}" > .env
             printf "DB_NAME=%s\n" "${{ secrets.DB_NAME }}" >> .env
             printf "DB_USER=%s\n" "${{ secrets.DB_USER }}" >> .env
@@ -48,10 +48,17 @@ jobs:
             printf "SMTP=%s\n" "${{ secrets.SMTP }}" >> .env
             printf "ADMIN_PASS=%s\n" "${{ secrets.ADMIN_PASS }}" >> .env
 
-            # Сборка и запуск
+            # 2. Очистка порта 80 и старых контейнеров
+            echo "Остановка системного Nginx (если есть)..."
+            sudo systemctl stop nginx || true
+            
+            echo "Остановка старых контейнеров проекта..."
+            docker-compose down --remove-orphans || true
+
+            # 3. Сборка и запуск
             docker-compose up -d --build --force-recreate
             
-            # Чистка
+            # 4. Чистка
             docker image prune -f
 
       - name: Check disk space (на GitHub Runner)
