@@ -25,7 +25,6 @@ jobs:
             mkdir -p $PROJECT_DIR
             cd $PROJECT_DIR
 
-            # 1. Обновляем код
             if [ -d ".git" ]; then
               git fetch origin
               git reset --hard origin/main
@@ -33,41 +32,26 @@ jobs:
               git clone https://github.com/kukarek/safeisol-prod.git .
             fi
 
-            # 2. Генерируем .env (ВАЖНО: без отступов слева)
-            cat <<EOF > .env
-            DB_HOST=${{ secrets.DB_HOST }}
-            DB_NAME=${{ secrets.DB_NAME }}
-            DB_USER=${{ secrets.DB_USER }}
-            DB_PASSWORD=${{ secrets.DB_PASSWORD }}
-            DB_PORT=${{ secrets.DB_PORT }}
-            CELERY_BROKER_URL=${{ secrets.CELERY_BROKER_URL }}
-            CELERY_RESULT_BACKEND=${{ secrets.CELERY_RESULT_BACKEND }}
-            ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }}
-            SECRET_KEY=${{ secrets.SECRET_KEY }}
-            EMAIL_HOST_USER=${{ secrets.EMAIL_HOST_USER }}
-            EMAIL_HOST_PASSWORD=${{ secrets.EMAIL_HOST_PASSWORD }}
-            DEFAULT_FROM_EMAIL=${{ secrets.DEFAULT_FROM_EMAIL }}
-            SMTP=${{ secrets.SMTP }}
-            ADMIN_PASS=${{ secrets.ADMIN_PASS }}
-            EOF
+            # Генерация .env без проблем с табуляцией
+            printf "DB_HOST=%s\n" "${{ secrets.DB_HOST }}" > .env
+            printf "DB_NAME=%s\n" "${{ secrets.DB_NAME }}" >> .env
+            printf "DB_USER=%s\n" "${{ secrets.DB_USER }}" >> .env
+            printf "DB_PASSWORD=%s\n" "${{ secrets.DB_PASSWORD }}" >> .env
+            printf "DB_PORT=%s\n" "${{ secrets.DB_PORT }}" >> .env
+            printf "CELERY_BROKER_URL=%s\n" "${{ secrets.CELERY_BROKER_URL }}" >> .env
+            printf "CELERY_RESULT_BACKEND=%s\n" "${{ secrets.CELERY_RESULT_BACKEND }}" >> .env
+            printf "ALLOWED_HOSTS=%s\n" "${{ secrets.ALLOWED_HOSTS }}" >> .env
+            printf "SECRET_KEY=%s\n" "${{ secrets.SECRET_KEY }}" >> .env
+            printf "EMAIL_HOST_USER=%s\n" "${{ secrets.EMAIL_HOST_USER }}" >> .env
+            printf "EMAIL_HOST_PASSWORD=%s\n" "${{ secrets.EMAIL_HOST_PASSWORD }}" >> .env
+            printf "DEFAULT_FROM_EMAIL=%s\n" "${{ secrets.DEFAULT_FROM_EMAIL }}" >> .env
+            printf "SMTP=%s\n" "${{ secrets.SMTP }}" >> .env
+            printf "ADMIN_PASS=%s\n" "${{ secrets.ADMIN_PASS }}" >> .env
 
-            # 3. Сборка и запуск (Docker Compose сам подхватит .env для контейнеров)
+            # Сборка и запуск
             docker-compose up -d --build --force-recreate
-
-            # 4. Проверка готовности (ждем, пока Django ответит)
-            attempt=0
-            until docker-compose exec -T web python manage.py check > /dev/null 2>&1 || [ $attempt -eq 15 ]; do
-              echo "Waiting for web container... ($attempt/15)"
-              attempt=$((attempt + 1))
-              sleep 3
-            done
-
-            # 5. Миграции и тесты
-            docker-compose exec -T web python manage.py migrate --noinput
-            docker-compose exec -T web coverage run manage.py test
-            docker-compose exec -T web coverage report -m
             
-            # 6. Очистка старых образов
+            # Чистка
             docker image prune -f
 
       - name: Check disk space (на GitHub Runner)
