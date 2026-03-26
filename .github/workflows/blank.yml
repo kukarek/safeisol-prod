@@ -44,7 +44,7 @@ jobs:
             printf "SECRET_KEY=%s\n" "${{ secrets.SECRET_KEY }}" >> .env
             printf "EMAIL_HOST_USER=%s\n" "${{ secrets.EMAIL_HOST_USER }}" >> .env
             printf "EMAIL_HOST_PASSWORD=%s\n" "${{ secrets.EMAIL_HOST_PASSWORD }}" >> .env
-            printf "DEFAULT_FROM_EMAIL=%s\n" "${{ secrets.DEFAULT_FROM_EMAIL }}" >> .env
+            printf "DEFAULT_FOR_EMAIL=%s\n" "${{ secrets.DEFAULT_FOR_EMAIL }}" >> .env
             printf "SMTP=%s\n" "${{ secrets.SMTP }}" >> .env
             printf "ADMIN_PASS=%s\n" "${{ secrets.ADMIN_PASS }}" >> .env
 
