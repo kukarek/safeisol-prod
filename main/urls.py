@@ -19,6 +19,7 @@ urlpatterns = [
     path('product/<slug:product_slug>/', views.Product.as_view(), name='product'),
 
     path('robots.txt', views.robots_txt, name='robots_txt'),
+    path('llms.txt', views.llms_txt, name='llms_txt'),
     path('sitemap.xml', sitemap, {'sitemaps': SitemapRegistry.get_sitemaps()}, name='sitemap'),
 ]
 
