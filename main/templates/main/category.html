@@ -7,16 +7,24 @@
     <title>{{ categories.0.title }} — купить от производителя | SAFEISOL</title>
 
     <!-- SEO meta tags -->
-    <meta name="description" content="Категория товаров {{ categories.0.title }} от ООО «Безопасная теплоизоляция» — термочехлы, огнезащитные шторы, теплоизоляционные решения.">
-    <meta name="keywords" content="термочехлы, теплоизоляция, {{ categories.0.title }}, огнезащитные шторы, Safeisol, безопасная теплоизоляция">
+    <meta name="description" content="{{ categories.0.title }} от производителя SAFEISOL — купить съёмную теплоизоляцию с доставкой по РФ. Расчёт, проектирование, монтаж. Цены на сайте.">
+    <meta name="keywords" content="{{ categories.0.title }} купить, {{ categories.0.title }} цена, {{ categories.0.title }} от производителя, съёмная теплоизоляция, SAFEISOL">
     <link rel="canonical" href="https://safeisol.ru{{ request.path }}">
 
     <!-- Open Graph для соц. сетей и мессенджеров -->
-    <meta property="og:title" content="{{ categories.0.title }} — Safeisol">
-    <meta property="og:description" content="Ознакомьтесь с товарами категории {{ categories.0.title }} от компании Safeisol.">
+    <meta property="og:title" content="{{ categories.0.title }} — купить от производителя | SAFEISOL">
+    <meta property="og:description" content="{{ categories.0.title }} от SAFEISOL. Цена от производителя, расчёт теплопотерь, доставка по РФ.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://safeisol.ru{{ request.path }}">
     <meta property="og:image" content="https://safeisol.ru{% static 'main/media/logo-ico.png' %}">
+    <meta property="og:site_name" content="SAFEISOL">
+    <meta property="og:locale" content="ru_RU">
+    <meta name="robots" content="index, follow">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ categories.0.title }} — купить от производителя | SAFEISOL">
+    <meta name="twitter:description" content="{{ categories.0.title }} от SAFEISOL. Цена от производителя, доставка по РФ.">
     
     <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
     <link type="text/css" href="{% static 'main/css/category.css' %}" rel="stylesheet">

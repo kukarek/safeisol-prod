@@ -6,19 +6,25 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <!-- SEO мета-теги -->
-        <meta name="description" content="ООО «Безопасная теплоизоляция» — производство термочехлов SAFEISOL, огнезащитных штор и экранов. Экономия, безопасность и качество.">
-        <meta name="keywords" content="термочехлы, теплоизоляция, SAFEISOL, огнезащитные шторы, экраны, промышленная изоляция">
+        <meta name="description" content="ООО «Безопасная теплоизоляция» — производитель термочехлов SAFEISOL. 10 лет на рынке, 1000+ проектов. Собственное производство в Москве, полный цикл от расчёта до монтажа.">
+        <meta name="keywords" content="безопасная теплоизоляция производитель, SAFEISOL компания, производство термочехлов Москва, завод теплоизоляции, съёмная теплоизоляция производитель">
         <meta name="author" content="ООО «Безопасная теплоизоляция»">
         <meta name="robots" content="index, follow">
         <link rel="canonical" href="https://safeisol.ru/about/">
 
         <!-- Open Graph (для Facebook, LinkedIn и других соцсетей) -->
         <meta property="og:type" content="website">
-        <meta property="og:title" content="О компании — Безопасная теплоизоляция">
-        <meta property="og:description" content="Теплоизоляционные решения SAFEISOL для промышленности, логистики и строительства.">
+        <meta property="og:title" content="О компании SAFEISOL — производитель термочехлов с 2015 года">
+        <meta property="og:description" content="Собственное производство в Москве. 1000+ реализованных проектов. Полный цикл: расчёт, проектирование, изготовление, монтаж.">
         <meta property="og:image" content="https://safeisol.ru/static/logo.webp">
-        <meta property="og:url" content="https://safeisol.ru/about">
-        <meta property="og:site_name" content="Безопасная теплоизоляция">
+        <meta property="og:url" content="https://safeisol.ru/about/">
+        <meta property="og:site_name" content="SAFEISOL">
+        <meta property="og:locale" content="ru_RU">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="О компании SAFEISOL — производитель термочехлов">
+        <meta name="twitter:description" content="Собственное производство в Москве. 1000+ реализованных проектов.">
 
         <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
         <link type="text/css" href="{% static 'main/css/header.css' %}" rel="stylesheet">
@@ -44,6 +50,28 @@
         </script>
         <noscript><div><img src="https://mc.yandex.ru/watch/102102304" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
         <!-- /Yandex.Metrika counter -->
+
+        <!-- Schema.org AboutPage -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "О компании SAFEISOL",
+            "description": "Производитель термочехлов SAFEISOL. 10 лет на рынке, 1000+ проектов.",
+            "url": "https://safeisol.ru/about/",
+            "mainEntity": {
+                "@type": "Organization",
+                "name": "ООО «Безопасная теплоизоляция»",
+                "alternateName": "SAFEISOL",
+                "url": "https://safeisol.ru",
+                "foundingDate": "2015",
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "Россия"
+                }
+            }
+        }
+        </script>
     </head>
 
     {% header cat_selected='about' %}

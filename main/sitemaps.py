@@ -2,7 +2,7 @@ from django.contrib.sitemaps import Sitemap
 import inspect
 from django.urls import reverse
 from django.db.models.query import QuerySet
-from .models import Product, Category
+from .models import Product, Category, Service
 
 
 class SitemapRegistry:
@@ -108,6 +108,17 @@ class CategorySitemap(Sitemap):
         return obj.get_absolute_url()
 
 @SitemapRegistry.register
+class ServiceSitemap(Sitemap):
+    changefreq = "monthly"
+    priority = 0.8
+
+    def items(self):
+        return Service.objects.all()
+
+    def location(self, obj):
+        return reverse("service", kwargs={"service_slug": obj.slug})
+
+@SitemapRegistry.register
 class StaticViewSitemap(Sitemap):
     """
     Sitemap for static views of the site.
@@ -118,8 +129,17 @@ class StaticViewSitemap(Sitemap):
         priority (float): The priority of the static pages relative to other pages.
     """
     changefreq = "monthly"
-    priority = 0.5
 
+    _priorities = {
+        "home": 1.0,
+        "catalog": 0.9,
+        "services": 0.8,
+        "about": 0.6,
+        "certificates": 0.5,
+        "contacts": 0.5,
+        "delivery": 0.5,
+        "complete_projects": 0.5,
+    }
 
     def items(self) -> list:
         """
@@ -142,3 +162,6 @@ class StaticViewSitemap(Sitemap):
             item (str): The name of the static view for which to generate the URL.
         """
         return reverse(item)
+
+    def priority(self, item):
+        return self._priorities.get(item, 0.5)

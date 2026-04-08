@@ -7,19 +7,26 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{{ product.title }} — купить от производителя | SAFEISOL</title>
-        <meta name="description" content="{{ product.description }}">
-        <meta name="keywords" content="{{ product.keywords }}">
+        <title>{{ product.title }} — купить от производителя, цена | SAFEISOL</title>
+        <meta name="description" content="{{ product.description }} Цена от производителя, расчёт и доставка по РФ.">
+        <meta name="keywords" content="{{ product.keywords }}, {{ product.title }} купить, {{ product.title }} цена">
         <meta name="robots" content="index, follow">
         <link rel="canonical" href="https://safeisol.ru{{ product.get_absolute_url }}">
 
         <!-- Open Graph -->
         <meta property="og:type" content="product">
-        <meta property="og:title" content="{{ product.title }} — SAFEISOL">
-        <meta property="og:description" content="{{ product.description }}">
+        <meta property="og:title" content="{{ product.title }} — купить от производителя | SAFEISOL">
+        <meta property="og:description" content="{{ product.description }} Цена от производителя, доставка по РФ.">
         <meta property="og:url" content="https://safeisol.ru{{ product.get_absolute_url }}">
-        <meta property="og:site_name" content="Безопасная теплоизоляция">
+        <meta property="og:site_name" content="SAFEISOL">
         {% if product.content.images %}<meta property="og:image" content="https://safeisol.ru{% static 'main/media/' %}{{ product.content.images.0.src }}">{% endif %}
+        <meta property="og:locale" content="ru_RU">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ product.title }} — купить от производителя | SAFEISOL">
+        <meta name="twitter:description" content="{{ product.description }} Цена от производителя, доставка по РФ.">
+        {% if product.content.images %}<meta name="twitter:image" content="https://safeisol.ru{% static 'main/media/' %}{{ product.content.images.0.src }}">{% endif %}
 
         <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
         <link type="text/css" href="{% static 'main/css/breadcrumbs.css' %}" rel="stylesheet">
@@ -61,6 +68,18 @@
                 "@type": "Organization",
                 "name": "ООО «Безопасная теплоизоляция»",
                 "url": "https://safeisol.ru"
+            },
+            "offers": {
+                "@type": "Offer",
+                "availability": "https://schema.org/InStock",
+                "priceCurrency": "RUB",
+                "price": "0",
+                "priceValidUntil": "2027-12-31",
+                "seller": {
+                    "@type": "Organization",
+                    "name": "SAFEISOL"
+                },
+                "url": "https://safeisol.ru{{ product.get_absolute_url }}"
             }{% if product.category %},
             "category": "{{ product.category.title }}"{% endif %}{% if product.content.images %},
             "image": "https://safeisol.ru{% static 'main/media/' %}{{ product.content.images.0.src }}"{% endif %}

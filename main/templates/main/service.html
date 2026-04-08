@@ -7,17 +7,25 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ service.name }}</title>
-        <meta name="description" content="{{ service.name }}">
-        <meta name="keywords" content="теплоизоляция, услуги, теплоизоляционные работы">
-        <meta name="author" content="ООО Безопасная Теплоизоляция">
+        <title>{{ service.name }} — заказать услугу | SAFEISOL</title>
+        <meta name="description" content="{{ service.name }} от SAFEISOL. Профессиональное выполнение работ по теплоизоляции промышленного оборудования. Бесплатный расчёт, гарантия качества.">
+        <meta name="keywords" content="{{ service.name }}, заказать теплоизоляцию, услуги теплоизоляции, SAFEISOL услуги, теплоизоляционные работы заказать">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://safeisol.ru/services/{{ service.slug }}/">
 
-        <!-- Open Graph / Facebook -->
-        <meta property="og:title" content="{{ service.name }}">
-        <meta property="og:description" content="{{ service.meta_description|default:service.name }}">
+        <!-- Open Graph -->
+        <meta property="og:title" content="{{ service.name }} — SAFEISOL">
+        <meta property="og:description" content="{{ service.name }}. Профессиональные услуги по теплоизоляции от производителя SAFEISOL.">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ request.build_absolute_uri }}">
-        <meta property="og:image" content="{% static 'main/media/logo-ico.png' %}">
+        <meta property="og:url" content="https://safeisol.ru/services/{{ service.slug }}/">
+        <meta property="og:site_name" content="SAFEISOL">
+        <meta property="og:image" content="https://safeisol.ru{% static 'main/media/logo-ico.png' %}">
+        <meta property="og:locale" content="ru_RU">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="{{ service.name }} — SAFEISOL">
+        <meta name="twitter:description" content="{{ service.name }}. Профессиональные услуги по теплоизоляции.">
 
         <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
         <link type="text/css" href="{% static 'main/css/service.css' %}" rel="stylesheet">
@@ -43,6 +51,26 @@
         </script>
         <noscript><div><img src="https://mc.yandex.ru/watch/102102304" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
         <!-- /Yandex.Metrika counter -->
+
+        <!-- Schema.org Service -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "{{ service.name }}",
+            "description": "{{ service.name }} от SAFEISOL. Профессиональное выполнение работ по теплоизоляции.",
+            "url": "https://safeisol.ru/services/{{ service.slug }}/",
+            "areaServed": {
+                "@type": "Country",
+                "name": "Россия"
+            },
+            "provider": {
+                "@type": "Organization",
+                "name": "SAFEISOL",
+                "url": "https://safeisol.ru"
+            }
+        }
+        </script>
     </head>
 
     <body>
