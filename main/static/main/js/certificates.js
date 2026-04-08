@@ -1,37 +1,4 @@
 
-
-function openModal(imgElement) {
-    const modal = document.getElementById('modal');
-    const modalImage = document.getElementById('modalImage');
-  
-    modalImage.src = imgElement.src;
-    modal.style.display = "flex";
-  
-    // Плавное появление
-    setTimeout(() => {
-      modal.style.opacity = 1;
-    }, 1);
-  
-    document.body.classList.add('no-scroll');
-  }
-  
-  function closeModal(event) {
-    if (event.target === event.currentTarget || event.target.classList.contains('close')) {
-      const modal = document.getElementById('modal');
-      modal.style.opacity = 0;
-  
-      setTimeout(() => {
-        modal.style.display = "none";
-      }, 300); // Задержка под анимацию исчезновения
-  
-      document.body.classList.remove('no-scroll');
-    }
-  }
-
-
-
-//рабочий
-
 let isZooming = false;
 let startY, initialTop, initialMouseY;
 

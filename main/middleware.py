@@ -20,7 +20,8 @@ class CacheControlMiddleware:
         for one year (31536000 seconds).
         """
         response = self.get_response(request)
-        response['Cache-Control'] = 'public, max-age=31536000'
+        if request.path.startswith('/static/'):
+            response['Cache-Control'] = 'public, max-age=31536000'
         return response
 
 

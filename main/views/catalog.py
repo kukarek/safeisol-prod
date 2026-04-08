@@ -86,7 +86,7 @@ class Product(mixins.BreadcrumbsMixin, DetailView):
         Prefetches related category to optimize database queries.
         """
         if not hasattr(self, '_object'):
-            self._object = get_object_or_404(models.Product.objects.prefetch_related('category'), slug=self.kwargs['product_slug'])
+            self._object = get_object_or_404(models.Product.objects.select_related('category'), slug=self.kwargs['product_slug'])
         return self._object
     
     def get_breadcrumbs(self) -> list[dict[str, str]]:

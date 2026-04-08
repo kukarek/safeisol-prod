@@ -1,5 +1,5 @@
 from django.views.generic import ListView, DetailView
-from django.shortcuts import get_object_or_404, get_list_or_404
+from django.shortcuts import get_object_or_404
 from main import models, mixins
 
 
@@ -9,7 +9,7 @@ class Services(mixins.BreadcrumbsMixin, ListView):
     context_object_name = 'services'
 
     def get_queryset(self):
-        return get_list_or_404(models.Service.objects.all())
+        return models.Service.objects.all()
 
     def get_breadcrumbs(self):
         return [{'link': '/', 'title': 'Главная'}, {'link': '/services/', 'title': 'Услуги'}]
