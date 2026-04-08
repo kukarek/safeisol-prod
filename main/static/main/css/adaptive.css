@@ -3,8 +3,8 @@
 		width: 90%;
 	}	
 
-	.header-logo {
-		background-image: url(/static/main/media/mobile-header.png);
+	.header-info {
+		background-image: url(/static/main/media/mobile-header.webp);
 		height: inherit;
 		width: 100%;
 		aspect-ratio: 33/9;

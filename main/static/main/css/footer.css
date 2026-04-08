@@ -61,7 +61,7 @@
     text-align: left;
 }
 
-.footer-mail-logo {
+.footer-mail-contact .svg_mail {
     width: 18px;
     height: auto;
     padding: 10px;
@@ -74,13 +74,13 @@
     width: 100%;
 }
 
-.footer-phone-logo {
+.footer-phone-contact .svg_phone {
     width: 18px;
     padding: 10px;
     fill: var(--light_gray);
 }
 
-.footer-address-logo {
+.footer-address .svg_loc {
     width: 18px;
     padding: 10px;
     fill: var(--light_gray);
