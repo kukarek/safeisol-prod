@@ -73,6 +73,9 @@ jobs:
 
             # 3. Сборка и запуск
             docker-compose up -d --build --force-recreate
+
+            # Обновление статики внутри volume
+            docker-compose exec -T web python manage.py collectstatic --noinput
             
             # 4. Чистка
             docker image prune -f
