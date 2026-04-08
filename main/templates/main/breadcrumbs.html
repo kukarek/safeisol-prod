@@ -19,3 +19,21 @@
         </ul>
     </div>
 </div>
+
+<!-- Schema.org BreadcrumbList -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {% for bc in breadcrumbs %}
+        {
+            "@type": "ListItem",
+            "position": {{ forloop.counter }},
+            "name": "{{ bc.title }}"{% if not forloop.last %},
+            "item": "https://safeisol.ru{{ bc.link }}"{% endif %}
+        }{% if not forloop.last %},{% endif %}
+        {% endfor %}
+    ]
+}
+</script>

@@ -112,7 +112,7 @@
 }
 
 .header-search__btn {
-    margin: 55 0 45 0;
+    margin: 55px 0 45px 0;
     background-color: rgba(255, 255, 255, 0);
     border: none;
 }
@@ -141,7 +141,7 @@
     grid-auto-flow: column;
     gap: 10px;
     align-items: center;
-    margin: 55 auto 45 auto;
+    margin: 55px auto 45px auto;
 }
 
 .header-mail-contact:hover .mail-svg-path {
@@ -161,7 +161,7 @@
     grid-auto-flow: column;
     gap: 10px;
     align-items: center;
-    margin: 55 0 45 480;
+    margin: 55px 0 45px 480px;
 }
 
 .header-phone-link {

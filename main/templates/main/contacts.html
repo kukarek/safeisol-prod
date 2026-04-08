@@ -1,10 +1,11 @@
 {% load static %}
 {% load main_tags %}
 
+<!DOCTYPE html>
 <html lang="ru">
 
     <head>
-        <title>Контакты — Безопасная теплоизоляция</title>
+        <title>Контакты ООО «Безопасная теплоизоляция» | SAFEISOL</title>
         <meta name="description" content="Контактная информация ООО «Безопасная теплоизоляция». Адрес, телефон, email и часы работы. Свяжитесь с нами для консультаций и заказов." />
         <meta name="keywords" content="контакты, теплоизоляция, ООО Безопасная теплоизоляция, телефон, email, адрес" />
         <meta name="robots" content="index, follow" />
@@ -34,6 +35,40 @@
         </script>
         <noscript><div><img src="https://mc.yandex.ru/watch/102102304" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
         <!-- /Yandex.Metrika counter -->
+
+        <!-- Schema.org LocalBusiness -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "ООО «Безопасная теплоизоляция»",
+            "image": "https://safeisol.ru{% static 'main/media/logo-ico.png' %}",
+            "url": "https://safeisol.ru",
+            "telephone": "+7-499-499-21-27",
+            "email": "sale@safeisol.ru",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Варшавское шоссе д.125 стр. 1",
+                "addressLocality": "Москва",
+                "postalCode": "117587",
+                "addressCountry": "RU"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+                    "opens": "09:00",
+                    "closes": "18:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Friday",
+                    "opens": "09:00",
+                    "closes": "17:00"
+                }
+            ]
+        }
+        </script>
     </head>
 
     <body>
@@ -47,7 +82,7 @@
             <div class="title">
 
                 <div class="container">
-                    <div class="section-title">Контакты</div>   
+                    <h1 class="section-title">Контакты</h1>   
                 </div>
 
             </div>

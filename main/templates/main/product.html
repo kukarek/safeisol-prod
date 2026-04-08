@@ -1,16 +1,26 @@
 {% load static %}
 {% load main_tags %}
 
-
-
+<!DOCTYPE html>
 <html lang="ru">
 
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{{ product.title }} — Безопасная Теплоизоляция</title>
+        <title>{{ product.title }} — купить от производителя | SAFEISOL</title>
         <meta name="description" content="{{ product.description }}">
         <meta name="keywords" content="{{ product.keywords }}">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://safeisol.ru{{ product.get_absolute_url }}">
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="product">
+        <meta property="og:title" content="{{ product.title }} — SAFEISOL">
+        <meta property="og:description" content="{{ product.description }}">
+        <meta property="og:url" content="https://safeisol.ru{{ product.get_absolute_url }}">
+        <meta property="og:site_name" content="Безопасная теплоизоляция">
+        {% if product.content.images %}<meta property="og:image" content="https://safeisol.ru{% static 'main/media/' %}{{ product.content.images.0.src }}">{% endif %}
+
         <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
         <link type="text/css" href="{% static 'main/css/breadcrumbs.css' %}" rel="stylesheet">
         <link type="text/css" href="{% static 'main/css/product.css' %}" rel="stylesheet">
@@ -36,6 +46,27 @@
         <noscript><div><img src="https://mc.yandex.ru/watch/102102304" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
         <!-- /Yandex.Metrika counter -->
 
+        <!-- Schema.org Product -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "{{ product.title }}",
+            "description": "{{ product.description }}",
+            "brand": {
+                "@type": "Brand",
+                "name": "SAFEISOL"
+            },
+            "manufacturer": {
+                "@type": "Organization",
+                "name": "ООО «Безопасная теплоизоляция»",
+                "url": "https://safeisol.ru"
+            }{% if product.category %},
+            "category": "{{ product.category.title }}"{% endif %}{% if product.content.images %},
+            "image": "https://safeisol.ru{% static 'main/media/' %}{{ product.content.images.0.src }}"{% endif %}
+        }
+        </script>
+
     </head>
 
     <body>
@@ -49,7 +80,7 @@
             
             <div class="title">
                 <div class="container">
-                    <p class="section-title">{{ product.title }}</p>
+                    <h1 class="section-title">{{ product.title }}</h1>
                 </div>
             
             </div>
