@@ -12,7 +12,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ['id', 'title', 'url']
+        fields = ['id', 'title', 'url', 'slug', 'content', 'category', 'keywords', 'description']
 
     def get_url(self, obj) -> str:
         """

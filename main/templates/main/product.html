@@ -19,14 +19,14 @@
         <meta property="og:description" content="{{ product.description }} Цена от производителя, доставка по РФ.">
         <meta property="og:url" content="https://safeisol.ru{{ product.get_absolute_url }}">
         <meta property="og:site_name" content="SAFEISOL">
-        {% if product.content.images %}<meta property="og:image" content="https://safeisol.ru{% static 'main/media/' %}{{ product.content.images.0.src }}">{% endif %}
+{% if product.content.images %}<meta property="og:image" content="https://safeisol.ru{% static 'main/media/' %}{{ product.content.images.0.src }}">{% endif %}
         <meta property="og:locale" content="ru_RU">
 
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="{{ product.title }} — купить от производителя | SAFEISOL">
         <meta name="twitter:description" content="{{ product.description }} Цена от производителя, доставка по РФ.">
-        {% if product.content.images %}<meta name="twitter:image" content="https://safeisol.ru{% static 'main/media/' %}{{ product.content.images.0.src }}">{% endif %}
+{% if product.content.images %}<meta name="twitter:image" content="https://safeisol.ru{% static 'main/media/' %}{{ product.content.images.0.src }}">{% endif %}
 
         <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
         <link type="text/css" href="{% static 'main/css/breadcrumbs.css' %}" rel="stylesheet">
@@ -82,7 +82,7 @@
                 "url": "https://safeisol.ru{{ product.get_absolute_url }}"
             }{% if product.category %},
             "category": "{{ product.category.title }}"{% endif %}{% if product.content.images %},
-            "image": "https://safeisol.ru{% static 'main/media/' %}{{ product.content.images.0.src }}"{% endif %}
+"image": "https://safeisol.ru{% static 'main/media/' %}{{ product.content.images.0.src }}"{% endif %}
         }
         </script>
 
@@ -111,12 +111,12 @@
                             <div class="mini_imgs">
                                 {% for image in product.content.images %}
                                 <div class="mini-img {% if forloop.first %}selected{% endif %}" onclick="selectImage('{{ image.src }}', this)">
-                                    <img src="{% static 'main/media/' %}{{ image.thumbnail }}" alt="{{ image.alt }}"/>
+<img src="{% static 'main/media/thumbnails/' %}{{ image.src }}" alt="{{ image.alt }}"/>
                                 </div>
                                 {% endfor %}
                             </div>
                             <div class="selected_img">
-                                <img id="main-image" src="{% static 'main/media/' %}{{ product.content.images.0.src }}" alt="{{ product.content.images.0.alt }}" title="{{ product.content.images.0.alt }}" onclick="openModal()"/>
+<img id="main-image" src="{% static 'main/media/' %}{{ product.content.images.0.src }}" alt="{{ product.content.images.0.alt }}" title="{{ product.content.images.0.alt }}" onclick="openModal()"/>
                             </div>
                         </div>
                         <div class="product-desc-block">
@@ -158,7 +158,7 @@
                         </div>
                         {% else  %}
                         <div class="product-desc-img-container">
-                            <img class="product-desc-img" src="{% static 'main/media/' %}{{ item.value }}" alt="{{ item.alt }}" title="{{ item.alt }}"/>
+<img class="product-desc-img" src="{% static 'main/media/' %}{{ item.value }}" alt="{{ item.alt }}" title="{{ item.alt }}"/>
                         </div>
                         {% endif %}
                         {% endfor %}

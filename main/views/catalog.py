@@ -99,7 +99,7 @@ class Product(mixins.BreadcrumbsMixin, DetailView):
             {'link': '/', 'title': 'Главная'},
             {'link': '/catalog/', 'title': 'Каталог'}
         ]
-        if models.Product.objects.filter(category=product.category).count() > 1:
+        if product.category and models.Product.objects.filter(category=product.category).count() > 1:
             breadcrumbs.append({'link': f'/category/{product.category.slug}', 'title': product.category.title})
         breadcrumbs.append({'link': f'/product/{product.slug}', 'title': product.title})
         return breadcrumbs
