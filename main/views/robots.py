@@ -7,6 +7,7 @@ def robots_txt(request):
     Generates a robots.txt file for the site.
     This file is used to control how search engines index the site.
     """
+    host = f"https://{request.get_host()}"
     content = [
         "User-agent: *",
         "Disallow: /admin/",
@@ -18,6 +19,7 @@ def robots_txt(request):
         "Allow: /static/main/media/",
         "Allow: /static/main/documents/",
         "Allow: /",
+        f"Host: {host}",
         "",
         "# Yandex-specific directives",
         "User-agent: Yandex",
@@ -27,8 +29,8 @@ def robots_txt(request):
         "Disallow: /media/",
         "Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term",
         "Clean-param: yclid&gclid&fbclid",
+        f"Host: {host}",
         "",
-        f"Host: https://{request.get_host()}",
-        f"Sitemap: https://{request.get_host()}{reverse('sitemap')}",
+        f"Sitemap: {host}{reverse('sitemap')}",
     ]
     return HttpResponse("\n".join(content), content_type="text/plain")

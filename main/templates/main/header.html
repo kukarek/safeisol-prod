@@ -122,7 +122,7 @@
      
 </form>
 
-<div class="navbar">
+<nav class="navbar" aria-label="Основная навигация">
     <div class="container">
         <ul class="header-ul">
             <li  class="header-li"><a class="navbar-a" href="{% url 'home' %}">Главная</a></li>
@@ -134,6 +134,6 @@
             <li  class="header-li"><a class="{% if cat_selected == 'contacts' %}navbar-a-selected{% else %}navbar-a{% endif %}" href="{% url 'contacts' %}">Контакты</a></li>
         </ul>
     </div>
-</div>
+</nav>
 
 

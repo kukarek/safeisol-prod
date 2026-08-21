@@ -32,6 +32,11 @@
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="Сертификаты качества термочехлов | SAFEISOL">
         <meta name="twitter:description" content="Сертификаты ГОСТ, ТУ для термочехлов SAFEISOL.">
+        <meta name="twitter:image" content="https://safeisol.ru{% static 'main/media/logo-ico.png' %}">
+
+        <!-- Open Graph -->
+        <meta property="og:image" content="https://safeisol.ru{% static 'main/media/logo-ico.png' %}">
+
         <!-- Yandex.Metrika counter -->
         <script type="text/javascript" >
             (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -50,9 +55,10 @@
         <!-- /Yandex.Metrika counter -->
     </head>
 
+    <body>
+
     {% header cat_selected='about' %}
     {% include 'main/breadcrumbs.html' %}
-    <body>
         <div class="content">
             <div class="container">
                 <h1 class="section-title">{{ subtitle }}</h1>
@@ -86,11 +92,13 @@
             <div class="modal-content" onclick="closeModal(event)">
                 <img class="modal-image zoomable" id="modalImage" />
             </div>
-        </div>  
+        </div>
+
+        {% footer %}
+
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="{% static 'main/js/base.js' %}"></script>
         <script src="{% static 'main/js/header.js' %}"></script>
         <script src="{% static 'main/js/certificates.js' %}"></script>
     </body>
 </html>
-{% footer %}

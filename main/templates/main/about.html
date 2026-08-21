@@ -4,7 +4,9 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>О компании «Безопасная теплоизоляция» — производитель термочехлов | SAFEISOL</title>
         <!-- SEO мета-теги -->
         <meta name="description" content="ООО «Безопасная теплоизоляция» — производитель термочехлов SAFEISOL. 10 лет на рынке, 1000+ проектов. Собственное производство в Москве, полный цикл от расчёта до монтажа.">
         <meta name="keywords" content="безопасная теплоизоляция производитель, SAFEISOL компания, производство термочехлов Москва, завод теплоизоляции, съёмная теплоизоляция производитель">
@@ -25,6 +27,7 @@
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="О компании SAFEISOL — производитель термочехлов">
         <meta name="twitter:description" content="Собственное производство в Москве. 1000+ реализованных проектов.">
+        <meta name="twitter:image" content="https://safeisol.ru{% static 'main/media/logo-ico.png' %}">
 
         <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
         <link type="text/css" href="{% static 'main/css/header.css' %}" rel="stylesheet">
@@ -32,7 +35,6 @@
         <link type="text/css" href="{% static 'main/css/about.css' %}" rel="stylesheet">
         <link type="text/css" href="{% static 'main/css/adaptive.css' %}" rel="stylesheet">
         <link rel="icon" href="{% static 'main/media/logo-ico.png' %}" type="image/x-icon">
-        <title>О компании «Безопасная теплоизоляция» — производитель термочехлов | SAFEISOL</title>
 
         <!-- Yandex.Metrika counter -->
         <script type="text/javascript" >
@@ -74,10 +76,10 @@
         </script>
     </head>
 
+    <body>
+
     {% header cat_selected='about' %}
     {% include 'main/breadcrumbs.html' %}
-
-    <body>
         <div class="content">
             <div class="container">
                 <h1 class="section-title">{{ subtitle }}</h1>

@@ -25,6 +25,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ categories.0.title }} — купить от производителя | SAFEISOL">
     <meta name="twitter:description" content="{{ categories.0.title }} от SAFEISOL. Цена от производителя, доставка по РФ.">
+    <meta name="twitter:image" content="https://safeisol.ru{% static 'main/media/logo-ico.png' %}">
     
     <link type="text/css" href="{% static 'main/css/base.css' %}" rel="stylesheet">
     <link type="text/css" href="{% static 'main/css/category.css' %}" rel="stylesheet">
@@ -37,6 +38,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Schema.org CollectionPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "{{ categories.0.title }} — SAFEISOL",
+        "description": "{{ categories.0.title }} от производителя SAFEISOL — съёмная теплоизоляция с доставкой по РФ",
+        "url": "https://safeisol.ru{{ request.path }}",
+        "provider": {
+            "@type": "Organization",
+            "name": "SAFEISOL",
+            "url": "https://safeisol.ru"
+        }
+    }
+    </script>
 
     <!-- Yandex.Metrika counter -->
         <script type="text/javascript" >
