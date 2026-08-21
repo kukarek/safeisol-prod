@@ -6,18 +6,33 @@ from django.contrib.messages import constants as messages
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Load environment variables FIRST (needed for logging config)
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
 # Configure logging
-LOGGING_CONFIG_PATH = BASE_DIR / 'safeisol' / 'logging.ini'
-LOGS_DIR = BASE_DIR / 'logs'
-LOGS_DIR.mkdir(exist_ok=True)
+LOGGING_CONFIG_PATH = env.path('LOGGING_CONFIG_PATH', BASE_DIR / 'safeisol' / 'logging.ini')
+LOG_FILE = env.str(
+    'LOG_FILE',
+    str(BASE_DIR / 'logs' / 'django.log') if env.bool('DEBUG', default=False) else '/var/log/django/django.log'
+)
+LOGS_DIR = Path(LOG_FILE).parent
+LOGS_DIR.mkdir(parents=True, exist_ok=True)
+
 logging.config.fileConfig(
     LOGGING_CONFIG_PATH, disable_existing_loggers=False
 )
-logger = logging.getLogger('django')
 
-# Load environment variables
-env = environ.Env()
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+# Подменяем путь к лог-файлу из env (logging.ini не поддерживает env vars)
+import logging
+_file_handler = logging.getLogger().handlers
+for handler in _file_handler:
+    if isinstance(handler, logging.FileHandler) and hasattr(handler, 'baseFilename'):
+        handler.close()
+        handler.baseFilename = os.path.abspath(LOG_FILE)
+        handler.stream = open(LOG_FILE, handler.mode)
+
+logger = logging.getLogger('django')
 
 # Security settings
 SECRET_KEY = env('SECRET_KEY', default='placeholder-for-build-purposes')
