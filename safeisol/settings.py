@@ -19,6 +19,10 @@ LOG_FILE = env.str(
 LOGS_DIR = Path(LOG_FILE).parent
 LOGS_DIR.mkdir(parents=True, exist_ok=True)
 
+# Убеждаемся что директория для файла из logging.ini тоже существует
+_ini_log_dir = Path('/var/log/django')
+_ini_log_dir.mkdir(parents=True, exist_ok=True)
+
 logging.config.fileConfig(
     LOGGING_CONFIG_PATH, disable_existing_loggers=False
 )
