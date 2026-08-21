@@ -18,25 +18,7 @@ ENV DJANGO_SETTINGS_MODULE=safeisol.settings \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
-# Сборка статики с фейковыми переменными
-# После collectstatic мы удаляем этот временный файл, чтобы он не попал в финальный образ.
-RUN cat > /tmp/.env <<EOF
-SECRET_KEY=build-placeholder
-ALLOWED_HOSTS=*
-DB_NAME=temp
-DB_USER=temp
-DB_PASSWORD=temp
-DB_HOST=localhost
-DB_PORT=5432
-EMAIL_HOST_USER=temp
-EMAIL_HOST_PASSWORD=temp
-DEFAULT_FROM_EMAIL=temp
-DEFAULT_FOR_EMAIL=temp
-SMTP=temp
-ADMIN_PASS=temp
-CELERY_BROKER_URL=redis://localhost:6379
-CELERY_RESULT_BACKEND=redis://localhost:6379
-EOF
-RUN cp /tmp/.env .env && python manage.py collectstatic --noinput && rm .env /tmp/.env
+# Сборка статики (.env копируется из build context)
+RUN python manage.py collectstatic --noinput
 
 CMD ["gunicorn", "safeisol.wsgi:application", "--bind", "0.0.0.0:8000"]
