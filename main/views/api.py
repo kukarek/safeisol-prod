@@ -1,3 +1,5 @@
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 from rest_framework.decorators import api_view, throttle_classes
 from rest_framework.response import Response
 from rest_framework import status
@@ -80,6 +82,7 @@ class TrackerRateThrottle(AnonRateThrottle):
 
 @api_view(['POST'])
 @throttle_classes([TrackerRateThrottle])
+@csrf_exempt
 def track_event(request) -> Response:
     """
     Endpoint для приёма событий трекера.

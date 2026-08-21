@@ -52,6 +52,11 @@
         return params.get(name) || '';
     }
 
+    function getCsrfToken() {
+        var match = document.cookie.match(new RegExp('(^| )csrftoken=([^;]+)'));
+        return match ? match[2] : '';
+    }
+
     // ─── Отправка события ─────────────────────────────────────
 
     function trackEvent(eventType, data) {
@@ -101,6 +106,10 @@
             var xhr = new XMLHttpRequest();
             xhr.open('POST', '/api/track/', true);
             xhr.setRequestHeader('Content-Type', 'application/json');
+            var csrfToken = getCsrfToken();
+            if (csrfToken) {
+                xhr.setRequestHeader('X-CSRFToken', csrfToken);
+            }
             xhr.send(JSON.stringify(payload));
         } catch (e) {
             // Тихо — трекер не должен ломать сайт
