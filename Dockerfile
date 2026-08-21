@@ -18,6 +18,9 @@ ENV DJANGO_SETTINGS_MODULE=safeisol.settings \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
+# Создаём директорию для логов (нужна для collectstatic)
+RUN mkdir -p /var/log/django
+
 # Сборка статики (.env копируется из build context)
 RUN python manage.py collectstatic --noinput
 
