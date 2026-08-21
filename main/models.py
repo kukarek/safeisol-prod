@@ -160,6 +160,53 @@ class Certificate(models.Model):
         return self.title
 
 
+class TrackerEvent(models.Model):
+    """
+    Единая таблица для хранения всех событий трекера.
+    event_type — тип события, metadata — произвольные JSON-данные.
+    """
+
+    EVENT_TYPES = [
+        ("lead_submit", "Отправка заявки"),
+        ("phone_click", "Клик по телефону"),
+        ("doc_download", "Скачивание документа"),
+        ("product_view", "Просмотр товара"),
+        ("product_tab", "Переключение вкладки товара"),
+        ("product_image_view", "Просмотр изображения товара"),
+        ("catalog_view", "Просмотр каталога"),
+        ("category_view", "Просмотр категории"),
+        ("breadcrumb_click", "Клик по хлебным крошкам"),
+        ("search_query", "Поиск по сайту"),
+        ("search_click", "Клик по результату поиска"),
+        ("page_view", "Просмотр страницы"),
+        ("scroll_depth", "Глубина скролла"),
+        ("time_on_page", "Время на странице"),
+    ]
+
+    event_type = models.CharField(max_length=50, choices=EVENT_TYPES, db_index=True)
+    url = models.URLField(max_length=1024, verbose_name="URL страницы")
+    product = models.CharField(max_length=255, blank=True, default="", verbose_name="Товар")
+    category = models.CharField(max_length=255, blank=True, default="", verbose_name="Категория")
+    metadata = models.JSONField(default=dict, blank=True, verbose_name="Доп. данные")
+    ip_address = models.GenericIPAddressField(null=True, blank=True, verbose_name="IP")
+    user_agent = models.TextField(blank=True, default="", verbose_name="User-Agent")
+    visitor_id = models.CharField(max_length=64, blank=True, default="", db_index=True, verbose_name="Visitor ID")
+    session_id = models.CharField(max_length=64, blank=True, default="", db_index=True, verbose_name="Session ID")
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name="Время события")
+
+    class Meta:
+        verbose_name = "Событие трекера"
+        verbose_name_plural = "События трекера"
+        ordering = ["-created_at"]
+        indexes = [
+            models.Index(fields=["event_type", "created_at"]),
+            models.Index(fields=["visitor_id", "created_at"]),
+        ]
+
+    def __str__(self):
+        return f"{self.event_type} — {self.url} ({self.created_at})"
+
+
 class ContactRequest(models.Model):
     """
     Model representing a contact request submitted by a user.

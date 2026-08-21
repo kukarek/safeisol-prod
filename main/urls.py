@@ -26,6 +26,7 @@ urlpatterns = [
 api_urlpatterns = [
     path('send_contacts/', views.send_contacts, name='send_contacts_api'),
     path('products/', views.get_products, name='get_products'),
+    path('track/', views.track_event, name='track_event'),
 ]
 
 urlpatterns += [path('api/', include((api_urlpatterns, 'api')))]
