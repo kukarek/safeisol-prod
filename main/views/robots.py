@@ -29,7 +29,6 @@ def robots_txt(request):
         "Disallow: /media/",
         "Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term",
         "Clean-param: yclid&gclid&fbclid",
-        f"Host: {host}",
         "",
         f"Sitemap: {host}{reverse('sitemap')}",
     ]
