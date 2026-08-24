@@ -351,18 +351,13 @@
 
 	.container.tile_goods .product {
 		width: 100%;
-		height: auto;
 		padding: 3px;
 		margin: 0;
 	}
 
-	.container.tile_goods .product .product-img-block {
-		aspect-ratio: 1 / 1;
-		width: 100%;
-	}
-
 	.product-img-block {
 		padding: 0;
+		line-height: 0;
 	}
 
 	.product-block {
@@ -383,6 +378,8 @@
 	.container.tile_goods {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+		gap: 4px;
+		align-items: start;
 	}
 
 	.subtitle {
@@ -442,10 +439,6 @@
 		position: absolute;
 	}
 
-	.product-img {
-		height: 100%;
-		aspect-ratio: 1/1;
-	}
 
 	.service-description .paragraph {
 		font-size: 4vw;
