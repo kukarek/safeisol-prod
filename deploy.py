@@ -22,6 +22,13 @@ import subprocess
 import sys
 from pathlib import Path
 
+# Надёжный вывод в консоль независимо от кодировки Windows (cp1251 и т.п.).
+# Без этого печать вывода сервера с кириллицей может уронить скрипт.
+if sys.stdout and hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if sys.stderr and hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 # --- параметры деплоя на сервере -------------------------------------------
 REMOTE_BRANCH = "main"
 REMOTE_REPO_DIR = "/root/safeisol-prod"  # рабочий каталог docker-compose на сервере
@@ -101,6 +108,10 @@ def deploy_on_server(server: str, password: str) -> None:
     try:
         remote_run(client, f"cd {REMOTE_REPO_DIR} && git pull origin {REMOTE_BRANCH}")
         remote_run(client, f"cd {REMOTE_REPO_DIR} && docker compose up -d --build")
+        # После пересборки web-контейнер получает новый IP. Nginx (без resolver)
+        # кэширует IP апстрима на старте, поэтому его нужно пересоздать, иначе
+        # он будет проксировать на устаревший адрес и отдавать 502.
+        remote_run(client, f"cd {REMOTE_REPO_DIR} && docker compose up -d --force-recreate nginx")
         remote_run(client, f"cd {REMOTE_REPO_DIR} && docker compose ps")
     finally:
         client.close()
