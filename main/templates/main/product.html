@@ -66,8 +66,7 @@
                 "@type": "Organization",
                 "name": "ООО «Безопасная теплоизоляция»",
                 "url": "https://safeisol.ru"
-            }{% if product.category %},
-            "category": "{{ product.category.title }}"{% endif %}{% if product.content.images %},
+            }{% if product.content.images %},
 "image": "https://safeisol.ru{% static 'main/media/' %}{{ product.content.images.0.src }}"{% endif %}
         }
         </script>
