@@ -1,6 +1,7 @@
 from django.contrib.sitemaps import Sitemap
 import inspect
 from django.urls import reverse
+from django.db.models import Count
 from django.db.models.query import QuerySet
 from .models import Product, Category, Service
 
@@ -92,10 +93,18 @@ class CategorySitemap(Sitemap):
         """
         Returns a queryset of all categories to be included in the sitemap.
         This method retrieves all categories from the database.
+
+        Categories that contain exactly one product are excluded: their URL
+        permanently redirects to the single product page, so adding them to
+        the sitemap would tell search engines to index a redirecting page.
         Returns:
-            QuerySet: A queryset containing all Category objects.
+            QuerySet: A queryset containing all Category objects with not exactly one product.
         """
-        return Category.objects.all()
+        return (
+            Category.objects
+            .annotate(_product_count=Count('products'))
+            .exclude(_product_count=1)
+        )
 
 
     def location(self, obj: Category) -> str:

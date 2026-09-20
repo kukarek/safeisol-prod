@@ -66,19 +66,6 @@
                 "@type": "Organization",
                 "name": "ООО «Безопасная теплоизоляция»",
                 "url": "https://safeisol.ru"
-            },
-            "offers": {
-                "@type": "Offer",
-                "availability": "https://schema.org/InStock",
-                "priceCurrency": "RUB",
-                "lowPrice": "1000",
-                "offerCount": "1",
-                "priceValidUntil": "2027-12-31",
-                "seller": {
-                    "@type": "Organization",
-                    "name": "SAFEISOL"
-                },
-                "url": "https://safeisol.ru{{ product.get_absolute_url }}"
             }{% if product.category %},
             "category": "{{ product.category.title }}"{% endif %}{% if product.content.images %},
 "image": "https://safeisol.ru{% static 'main/media/' %}{{ product.content.images.0.src }}"{% endif %}

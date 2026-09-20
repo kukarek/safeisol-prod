@@ -19,10 +19,16 @@ class CategoryViewTest(TestCase):
         self.category = Category.objects.create(title="Чехлы", slug="chehly")
 
     def test_redirect_if_one_product(self):
-        """Test that if there is only one product in the category, it redirects to the product page."""
+        """Test that if there is only one product in the category, it permanently redirects to the product page."""
         product = Product.objects.create(title="Продукт 1", slug="product-1", content={}, category=self.category)
         response = self.client.get(reverse('category', kwargs={'category_slug': self.category.slug}))
-        self.assertRedirects(response, reverse('product', kwargs={'product_slug': product.slug}))
+        self.assertEqual(response.status_code, 301)
+        self.assertRedirects(
+            response,
+            reverse('product', kwargs={'product_slug': product.slug}),
+            status_code=301,
+            fetch_redirect_response=False,
+        )
 
     def test_show_category_with_multiple_products(self):
         """Test that the category page shows multiple products."""

@@ -61,7 +61,11 @@ class Category(mixins.BreadcrumbsMixin, DetailView):
         self.object = self.get_object()  # гарантируем наличие self.object
         products = list(self.object.products.all())
         if len(products) == 1:
-            return redirect('product', product_slug=products[0].slug)
+            # Permanent redirect: the single-product category URL is fully
+            # replaced by the product card. 301 tells search engines the move
+            # is permanent, so indexing consolidates on the product URL and
+            # the category URL stops being reported as a redirecting page.
+            return redirect('product', product_slug=products[0].slug, permanent=True)
         return super().get(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
